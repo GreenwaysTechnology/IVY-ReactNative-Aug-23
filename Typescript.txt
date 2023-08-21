@@ -1,0 +1,1482 @@
+				User interface Development
+				     Using Angular
+.....................................................................................
+
+Angular is just javascript framework to build user interface.
+
+Pre Knowledge
+1.Javascript - basics of js
+2.CSS 3
+3.HTML 5.
+
+Are we going to build angular apps using plain javascript?
+   No!
+
+We are going to use the language called "typescript"
+
+Angular is built on the top of various technologies
+1.Typescript
+2.Reactive Programming using RXJS
+4.Build tools like webpack
+....................................................................................
+		                     TypeScript 
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+What is typescript?
+
+ Typescript is object oriented and functional style programming language.
+ Typescript that scales javascript.
+ scaling is nothing but expanding features.
+ Typescript is super set of Javascript.
+
+Why Typescript? or Why Typescript was created?
+
+What is Javascript?
+
+ -Javascript is programming language.
+
+Styles of programming language
+ -Object oriented
+ -Procedure oriented
+ -Functional oriented
+
+Java is object oriented,Java added functional programming principles.
+
+Java is object oriented,functional style programming languages - hybrid language
+
+
+Some languages designed with single style - c++,c
+Some languages designed with multiple styles (hybrid) - Javascript,java 8,C#,Scala,Groovy,Kotiln....
+
+	"Javascript is Object based,functional Style,Event driven programming 	language." - Hybrid language
+
+Object based vs Object oriented:
+...............................
+
+Object Oriented Principles:
+...........................
+
+1.Abstraction
+2.Encapsulation
+3.Hierarchy - has-a,is-a 
+4.Typing-strong typing(static typing) and weak typing(dynamic typing)
+5.Modularity - how to share code across files and folders
+----------------------
+6.Concurrency
+7.Persistency
+
+if any language follows the first 5 prinicples 100% , those languages are called object oriented programming.
+
+if any language  does not follow the first 5 prinicples 100% or if follwing paritally , those languages are called "object based programming"
+
+functional pure vs style:
+
+-if any language follows 100% functional programming principles those languages are called "purely functional",if not functional style.
+
+Javascript features:
+
+ -Typing
+     Dynamic typed language / weak typed language -----javascript
+
+        The type of variable is not verified during compile time, runtime verfication.
+
+     var x ="hello"
+     x=10;
+
+     Static typed language/ Strongly typed language -  c,c++,c#,java......
+       The type of variable is verified during compile time.
+
+eg:
+  int a =100
+  int a ="hello"; invalid ;compile time error.
+	
+		"Think: why js was designed to be dynamic typed?"
+
+Drawbacks of dynamic typing:
+    -We cant build enterprise consistent application.
+
+ -Object based 
+    if we  want to design enterprise apps, using object oriented  in js not possible.
+
+Why javascript:
+  Javascript was created for process html pages.
+
+https://home.cern/science/computing/birth-web/short-history-web
+
+1989 - Web Project was started    ----------Sun created Java
+
+1990 -  The first webserver,Browser was created
+
+1994 - Netscap started
+
+1995 - The first netscap navigator came to access web pages 
+
+1996 - Netscap decided to put java inside web browser.
+
+static web page- before netscap
+dynamic web page -netscap
+
+----Static web----- only hand coded html pages.
+
+1996 - CREATED Dynamic web : how to work with databases
+     - CGI - C,perl.
+ J2EE- Servlets,JSP
+ MS  - ASP
+ OPEN SOURCE - PHP.
+
+Server side web : create html pages on fly by including data from databases.
+
+Netscap decided to build client side web technoloy- once html is rendered into web browser how to change that html onfly. 
+
+Netscap decided to create a new programming language, who recurited Brendan Eich
+,the programmer , asked to create new programming language for netscap navigator.
+
+-Objective of Project
+
+-It should be like java but it should not be java -light weight - scripting
+-deadline is 10 days.
+
+Time line:
+
+1.javascript project started 1995
+1.first name of the language was "Mocha"
+2.language was renamed to "Live Script" -1996
+3.language was renamed to "java Script" -1996
+
+After language ready, which was submitted to standard body "ECMA international"
+
+1996---1997 : JS 1.0 =>ES 1.0
+
+1997- 1998 :  ES 2.0: It did not come
+
+1999 :  ES 3
+
+2007 : ES 4
+
+2008 : ES 5
+
+2012-2015 : ES 6
+
+2016  ONWARDS : es 7,es 8, ......
+///////////////////////////////////////////////////////////////////////////////////////////
+				Object oriented Javascript
+.............................................................................................
+
+Fundamentally js is object based,type less language, then it is difficult to build object oriented systems.
+
+in order to create better javascript, 2009, The project was started to make javascript looks like other object oriented langugages.
+
+  - classes,interfaces,modules.... : Coffee script (intension was to introduce object oriented features like classes,interfaces).
+
+Coffee script was the programming language. used to add classes,interfaces into js.
+
+YOu write code in coffeescript
+
+Employee.coffee
+
+class Employee {
+
+}
+compiler - coffee Employee.coffe
+|
+Employee.js - compiled code -pure javascript 
+|
+run on browser
+
+
+Coffee script had issues still - Type system- No strongly typed.
+.....................................................................................
+
+2010, Microsoft started project to create object oriented javascript using C#
+
+Objective of MS Project:
+
+ -Add Type System - Strong Typing
+ -Classes
+ -Modules
+ -interfaces
+ -encapulation keywords
+ .......
+C# ------------->compiler------>plain javascript.
+
+MS Failed to port this project to public because
+
+Problems with C#
+ 1.PORTABLITY.
+ 2.COMPLEXITY
+.....................................................................................
+Arch of TS:
+
+					
+				      TS language
+					    |
+					  ES 6
+					    |
+					  ES 5
+
+
+Typescript----compile----Plain javascript
+
+Typescript is strongly typed, object oriented  javascript.
+
+Now you can use type script to build better object oriented systems using javascript.
+
+TS is not compititor or replacer for javascript but it complements js.
+Type scrit is a typed superset of javascript that compiles to plain javascript
+
+                  any browser,any host, any os, any device
+
+.....................................................................................
+			  Project Setup
+.....................................................................................
+
+Softwares:
+1.node js
+2.vscode 
+
+Project creation:
+
+E:\session\Evoke> mkdir tsapps
+
+E:\session\Evoke>cd tsapps
+
+E:\session\Evoke\tsapps>npm init --yes
+   ->This step will create package.json file
+{
+  "name": "tsapps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+E:\session\Evoke\tsapps>mkdir src
+  ->This will have source files : ts files
+
+Typescript compiler:
+E:\session\Evoke\tsapps>npm install typescript --save-dev
+
+lanuch code window
+E:\session\Evoke\tsapps>code .
+   ->Lanuch the project in the current code window
+
+How to write type script?
+
+ src
+  |
+   index.ts
+-Typescript files are saved with "fileName.ts" extension
+
+How to compile Type script?
+
+inside package.json
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile":"tsc --watch"
+  },
+
+in order to compile typescript file, we need one more configuration
+
+E:\session\Evoke\tsapps> tsconfig.json
+  ->compiler configuration file
+{
+    "compilerOptions": {
+        "outDir": "build"     
+    },
+    "exclude": ["node_modules"],
+    "files": ["src/index.ts"]
+}
+
+Start compilation:
+
+E:\session\Evoke\tsapps>npm run compile
+9:03:36 pm] Starting compilation in watch mode...
+
+[9:03:37 pm] Found 0 errors. Watching for file changes.
+
+Go to project explorer and see the build folder is where compiled code.
+
+How to run the code?
+
+E:\session\Evoke\tsapps
+		|
+		index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Typescript Application Demos</h1>
+    <script src="build/index.js"></script>
+</body>
+</html>
+
+if you want to run javascript in server env(outside browser)
+
+  you can run using node.js
+    eg:
+	E:\session\Evoke\tsapps>node build/index.js
+	 Hello world
+.....................................................................................
+			 Typescript language core concepts
+
+1.Language fundamentals
+   ->How to declare variables
+   ->How to use type system -static type/strong typing
+   ->Literals -values
+2.How to declare functions
+
+3.Object oriented Programming and implementation
+
+4.Modules - packages
+
+5.Decorators - annotations		
+
+...................................................................................
+
+How to declare variables ?
+
+In javascript 
+
+var or let or const or this variableName=value(literals)
+
+In Typescript
+
+var or let or const variableName:Datatype=value(literals)
+
+Data types are decided based on literals:
+
+Literals in js and ts:
+.......................
+
+1.string
+2.number
+3.boolean
+4.undefined
+5.NaN -Not a Number
+6.infinity 
+7.function
+8.object
+9.null
+
+Data Types:
+............
+
+Primitives
+  =>string,number,boolean
+
+Reference Types
+  =>Object,Array
+
+Other Types
+ void
+ undefined
+ any
+ function
+ unknown
+ enum
+
+
+Eg: Basic types:
+//data types and variable declaration
+//string literals are represented using "" or '' or ``(template literal noation)
+
+let firstName: string = "Subramanian"
+
+console.log("firstName :" + firstName)
+console.log('firstName :', firstName)
+//es 6 feature
+console.log(`First Name ${firstName}`)
+
+let lastName: string = 'Murugan'
+let fullName: string = `${firstName} ${lastName}`
+console.log(`Full Name : ${fullName}`)
+
+//number: 64 bit by default every number is double only.
+let salary: number = 10000
+console.log(`Salary ${salary}`)
+
+//boolean : 1 bit value stores either true or false
+let isActive:boolean = true
+console.log(`Active :${isActive}`)
+
+//undefined: if variable is declared without any value
+
+let myvariable
+console.log(`My variable ${myvariable}`)
+
+
+Finding Type Errors:
+
+//type script is going to ensure that your variable must have that type value only.
+
+let price:number =100
+console.log(`Price ${price}`)
+
+//src/index.ts:6:1 - error TS2322: Type 'string' is not assignable to type 'number'.
+//price ="Hello"
+
+price=900
+
+let isActive:boolean = 100
+....................................................................................
+			 Type Inference
+....................................................................................
+
+
+//Type inference 
+
+//here variable salary is declared with number data type,in future variable salary cant be initalized with other type values
+let salary: number = 100
+console.log(`Salary ${salary}`)
+
+// Here we have declared variable but not explicitly mentioned type :Type inference
+let isActive = true
+console.log(`isActive ${isActive}`)
+
+//src/index.ts:11:1 - error TS2322: Type 'number' is not assignable to type 'boolean'.
+//11 isActive =90
+isActive =90
+.....................................................................................
+			   NaN
+
+NaN is nothing but Not a Number.
+NaN represents "Runtime numerical computation error'
+NaN internally having error code.
+
+When you get NaN?
+
+ =>when you do numerical operation against undefined values
+
+if you get NaN , you have to fix because it is runtime bug.
+
+//NaN
+
+let price = 100
+let qty
+console.log(`Price ${price} Qty ${qty}`)
+let totalPrice = qty * price  //undefined * 100 
+console.log(`Total ${totalPrice} `)
+.....................................................................................
+			 Div by 0
+////////////////////////////////////////////////////////////////////////////////////
+Infinity: 
+   if you divide any number by 0
+
+let price = 100
+let avgPrice = price / 0
+console.log(`Avg Price ${avgPrice}`)//Avg Price Infinity
+.....................................................................................
+			 any type
+....................................................................................
+
+In typescript if you declare variable with explicit type or implicit(via type inference), the variable must follow the type rules.
+
+eg:
+let a: number = 10
+a=100;
+//a="hello"
+
+let b =100;
+//b="hello"
+
+But sometimes i dont want to restrict a variable with particular type, variable must accept any type of value in future assigments.
+   Thats where we use "any" type
+
+let a: number = 10
+a = 100;
+//a="hello"
+
+let b = 100;
+//b="hello"
+
+//Explicit any
+let c: any = 10
+c = "hello"
+
+//implicit any : type inference any
+let d; // undefined
+console.log(d)
+d=100
+console.log(d)
+d="Hello"
+console.log(d)
+
+let e:undefined
+e = undefined
+.....................................................................................
+			   Adanced Booleans
+....................................................................................
+
+Java:
+ int a =10;
+ if(a){}
+
+in js 
+ let a=10;
+ if(a){}
+
+In js/ts every thing is true,except the following values
+
+Fasly values:
+
+1.boolean false
+2.0
+3.undefined
+4.empty string "" ''
+5.NaN
+6.null
+//advanced boolean
+
+let a = NaN
+if (a) {
+    console.log('valid')
+} else {
+    console.log('invalid')
+}
+.....................................................................................
+			  const
+......................................................................................
+if any variable is declared with const keyword "cant be reinitalized"
+
+//const 
+
+let a =10;
+console.log(`a ${a}`)
+a=90
+console.log(`a ${a}`)
+const b =90
+console.log(`b ${b}`)
+//src/index.ts:9:1 - error TS2588: Cannot assign to 'b' because it is a constant.
+//b=100
+.....................................................................................
+			 functions
+.....................................................................................
+
+What is function?
+   function is going to encapsulate the code/logic
+
+How to declare function , and how invoke?
+//function declaration
+function sayHello(){
+    //logic
+   console.log('Hello')   
+}
+//function invocation
+sayHello()
+
+function args and parameters
+
+without explicit types:
+//function args and parameters
+
+//here a and b are variables its type is implicit
+//the type of variables are understood based on values we pass
+function add(a, b) {
+    //biz logic
+    let c = a + b 
+    console.log(`Add : ${c}`)
+}
+//invoke function and pass values
+add(10,10)
+//add()
+add("abc",13)
+
+How to restric a and b type?
+function add(a:number, b:number) {
+    //biz logic
+    let c = a + b 
+    console.log(`Add : ${c}`)
+}
+//invoke function and pass values
+add(10,10)
+//add()
+// add("fdsfdsf",13)
+
+Default args:
+..............
+ if you dont pass parameter(values),the function initalizes the default values
+
+//default args
+function add(a: number = 0, b: number = 0) {
+    let c = a + b
+    console.log(`c ${c}`)
+}
+add(10, 10)
+add();
+
+Optional args:
+ This is ts feature, you can skip passing values but there will not be any default values
+
+//default args
+function add(a: number = 0, b: number = 0) {
+    let c = a + b
+    console.log(`c ${c}`)
+}
+add(10, 10)
+add();
+
+//optional args a?
+function multiply(a?: number, b?: number) {
+    let c = a * b
+    if (isNaN(c)) {
+        console.log('Kindly provide numbers as parameter')
+    } else {
+        console.log(`Multiply Result ${c}`)
+    }
+}
+multiply(10, 10)
+multiply()
+
+
+function divide(a?: number, b?: number) {
+    let c = a / b
+    console.log(`divide Result ${c}`)
+}
+//parameters are based on positions
+divide(undefined, 10)
+divide(null, 10)
+divide(10)
+
+function sum(a: number = 0, b?: number) {
+    let c = a * b
+    console.log(`Sum Result ${c}`)
+}
+sum(undefined, 10)
+
+function calculate(a: number, b: number, c: number) {
+
+}
+calculate(20,10,8)
+....................................................................................
+Return values and Return Type:
+
+function sum(a: number = 0, b: number = 0): number {
+    return a * b
+}
+console.log(sum(10, 10))
+
+if function does not return any value
+   you can void type
+
+function sum(a: number = 0, b: number = 0): number {
+    return a * b
+}
+console.log(sum(10, 10))
+
+function sayHello(): void {
+    console.log('Function without any type')
+}
+sayHello()
+....................................................................................
+			function as literal : function as value
+....................................................................................
+
+Since function is value, it can be assigned to a variable.
+
+let        a =     10
+ |         |       |
+keyword variable  literal(value)
+
+//function as literal
+
+//anonmous function: function without name
+let hello = function () {
+   //logic
+   console.log('Hello')
+}
+//the variable holding function literal can be used to invoke that function 
+hello()
+
+//args and parameters and return in anonmous function
+let sum = function (a: number = 0, b: number = 0): number {
+    return a * b
+}
+console.log(sum(10, 10))
+....................................................................................
+		 Arrow functions: es 6 version of anonmous functions
+....................................................................................
+
+Objective:
+ =>To simple and readable anonmous functions.
+
+//arrow functions
+
+//ES 5 style of anonmous function
+let hello = function () {
+    //logic
+    console.log('Hello')
+}
+//ES 6 style of writing anonmous functions : arrow function
+
+let hai = () => {
+    console.log('hai')
+}
+hai()
+//if function has only one line of logic, then you can remove {}
+hai = () => console.log('hai')
+hai()
+//args and parameters
+
+let sum = (a: number = 0, b: number = 0): number => {
+    let c = a + b
+    return c;
+}
+console.log(sum(12, 89))
+
+sum = (a: number = 0, b: number = 0): number => {
+    return a + b
+}
+console.log(sum(12, 89))
+
+//if function has only return statement, we can remove {} and return statement too.
+sum = (a: number = 0, b: number = 0): number => a + b
+console.log(sum(12, 89))
+console.log(sum)
+...................................................................................
+			Advanced Types
+...................................................................................
+Union type:
+
+  A variable can have multiple types
+
+//union type
+//id now can take either string or number 
+let id: number | string
+id = 1
+id = "abc"
+//id=true
+
+//union type and predefined constant values
+
+let gender: "Male" | "Female" | "Third"
+
+gender = "Male"
+gender = "Female"
+//gender = 2
+
+let jobStatus: "Open" | "Pending" | "Closed" | "Wait List"
+
+jobStatus = "Pending"
+//How to pass parameters with union type
+
+let mode = (varient: "Dark" | "Light") => {
+    console.log(varient)
+}
+mode("Light")
+.....................................................................................
+		Object oriented Programming and Implmentations
+....................................................................................
+ES 6 introduced class.
+Typescript added more power to class declarations
+
+class
+ =>instance variables
+ =>instance methods
+ =>constructors
+ =>How to create instance out of class
+
+class Employee {
+    //instance variables are declared inside class without any keyword
+    id: number=1;
+    firstName: string="";
+    lastName: string="";
+    status: boolean=false;
+}
+
+//create instance/object 
+//here let is keyword
+//employee is just variable : reference variable
+//new is operator to allocate memory
+//Employee()- constructor call
+let employee = new Employee();
+console.log(employee)
+console.log(employee.id,employee.firstName,employee.lastName,employee.status)
+
+
+How to initalize inside constructor?
+
+class Employee {
+    id: number;
+    firstName: string;
+    lastName: string;
+    status: boolean;
+    //add constructor
+    constructor() {
+        this.id = 1;
+        this.firstName = ''
+        this.lastName = ''
+        this.status = false
+    }
+}
+
+//create instance/object 
+//here let is keyword
+//employee is just variable : reference variable
+//new is operator to allocate memory
+//Employee()- constructor call
+let employee = new Employee();
+console.log(employee)
+console.log(employee.id, employee.firstName, employee.lastName, employee.status)
+
+constructor args and default args:
+.................................
+class Employee {
+    id: number;
+    firstName: string;
+    lastName: string;
+    status: boolean;
+    //add constructor , add constructor args
+    constructor(id: number = 0, firstName: string = '', lastName: string = '', status: boolean = false) {
+        this.id = id;
+        this.firstName = firstName
+        this.lastName = lastName
+        this.status = status
+    }
+}
+
+
+let employee = new Employee(1, 'Subramanian', 'Murugan', true);
+console.log(employee)
+console.log(employee.id, employee.firstName, employee.lastName, employee.status)
+...................................................................................
+			How to declare methods inside class
+ 
+//class with methods
+
+class ProductService {
+    constructor() { }
+    //methods
+    findAll(): string {
+        return 'List all products'
+    }
+    save(): string {
+        return 'Product save method '
+    }
+    remove(): string {
+        return 'Product remove method'
+    }
+    update(): string {
+        return 'Product Update method'
+    }
+}
+let productService = new ProductService()
+console.log(productService.findAll())
+console.log(productService.save())
+console.log(productService.remove())
+console.log(productService.update())
+....................................................................................
+			 Encapsulation
+....................................................................................
+
+How to restrict code sharing between files and between classes
+
+Typescript only supports encapsulation not javascript.
+
+Encapsulation can be implemented using keywords
+
+1.public 
+2.private
+3.protocted
+
+instance variables and methods can be declared with public,private,protected keywords
+
+By default all instance variables and methods are public 
+
+class Employee {
+    //here variables are by default public 
+    public id: number=1;
+    public firstName: string="";
+    lastName: string="";
+    status: boolean=false;
+}
+
+let employee = new Employee();
+console.log(employee)
+console.log(employee.id,employee.firstName,employee.lastName,employee.status)
+
+private means we can access the variables and methods outside the class.
+
+
+class AuthService {
+    private userName: string = 'admin'
+    private password: string = 'admin'
+}
+let authService= new AuthService()
+//Property 'userName' is private and only accessible within class 'AuthService'.
+
+//7 console.log(authService.userName)
+//~~~~~~~~
+//console.log(authService.userName)
+
+
+class AuthService {
+    private userName: string = 'admin'
+    private password: string = 'admin'
+
+    //private methods
+    private generatePassword(){
+        return '$%$$'
+    }
+    //access private variables and methods via public methods
+    public login(){
+        return this.generatePassword()
+    }
+}
+let authService= new AuthService()
+//Property 'userName' is private and only accessible within class 'AuthService'.
+
+//7 console.log(authService.userName)
+//~~~~~~~~
+//console.log(authService.userName)
+// console.log(authService.generatePassword())
+console.log(authService.login())
+....................................................................................
+			Hierarchy
+...................................................................................
+
+There are two types of Hierarchy
+
+1.HAS-A  - Dependency Injection
+2.IS-A   - Inheritance
+
+HAS-A
+//has-a
+
+class Address {
+    street: string;
+    city: string;
+    state: string
+    country: string;
+    zipcode: string
+    constructor(street: string = '', city: string = '', state: string = '', country: string = '', zipcode: string = '') {
+        this.street = street
+        this.city = city
+        this.state = state
+        this.country = country
+        this.zipcode = zipcode
+    }
+}
+
+class Customer {
+    id: number;
+    name: string;
+    //has-a: depenency Injection
+    address: Address //reference
+    constructor(id: number = 0, name: string = '', address: Address = new Address()) {
+        this.id = id
+        this.name = name
+        this.address = address
+    }
+}
+
+let customer = new Customer(1, 'Subramanian', new Address('3rd street', 'Coimbatore', 'Tamil nadu', 'India', '641111'))
+console.log(customer.id)
+console.log(customer.name)
+console.log(customer.address.street, customer.address.city, customer.address.state, customer.address.country, customer.address.zipcode)
+
+Eg: Another example:
+//repository,service,controller
+
+class CustomerRepository {
+    constructor() {
+
+    }
+    findAll() {
+        return 'Customers Info'
+    }
+}
+class CustomerService {
+    private customerRepo: CustomerRepository
+    constructor(customerRepo: CustomerRepository) {
+        this.customerRepo = customerRepo
+    }
+    findAll() {
+        return this.customerRepo.findAll()
+    }
+}
+class CustomerController {
+    //has-a
+    private customerService: CustomerService
+    constructor(customerService: CustomerService) {
+        this.customerService = customerService
+    }
+    init() {
+        console.log(this.customerService.findAll())
+    }
+}
+let customerCtrl = new CustomerController(new CustomerService(new CustomerRepository()))
+customerCtrl.init()
+....................................................................................
+		 Code Refactoring in has-a/dependency injection
+.....................................................................................
+
+We are going to use public and private keywords to reduce code .
+
+// class Address {
+//     street: string;
+//     city: string;
+//     state: string
+//     country: string;
+//     zipcode: string
+//     constructor(street: string = '', city: string = '', state: string = '', country: string = '', zipcode: string = '') {
+//         this.street = street
+//         this.city = city
+//         this.state = state
+//         this.country = country
+//         this.zipcode = zipcode
+//     }
+// }
+//Level 1: code refactoring: just remove variable declarations
+// class Address {
+//     //all constructor args are local variables
+//    constructor(street: string = '', city: string = '', state: string = '', country: string = '', zipcode: string = '') {
+//         this.street = street
+//         this.city = city
+//         this.state = state
+//         this.country = country
+//         this.zipcode = zipcode
+//     }
+// }
+//convert all constructor all local variables into instance variables
+//just by adding either private or public keyword
+// class Address {
+//     //all constructor args are local variables
+//     constructor(public street: string = '', public city: string = '', public state: string = '', public country: string = '', public zipcode: string = '') {
+//         this.street = street
+//         this.city = city
+//         this.state = state
+//         this.country = country
+//         this.zipcode = zipcode
+//     }
+// }
+//Level 3:
+class Address {
+    //all constructor args are local variables
+    constructor(public street: string = '', public city: string = '', public state: string = '', public country: string = '', public zipcode: string = '') { }
+}
+class Customer {
+    constructor(public id: number = 0, public name: string = '', public address: Address = new Address()) { }
+}
+
+let customer = new Customer(1, 'Subramanian', new Address('3rd street', 'Coimbatore', 'Tamil nadu', 'India', '641111'))
+console.log(customer.id)
+console.log(customer.name)
+console.log(customer.address.street, customer.address.city, customer.address.state, customer.address.country, customer.address.zipcode)
+.................
+
+class CustomerRepository {
+    constructor() { }
+    findAll() {
+        return 'Customers Info'
+    }
+}
+class CustomerService {
+    constructor(private customerRepo: CustomerRepository) { }
+    findAll() {
+        return this.customerRepo.findAll()
+    }
+}
+class CustomerController {
+    //has-a
+    constructor(private customerService: CustomerService) { }
+    init() {
+        console.log(this.customerService.findAll())
+    }
+}
+let customerCtrl = new CustomerController(new CustomerService(new CustomerRepository()))
+customerCtrl.init()
+....................................................................................
+				IS-A Inheritance
+...................................................................................
+
+1.class inheritance
+2.interface based inheritance
+3.abstract class based inheritance
+
+
+
+//base class
+class Account {
+    constructor() {
+        console.log('Account')
+    }
+    protected deposit(): number {
+        return 0
+    }
+}
+//child class 
+class SavingsAccount extends Account {
+    constructor() {
+        super()
+        console.log('Savings Account')
+    }
+    //overriding
+    deposit(): number {
+        return 1000
+    }
+}
+let sb = new SavingsAccount()
+//
+console.log(sb.deposit())
+
+...
+
+interfaces:
+
+//base class
+interface Account {
+    deposit(): number
+}
+//child class 
+class SavingsAccount implements Account {
+    constructor() {
+        console.log('Savings Account')
+    }
+    //overriding
+    deposit(): number {
+        return 1000
+    }
+}
+let sb = new SavingsAccount()
+//
+console.log(sb.deposit())
+
+Abstract classes:
+abstract class Animal {
+    //abstract methods
+    abstract eat():string 
+    //non abstract method
+    saveAnimal(){
+        console.log('Save animals from the Hunter and Global warming')
+    }
+}
+class Tiger extends Animal {
+    eat(): string {
+        return 'Tiger eats'
+    }
+}
+let tiger = new Tiger()
+console.log(tiger.eat())
+tiger.saveAnimal()
+....................................................................................
+				Object Types
+....................................................................................
+We can create objects in many ways
+
+Constructor Pattern:
+
+1.using function -es 5 way
+  function Employee() {} - new Employee()
+2.using classes - es 6 way
+  class Employee {} -> new Employee()
+
+Literal pattern:
+ let employee = {
+   id:1,
+   name:'Subramanian'
+}
+Data type for objects can be declared using three ways
+
+1.class as type
+2.interface as type
+4.type keyword as type.
+
+
+//How to enforce type safty for literal object properties
+
+//class as type
+// class Employee {
+//     id: number
+//     name: string
+// }
+
+//interface as Type
+// interface Employee {
+//     id: number
+//     name: string
+// }
+
+//type keyword as type 
+type Employee = {
+    id: number
+    name: string
+}
+
+let employee: Employee = {
+    id: 2,
+    name: 'Subramanian'
+}
+console.log(employee.id, employee.name)
+...
+Object fields:
+// type 
+class Product {
+    //required Fields and optional Fields
+    id: number
+    name: string
+    qty?: number
+    category?: "Food" | "Electronics" | "Books" | "Vegtables"
+    inStock?: boolean
+}
+
+//create object 
+let product: Product = {
+    id: 1,
+    name: 'Iphone 15',
+    qty: 1000,
+    category:"Electronics",
+    inStock: true
+}
+console.log(product)
+
+let productNew: Product = {
+    id: 1,
+    name: 'Iphone 15',
+    qty: 1000,
+}
+console.log(productNew)
+....................................................................................
+			 Collection/List/Array Types
+			        &
+			     Generics
+...................................................................................
+
+//arrays without type
+
+let list = [1, "hello", true]
+
+//restrict type 
+
+//Non Generic Syntax
+let numList: number[] = [1, 2, 3]
+//Generic syntax : <T>
+let numList2: Array<number> = [1, 2, 4]
+
+class Product {
+    id: number
+    name: string
+    qty?: number
+}
+class ProductService {
+    //return array of products
+    findAll(): Array<Product> {
+        return [{ id: 1, name: 'a', qty: 1 }, { id: 1, name: 'a', qty: 1 }]
+    }
+    list(): Product[] {
+        return [{ id: 1, name: 'a', qty: 1 }, { id: 1, name: 'a', qty: 1 }]
+    }
+}
+....................................................................................
+				Decorators-Annotations
+....................................................................................
+
+Annotations:
+  @Annoation eg : @Entity @Override,@Controller @Service....
+
+
+Steps:
+1.add decorator configuration in tsconfig.json
+{
+    "compilerOptions": {
+        "outDir": "build",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "files": [
+        "src/index.ts"
+    ]
+}
+/
+2.What is decorators
+  Decorator is just plain javascript function 
+
+
+
+3.How to use decorator
+  You can use decorator on class,fields,methods
+  @Decorator
+
+
+//how to write decorators
+
+//target is variable going to hold the reference of Object.
+
+function Course(target: any) {
+    //decorator logic
+    Object.defineProperty(target.prototype, 'subject', { value: 'Angular' })
+}
+
+
+@Course
+class Student {
+    constructor(public name: string = '') { }
+}
+let student = new Student('Subramanian') as any
+console.log(`Student ${student.name} is learning ${student.subject}`)
+....................................................................
+
+Decorator with parameter
+function Course(courseInfo:any) {
+    //decorator logic
+    return function(target:any){
+        Object.defineProperty(target.prototype, 'subject', { value: courseInfo })
+    }
+}
+
+@Course({ name: 'Java', duration: '40 hrs' })
+class Student {
+    constructor(public name: string = '') { }
+}
+let student = new Student('Subramanian') as any
+console.log(`Student ${student.name} is learning ${student.subject.name} and duration ${student.subject.duration}`)
+....................................................................................
+				Modules
+....................................................................................
+
+How to break your app into files and folders , and how to share code among them?
+
+ That is where modules comes into picture, this is equal to java packages.
+
+For code sharing:
+ code could be class,variables,objects,arrays,functions..
+
+there are two keywords
+1.export 
+2.export default
+
+for linking and using shared code
+there is a keyword called 
+
+eg:
+src/util/myutil.ts
+
+export const firstName: string = 'Subramanian'
+
+src/index.ts
+
+import { firstName } from './util/myutil'
+
+console.log(firstName)
+
+after compiling if you run this code, you will not able to run the code inside browser directly.
+The browser does not support ES 6 modules.
+
+How to run this? 
+  we need to use build tools to pack our code browser understandable format.
+
+Steps:
+
+1.install webpack
+
+  npm install webpack webpack-cli --save-dev
+
+2.add webpack.config.js in the project root dir
+const path = require('path');
+
+module.exports = {
+    entry: './build/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
+    },
+};
+3.build script we need to add inside package.json
+ "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc --watch",
+    "build": "webpack --watch"
+  }
+
+4.Edit index.html
+
+<body>
+    <h1>Typescript Application Demos</h1>
+    <!-- <script src="build/index.js"></script> -->
+    <script src="dist/bundle.js"></script>
+</body>
+
+You have to open two command prompt
+
+1.compile ts code - npm run compile
+2.build the code   -npm run build
+
+
+eg:
+src/services/customer.service.ts
+
+
+export class CustomerService {
+    constructor() {
+
+    }
+    findAll() {
+        return [{ id: 1, name: 'a' }]
+    }
+}
+src/index.ts
+import { CustomerService } from './services/customer.service'
+
+let customerService = new CustomerService()
+console.log(customerService.findAll())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
