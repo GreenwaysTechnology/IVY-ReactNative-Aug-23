@@ -1,0 +1,856 @@
+				  ES 6 Fundamentals
+.....................................................................................
+
+What is ES 6? ECMA 6?
+ 
+ES means ECMA Script, ECMA is standard organization to standarize the java script.
+
+What is Java script?
+ Javascript is one of the most popular programming language.
+ Javascript is Object based, functional style programming language.
+
+Java script language standarized by the Committe "ECMA" - European computer manfacturing assocation.
+
+....................................................................................
+ 			 ES 6 fundamentals
+....................................................................................
+
+What is Java script?
+ Javascript is one of the most popular programming language.
+ Javascript is Object based, functional style programming language.
+
+Java script language standarized by the Committe "ECMA" - European computer manfacturing assocation.
+
+In 1995, javascript language created by Brendan Eich  at Netscap Communication.
+
+Once the language created by Brendan Eich,The language submitted to the committe called ECMA For standarization.
+
+According to ECMA
+1.ES 1.0  -97
+2.ES 3.0 -99
+3.ES 4.0 -2006
+4.ES 5.0 -2007
+   During this period, Node.js was created.
+5.ES 6/ECMA 2015 - 2012-2015
+6.ES 7-2017
+etc...
+
+ES 6 Features:
+.............
+1.language fundamentals
+2.functions
+3.object based concepts and implementations
+....
+Modularity
+ -Commonjs
+ -ES 6 Modularity.
+...................................................................................
+
+Project setup:
+E:\session\IBM\2023\March>mkdir es6apps
+
+E:\session\IBM\2023\March>cd es6apps
+
+E:\session\IBM\2023\March\es6apps>mkdir src
+
+E:\session\IBM\2023\March\es6apps>code .
+
+How to  run js code?
+  
+ in order to run js , we need js run time called js virtual machine.
+
+There are two types of javascript Engine.
+
+1.embeded js engine/runtime
+    The js engine is embeded into other softwares 
+eg: browsers
+Chrome - v8
+fireFox -  Spider Monkey
+Chakra - Edge
+etc..
+
+2.stand alone js engine
+ 
+Node.js = V8
+Hermes - Open source Engine,Built for React Native
+
+Language fundamentals:
+
+JS is dynamic typed language, the data type is not declared,type of variable is understood during runtime.
+
+variables are declared using "var,let,const,this" keywords
+
+es 6 variables are declared using "let and const"
+
+
+let | const variableName = value(literal)
+
+
+types of literals     types
+
+1.string             - string
+2.number             - number
+3.boolean            - boolean
+4.undefined          - undefined
+5.NaN                - number
+6.infinity           - number
+7.function           - function
+8.null               - object
+9.object             - object
+
+types ;
+
+1.string
+2.number - number,infinity,NaN
+3.boolean
+4.undefined
+5.function
+6.object - null, object
+
+strings 
+
+1. declared using  "" ,'',``(es6)
+2. 16 bit unicode character
+
+`` - back tick notation:
+
+-string interpolation
+-multi line string literal
+
+
+
+
+//strings 
+//"",'',``(backtick -template literals) 
+//var firstName = 'Subramaian'
+let firstName = 'Subramanian'
+let lastName = "Murugan"
+console.log("Name " + firstName + lastName)
+console.log("Name ", firstName, lastName)
+//es 6 feature
+console.log(`Name ${firstName} ${lastName}`)
+//es 6 back tic notation is used for string concatation.
+let title = 'IBM'
+let doc = "<html>" +
+    "<head>" +
+    "<title>" + title + "</title>" +
+    "</head>" +
+    "<body>" +
+    "<h1>Hello</h1>" +
+    "</body>";
+console.log(doc)
+
+let docOne = `<html>
+           <head>
+            <title>${title}</title>
+            </head>
+          <body>
+            <h1>Hello</h1>
+          </body>
+        `;
+console.log(docOne)
+
+
+
+2.Numbers
+
+-all numbers size is 64 bit aka double.
+
+let salary = 10000;
+console.log(`Salary ${salary}`);
+let totalSalary = salary * 100
+console.log(`Total salary ${salary}`);
+
+
+2.boolean
+
+- 1 bit value eiether 0 or 1;
+- offers built in literal value called true/false
+
+
+let isEnabled = true
+let isValid = false
+console.log(`IsEnabled ${isEnabled} IsValid ${isValid}`)
+
+3.undefined:
+ -undefined; if variable declared but not initalized with any valid literals
+
+let cost;
+console.log(`cost ${cost}`);
+//undefined 
+
+let price;  //no value
+console.log(`Price ${price}`)
+
+4.NaN -  Not a Number
+
+ -NaN - not a number; it is numerical error code.during numerical computation, 
+
+js engine
+ -may throw error - NaN ; 
+ -NaN is not valid value, it is error , need to be fixed if you get.
+
+when you will get NaN.
+1.if you do compuation against undefined variables.
+
+//numerical computation against undefined
+let qty; //undefined
+let price = 100;
+let totalPrice = qty * price;
+console.log(`Totatl Price is ${totalPrice}`)
+
+
+Infinity:
+.........
+
+-div/0 -
+
+let x =100;
+let y =0
+let c = x/y;
+console.log(`C ${c}`)
+
+
+let vs const:
+
+//let and const both are same
+//consts are like final keyword
+
+let a = 10
+console.log(`A is ${a}`)
+a = 20
+console.log(`A is ${a}`)
+
+const b=90
+console.log(`B is ${b}`)
+b=80
+console.log(`B is ${b}`)
+
+....................................................................................
+				Advanced Booleans
+.....................................................................................
+
+In javascript every thing is true,except the following values
+
+Falsy Values:
+.............
+1.boolean false
+2.0
+3.undefined
+4.NaN
+5.empty string("",'')
+6.null
+
+Truthy values are except the above values are considered truthy values....
+let myvar //undefined
+
+if (myvar) {
+    console.log(`${myvar} is valid`)
+} else {
+    console.log(`${myvar} is invalid`)
+}
+myvar = 0
+if (myvar) {
+    console.log(`${myvar} is valid`)
+} else {
+    console.log(`${myvar} is invalid`)
+}
+
+myvar = ""
+if (myvar) {
+    console.log(`${myvar} is valid`)
+} else {
+    console.log(`${myvar} is invalid`)
+}
+
+myvar = 10 * undefined
+if (myvar) {
+    console.log(`${myvar} is valid`)
+} else {
+    console.log(`${myvar} is invalid`)
+}
+
+
+myvar = null
+if (myvar) {
+    console.log(`${myvar} is valid`)
+} else {
+    console.log(`${myvar} is invalid`)
+}
+
+myvar = false
+if (myvar) {
+    console.log(`${myvar} is valid`)
+} else {
+    console.log(`${myvar} is invalid`)
+}
+
+//
+let mynewVar = "subramanian"
+if (mynewVar) {
+    console.log(`${mynewVar} is valid`)
+} else {
+    console.log(`${mynewVar} is invalid`)
+}
+mynewVar = 12
+if (mynewVar) {
+    console.log(`${mynewVar} is valid`)
+} else {
+    console.log(`${mynewVar} is invalid`)
+}
+
+.....................................................................................
+Operators:
+
+==  - only value match
+=== : Strict match -  type + value
+
+//== and ===
+
+let a = 10
+let b = "10"
+
+if (a == b) {
+    console.log("a and b are equal")
+} else {
+    console.log("a and b are not equal")
+}
+
+//test both value and type -  both must match- if it is true, then only it is true
+if (a === b) {
+    console.log("a and b are equal")
+} else {
+    console.log("a and b are not equal")
+}
+.....................................................................................
+tenary:
+......
+ To replace if else
+ based on truthy and falsy values...
+
+//tenary operator
+
+let a = 10
+let b = 20
+if (a === b) {
+    console.log("a and b are equal")
+} else {
+    console.log("a and b are not equal")
+}
+//using tenary
+(a === b) ? console.log("a and b are equal") : console.log("a and b are not equal")
+
+let c = (a === b) ? "a and b are equal" : "a and b are not equal"
+console.log(c)
+...................................................................................
+...................................................................................
+...................................................................................
+				Functions
+..................................................................................
+
+function is basic building block of javascript.
+//functions -
+
+//basic function delclaration and invocation
+
+function sayHello() {
+    console.log('Hello function')
+}
+sayHello()
+
+
+//function ars and parameters
+//a and b are args
+function add(a, b) {
+    let c = a + b
+    console.log(`The add result is ${c}`)
+}
+//10,10 are parameters
+add(10, 10)
+//
+let x = 10
+let y = 90
+add(x, y)
+.................
+
+//es 6 default args 
+function add(a = 0, b = 0) {
+    console.log(`a ${a} b ${b}`)
+    let c = a + b
+    console.log(`The add result is ${c}`)
+}
+add(10, 10)
+add() // no value is passed
+.............
+
+Returning value:
+function add(a = 0, b = 0) {
+    return a + b
+}
+console.log(`The result is ${add(10,10)}`)
+
+//returning value from the function 
+
+function add(a = 0, b = 0) {
+    return a + b
+}
+let c = add(10, 10)
+console.log(`c ${c}`)
+console.log(`c ${add(10, 10)}`)
+
+function doStuff() {
+    return // undefined
+}
+console.log(doStuff())
+
+//login
+// function login(userName = '', password = '') {
+//     if (userName === 'admin' && password === 'admin') {
+//         return 'Login Success'
+//     } else {
+//         return 'Login Failed'
+//     }
+// }
+function login(userName = '', password = '') {
+    return (userName === 'admin') && (password === 'admin') ? "Login Success" : "Login failed"
+}
+console.log(login('admin', 'admin'))
+.....................................................................................
+			   Functional Programming principles
+
+1.function is first class citizen
+   function is value , literal
+
+Since function is value, we can store into variables
+
+
+function sayHello() {
+    return 'Hello'
+}
+//invoke 
+sayHello()
+/////////////////////////////////////////////////////
+
+//function can be stored into variable
+
+let hello = sayHello
+console.log(hello)
+//once the function is stored into variable ,we can invoke
+console.log(hello())
+
+//function is declared in the same line 
+
+//function without name : anonmous function 
+let add = function (a = 0, b = 0) {
+    //logic 
+    console.log('add')
+    return a + b
+}
+console.log(add(10, 34))
+
+
+//a=10,b=10
+//a=x,b=y
+function add(a, b) {
+
+}
+add(10, 10)
+
+let x = 20
+let y = 20
+add(x, y)
+
+
+function sayGreet(hello) {
+    hello()
+}
+let greet = function () {
+    console.log('greet')
+}
+sayGreet(greet)
+
+sayGreet(function () {
+    console.log('Hello')
+})
+////////////////////////////////////////////////////
+
+function login(resolve, reject) {
+    let isLoggedIn = false
+    if (isLoggedIn) {
+        resolve('Login success')
+    } else {
+        reject('Login failed')
+    }
+
+}
+login(function (status) {
+    console.log(status)
+}, function (err) {
+    console.log(err)
+})
+
+Arrow functions:
+
+//es 5 function declaration
+
+let hello = function () {
+    console.log('hello')
+}
+hello()
+//es 6 arrow function 
+let hai = () => {
+    console.log('hello')
+}
+hai()
+//if function has only one line of body we can remove {}
+hai = () => console.log('hello')
+hai()
+
+//args and parameters
+let add = (a = 10, b = 20) => {
+    let c = a + b
+    console.log(`c ${c}`)
+}
+add(10, 10)
+//if function returns
+add = (a = 10, b = 20) => {
+    return a + b;
+}
+console.log(`c ${add(10, 10)}`)
+
+//if function only returns , we can remove return statement and {}
+add = (a = 10, b = 20) => a + b;
+console.log(`c ${add(10, 10)}`)
+
+
+// function sayGreet(hello) {
+//     hello()
+// }
+
+
+let sayGreet = hello => hello()
+
+let greet = () => console.log('greet')
+sayGreet(greet)
+
+sayGreet(() => {
+    console.log('Hello')
+})
+sayGreet(() => console.log('Hello'))
+
+
+const login = (resolve, reject) => {
+    let isLoggedIn = false
+    if (isLoggedIn) {
+        resolve('Login success')
+    } else {
+        reject('Login failed')
+    }
+
+}
+login(status => console.log(status), err => console.log(err))
+...................................................................................
+
+
+
+
+
+.....................................................................................
+			Objects
+.....................................................................................
+Js is object based language.
+
+How to create objects?
+
+1.Constructor pattern
+  es 5 way - function
+  es 6 way - class
+2.literal Patterns
+  no class,no functions
+
+
+ES 5 functions
+//object template.
+
+function Employee(id = 0, name = 'default', salary = 0) {
+    //instance variables
+    this.id = id
+    this.name = name
+    this.salary = salary
+    //instance methods
+    this.calculateSalary = (noOfdays) => {
+        return this.salary * noOfdays
+    }
+}
+//create object  
+//emp is reference variable
+//new is operator
+//Employee() , constructor call 
+let emp = new Employee(12, 'Subramanian', 1000)
+console.log(`id ${emp.id} ${emp.name} ${emp.calculateSalary(100)}`)
+
+.....................................................................................
+
+class Based:
+//object template.
+
+// function Employee(id = 0, name = 'default', salary = 0) {
+//     //instance variables
+//     this.id = id
+//     this.name = name
+//     this.salary = salary
+//     //instance methods
+//     this.calculateSalary = (noOfdays) => {
+//         return this.salary * noOfdays
+//     }
+// }
+
+class Employee {
+    constructor(id = 0, name = 'default', salary = 0) {
+        //instance variables
+        this.id = id
+        this.name = name
+        this.salary = salary
+    }
+    //instance methods
+    // calculateSalary = (noOfdays) => {
+    //     return this.salary * noOfdays
+    // }
+    calculateSalary(noOfdays) {
+        return this.salary * noOfdays
+    }
+}
+//create object  
+//emp is reference variable
+//new is operator
+//Employee() , constructor call 
+let emp = new Employee(12, 'Subramanian', 1000)
+console.log(`id ${emp.id} ${emp.name} ${emp.calculateSalary(100)}`)
+....................................................................................
+				Code Reuse - Hierachy
+
+There are two types of hierachy
+
+1.IS-A - inheritance
+   es 5 inheritance -  prototype based inheritance
+   es 6 inheritance - class based inheritance.
+2.HAS-A -compostion
+
+//base class
+class Account {
+    constructor() {
+        console.log('Account ')
+    }
+    //methods
+    deposit() {
+        return 10
+    }
+    withdraw() {
+        return 50
+    }
+}
+
+//derived
+class SavingsAccount extends Account {
+    constructor() {
+        super()
+        console.log('SavingsAccount ')
+    }
+    //override
+    deposit() {
+        return 10 * super.deposit()
+    }
+    withdraw() {
+        return 20 * super.withdraw()
+    }
+}
+
+let sb = new SavingsAccount()
+console.log(sb.deposit())
+console.log(sb.withdraw())
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+//literal objects 
+let customer = {
+    id: 1,
+    name: 'Subramanian',
+    city: 'Coimbatore'
+}
+console.log(customer.id, customer.name, customer.city)
+customer.id = 90
+customer.name = 'ram'
+console.log(customer.id, customer.name, customer.city)
+
+//complex literal : has -a : object has other objectPosition: 
+
+let person = {
+    id: 1,
+    name: 'Subramanian',
+    address: {
+        street: '10th street',
+        city: 'Coimbatore'
+    }
+}
+console.log(person.id, person.name, person.address.city)
+
+.....................................................................................
+				
+Module design patterns:
+1.Namespace design pattern
+2.AMD design pattern
+3.commonjs - cjs
+4.es 6 module design pattern
+5.system design pattern
+
+
+
+ES 6 module design pattern
+
+How to share code? and how to link files?
+
+code:
+ variables with any literals
+ class
+ objects
+ arrays
+ functions
+
+Code sharing keywords
+
+export 
+export default
+
+linking files and import
+
+import
+......
+export :
+=> export can be used to "share many variables" from the single file - multi sharing
+when you export ? you can import things from the other files using
+  destructuring syntax.
+
+import {} from 'fileName'
+
+
+Note:
+ Web browsers do not support "es 6 module" directly.
+
+How to run modular code?
+
+1.Using build tools
+2.Using modern browser configuration
+
+Using build tools:
+.................
+webpack
+
+How to install webpack in our project?
+
+Steps:
+
+1.make sure that you have package.json file
+ if not , create package.json file
+
+npm init  --yes
+
+2.install webpack
+  npm install webpack webpack-cli --save-dev
+
+3.add webpack.config.js in the project root dir
+
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js',
+  mode:'development',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+  },
+};
+
+4.build /bundle your code
+ open package.json
+ add entry into scripts
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc",
+    "build": "webpack --watch"
+  },
+
+5.start bundling
+  open cmd and run the following command
+npm run build
+
+> es6-apps@1.0.0 build
+> webpack
+
+asset bundle.js 5.19 KiB [emitted] (name: main)
+runtime modules 670 bytes 3 modules
+cacheable modules 758 bytes
+  ./src/index.js 146 bytes [built] [code generated]
+  ./src/mylib.js 612 bytes [built] [code generated]
+webpack 5.70.0 compiled successfully in 113 ms
+
+6.add bundle file inside index.html
+     <script src="dist/bundle.js"></script>
+
+
+
+eg:
+src/util.js
+//declare some variables
+
+// export const name = 'Subramanian'
+// export const city = 'Coimbatore'
+// export const salary = 9000
+// export const status = true
+// export const greet = () => 'hello'
+// export const skills = ['react', 'mobile']
+
+const name = 'Subramanian'
+const city = 'Coimbatore'
+const salary = 9000
+const status = true
+const greet = () => 'hello'
+const skills = ['react', 'mobile']
+
+export { name, city, salary, status, greet, skills }
+
+src/index.js
+import { name,city,status,skills,greet } from "./util";
+
+console.log(name,city)
+console.log(status)
+console.log(skills)
+console.log(greet())
+..
+src/services/user.service.js
+
+
+// export default class TodoService {
+//     constructor() {
+
+//     }
+//     //
+//     list() {
+//         return [{ id: 1, name: 'subramanian' }]
+//     }
+// }
+
+class UserService {
+    constructor() {
+
+    }
+    //
+    list() {
+        return [{ id: 1, name: 'subramanian' }]
+    }
+}
+export default UserService;
+
+src/index.js
+import  UserService  from "./services/user.service";
+
+let userService = new UserService()
+console.log(userService.list())
