@@ -1,12 +1,34 @@
+//class as type
+// class Employee {
+//     id: number
+//     name: string
+//     city?: string
+//     salary?: number
+//     isWorking?: boolean
+//     gender?: "Male" | "Female" | "Third"
+// }
+// interface Employee {
+//     id: number
+//     name: string
+//     city?: string
+//     salary?: number
+//     isWorking?: boolean
+//     gender?: "Male" | "Female" | "Third"
+// }
+type Employee = {
+    id: number
+    name: string
+    city?: string
+    salary?: number
+    isWorking?: boolean
+    gender?: "Male" | "Female" | "Third"
+}
 
-//data types: string,number,boolean
-//let variableName:type = literal
-let firstName: string = "Subramanian"
-
-console.log(firstName)
-
-//firstName =100
-
-let salary: number = 100
-
-let isActive:boolean = true 
+let employee: Employee = {
+    id: 1,
+    name: 'Subramanian',
+    city: 'Coimbatore',
+    salary: 100,
+    isWorking: true,
+    gender: "Male"
+}
