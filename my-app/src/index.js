@@ -1,61 +1,95 @@
+import ReactDOM from 'react-dom/client';
+import React from 'react';
 
-function blockMe(message) {
-    console.log(message)
-}
-const getUser = () => {
-    return new Promise((resolve, reject) => {
-        let user = 'admin'
-        if (user) {
-            setTimeout(resolve, 1000, user)
-        } else {
-            setTimeout(reject, 1000, 'user not found')
-        }
-    })
-}
-
-const login = user => {
-    return new Promise((resolve, reject) => {
-        if (user === 'admin') {
-            setTimeout(resolve, 1000, 'login success')
-
-        } else {
-            setTimeout(reject, 1000, 'login failed')
-
-        }
-    })
-}
-
-const showdashboard = status => {
-    return new Promise((resolve, reject) => {
-        if (status === 'login success') {
-            setTimeout(resolve, 1000, 'you are admin')
-
-        } else {
-            setTimeout(reject, 1000, 'you are guest')
-
-        }
-    })
-}
-
-blockMe('start')
-
-// getUser().then(user => login(user))
-//     .then(status => showdashboard(status))
-//     .then(page => console.log(page))
+// function getTodos(){
+//     fetch(url)
+//     .then(resonse => {
+//         return resonse.json()
+//     }).then(todos => {
+//         //
+//         this.setState((prvState) => {
+//             return { ...prvState, todos: prvState.todos.concat(todos) }
+//         })
+//     })
 //     .catch(err => {
 //         console.log(err)
 //     })
-async function main() {
-    try {
-        const user = await getUser()
-        const status = await login(user)
-        const page = await showdashboard(status)
-        console.log(user, status, page)
-    }
-    catch (err) {
-
-    }
-
+// }
+const Error = props => {
+    return <>
+        <h2>{props.error}</h2>
+    </>
 }
-main()
-blockMe('end')
+const Spinner = props => {
+    return <>
+        <h2 style={{ backgroundColor: 'yellow' }}>Loading...</h2>
+    </>
+}
+const TodoList = props => {
+    const { todos } = props
+    return <ul>
+        {todos.map((todo, index) => (
+            <li key={index} style={{ listStyle: 'none' }} >
+                <span style={{ margin: 10 }}>
+                    {todo.id}
+                </span>
+                <span>
+                    {todo.title}
+                </span>
+            </li>
+        ))}
+    </ul>
+}
+
+class Todos extends React.Component {
+    // state = {
+    //     todos: []
+    // }
+    state = {
+        isLoaded: false, //spinner status
+        todos: [], //data,
+        error: null
+    }
+    async componentDidMount() {
+        //make api call 
+        const url = `https://jsonplaceholder.typicode.com/todos`
+        try {
+            //Todo: remove timer once the code you understood
+            setTimeout(async () => {
+                const response = await fetch(url)
+                const todos = await response.json()
+                // this.setState((prvState) => {
+                //     return { ...prvState, todos: prvState.todos.concat(todos) }
+                // })
+                this.setState(oldState => {
+                    return { ...oldState, isLoaded: true, todos: oldState.todos.concat(todos) }
+                })
+            }, 5000)
+        }
+        catch (err) {
+            this.setState(oldState => {
+                return { ...oldState, isLoaded: true, err: err }
+            })
+        }
+    }
+    render() {
+        const { error, isLoaded, todos } = this.state;
+        //conditional Rendering
+        if (error) {
+            return <Error error={error} />
+        } else if (!isLoaded) {
+            return <Spinner />
+        } else {
+            return <TodoList todos={todos} />
+        }
+    }
+}
+
+
+const App = () => <div>
+    <Todos />
+</div>
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App></App>)
