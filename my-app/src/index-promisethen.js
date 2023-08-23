@@ -38,24 +38,37 @@ const showdashboard = status => {
 }
 
 blockMe('start')
-
-// getUser().then(user => login(user))
-//     .then(status => showdashboard(status))
-//     .then(page => console.log(page))
-//     .catch(err => {
+//callback hell : way of writing callback programs
+// getUser((user) => {
+//     console.log(user)
+//     login(user, (status) => {
+//         console.log(status)
+//         showdashboard(status, (adminPage) => {
+//             console.log(adminPage)
+//         }, (errPage) => {
+//             console.log(errPage)
+//         })
+//     }, (err) => {
 //         console.log(err)
 //     })
-async function main() {
-    try {
-        const user = await getUser()
-        const status = await login(user)
-        const page = await showdashboard(status)
-        console.log(user, status, page)
-    }
-    catch (err) {
+// }, (err) => {
+//     console.log(err)
+// })
 
-    }
+// getUser().then(user => {
+//     return login(user)
+// }).then(status => {
+//     return showdashboard(status)
+// }).then(page => {
+//     console.log(page)
+// }).catch(err => {
+//     console.log(err)
+// })
+getUser().then(user => login(user))
+    .then(status => showdashboard(status))
+    .then(page => console.log(page))
+    .catch(err => {
+        console.log(err)
+    })
 
-}
-main()
 blockMe('end')
