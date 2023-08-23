@@ -1,38 +1,27 @@
 import ReactDOM from 'react-dom/client';
+import logo from './logo.svg';
 
 
-const Profile = (props) => {
-    return <>
-        <h1>Id : {props.userId} </h1>
-        <h1>Name : {props.name} </h1>
-        <h1>Status : {props.status ? "Available" : "Not Available"} </h1>
-        <h1>City : {props.address.city} </h1>
-        <h1>Skills</h1>
-        <ul>
-            {
-                props.skills.map((skill) => {
-                    return <li>{skill}</li>
-                })
-            }
-        </ul>
-
-
-    </>
+const Panel = props => {
+    return <div>
+        {props.children}
+    </div>
 }
 
-
-let userId = 1
-let name = 'Subramanian'
-let status = true
-let address = {
-    city: 'Coimbatore'
+const Image = ({ url }) => {
+    return <img src={url} height={100} width={100} alt='Fallback' />
 }
-let skills = ['react', 'react native']
-
+const Text = ({ value }) => {
+    return <h1>{value}</h1>
+}
 const App = () => <div>
-    {/* {Profile(userId, name, status, address, skills)} */}
-    <Profile userId={userId} name={name} status={status} address={address} skills={skills} />
-    <Profile userId={12} name={"Murugan"} status={false} address={{ city: 'Coimbatore' }} skills={['js', 'java']} />
+    {/* <Panel/> */}
+    <Panel>
+        {/* component as prop */}
+        <Image url={logo} />
+        <Text value="Learn React" />
+    </Panel>
+
 </div>
 
 
