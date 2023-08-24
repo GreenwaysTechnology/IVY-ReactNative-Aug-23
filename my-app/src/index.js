@@ -1,95 +1,47 @@
-import ReactDOM from 'react-dom/client';
-import React from 'react';
+import React, { useEffect, useState } from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import './App.css'
+import { produce } from "immer"
 
-// function getTodos(){
-//     fetch(url)
-//     .then(resonse => {
-//         return resonse.json()
-//     }).then(todos => {
-//         //
-//         this.setState((prvState) => {
-//             return { ...prvState, todos: prvState.todos.concat(todos) }
-//         })
-//     })
-//     .catch(err => {
-//         console.log(err)
-//     })
-// }
-const Error = props => {
-    return <>
-        <h2>{props.error}</h2>
-    </>
-}
-const Spinner = props => {
-    return <>
-        <h2 style={{ backgroundColor: 'yellow' }}>Loading...</h2>
-    </>
-}
-const TodoList = props => {
-    const { todos } = props
-    return <ul>
-        {todos.map((todo, index) => (
-            <li key={index} style={{ listStyle: 'none' }} >
-                <span style={{ margin: 10 }}>
-                    {todo.id}
-                </span>
-                <span>
-                    {todo.title}
-                </span>
-            </li>
-        ))}
-    </ul>
-}
-
-class Todos extends React.Component {
-    // state = {
-    //     todos: []
-    // }
-    state = {
-        isLoaded: false, //spinner status
-        todos: [], //data,
-        error: null
-    }
-    async componentDidMount() {
-        //make api call 
-        const url = `https://jsonplaceholder.typicode.com/todos`
-        try {
-            //Todo: remove timer once the code you understood
-            setTimeout(async () => {
-                const response = await fetch(url)
-                const todos = await response.json()
-                // this.setState((prvState) => {
-                //     return { ...prvState, todos: prvState.todos.concat(todos) }
-                // })
-                this.setState(oldState => {
-                    return { ...oldState, isLoaded: true, todos: oldState.todos.concat(todos) }
-                })
-            }, 5000)
+const Player = props => {
+    const [player, setPlayer] = useState({
+        name: 'Subramanian',
+        house: {
+            name: 'RavenClaw',
+            points: 10 // increment this points
         }
-        catch (err) {
-            this.setState(oldState => {
-                return { ...oldState, isLoaded: true, err: err }
+    })
+    const onAdd = evt => {
+        // setPlayer({
+        //     ...player,  // level -0 clone outter properties only 
+        //     house: {
+        //         ...player.house, // level 2
+        //         points: player.house.points + 2         //clone all properties except points
+        //     }
+        // })
+        setPlayer(player => {
+            return produce(player, draft => {
+                draft.house.points += 2
             })
-        }
+        })
     }
-    render() {
-        const { error, isLoaded, todos } = this.state;
-        //conditional Rendering
-        if (error) {
-            return <Error error={error} />
-        } else if (!isLoaded) {
-            return <Spinner />
-        } else {
-            return <TodoList todos={todos} />
-        }
-    }
+
+    return <div>
+        <h1>State Mutation using Immer</h1>
+        <h1>Name : {player.name}</h1>
+        <h2>House  Name {player.house.name}</h2>
+        <h2>Points {player.house.points}</h2>
+        <button onClick={onAdd} className="btn btn-success">Add Point</button>
+    </div>
+}
+
+const App = () => {
+    return <>
+        <Player />
+    </>
 }
 
 
-const App = () => <div>
-    <Todos />
-</div>
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App></App>)
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
