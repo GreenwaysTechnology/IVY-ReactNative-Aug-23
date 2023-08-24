@@ -1,44 +1,72 @@
-import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
-import './App.css'
-import { produce } from "immer"
+import { configureStore, createAsyncThunk, createSlice, } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import logger from 'redux-logger'
 
-const Player = props => {
-    const [player, setPlayer] = useState({
-        name: 'Subramanian',
-        house: {
-            name: 'RavenClaw',
-            points: 10 // increment this points
-        }
-    })
-    const onAdd = evt => {
-        // setPlayer({
-        //     ...player,  // level -0 clone outter properties only 
-        //     house: {
-        //         ...player.house, // level 2
-        //         points: player.house.points + 2         //clone all properties except points
-        //     }
-        // })
-        setPlayer(player => {
-            return produce(player, draft => {
-                draft.house.points += 2
-            })
+//api 
+function fetchTodos() {
+    const url = 'https://jsonplaceholder.typicode.com/todos'
+    return fetch(url)
+}
+const fetchTodosAsync = createAsyncThunk('todos/fetch', async () => {
+    const todos = await (await fetchTodos()).json()
+    return todos
+})
+
+const TodoSlice = createSlice({
+    name: 'todos',
+    initialState: {
+        entities: [],
+        loading: 'idle'
+    },
+    reducers: {},
+    extraReducers: builder => {
+        builder.addCase(fetchTodosAsync.fulfilled, (state, action) => {
+            state.loading = 'fulfilled'
+            state.entities.push(action.payload)
         })
     }
+})
+const TodoReducer = TodoSlice.reducer
 
-    return <div>
-        <h1>State Mutation using Immer</h1>
-        <h1>Name : {player.name}</h1>
-        <h2>House  Name {player.house.name}</h2>
-        <h2>Points {player.house.points}</h2>
-        <button onClick={onAdd} className="btn btn-success">Add Point</button>
-    </div>
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        todo: TodoReducer
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
+})
+const Todos = props => {
+    const todos = useSelector(state => {
+        return state.todo
+    })
+    // console.log(todos.entities[0])
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchTodosAsync())
+    }, [])
+    
+    const { loading, entities } = todos
+    console.log(entities)
+    if (loading === 'fulfilled') {
+        return <ul>
+            {
+                entities[0].map(todo => {
+                    return <li key={todo.id}>{todo.title}</li>
+                })
+            }
+        </ul>
+    }
 }
 
 const App = () => {
     return <>
-        <Player />
+        <Provider store={appStore}>
+            <Todos />
+        </Provider>
     </>
 }
 
