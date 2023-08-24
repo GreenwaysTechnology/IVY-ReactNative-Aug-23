@@ -1,0 +1,5494 @@
+Lab Setup:
+
+1.Node js - latest version
+2.vs code 
+
+
+What is React?
+
+  React is javascript lib for building user interface 
+
+React java script lib like jquery,framework like angular.
+
+
+What is User interface application?
+ 
+  The user where he interacts , those applications are called user interface applications.
+
+Eg:
+  Desktop applications
+     if you want to interact with os, shell is primary user interface
+     shell in windows, command,powershell,explorer 
+
+  Web Browser:
+     It is one of the application software, acts as user interface for web applications
+
+ 
+ Hand Held devices
+  =>Mobile applications
+  =>Watch
+  =>Tabs
+ etc..
+....................................................................................
+				Types of web app
+
+1.Static Web apps -  1989 to 1995
+    built at server end,accessed by clients using browser
+    HTML Pages are primary output.
+
+2.Dynamic content web apps - 1996 to till date
+    built at server end, access by clients using browser
+eg:
+  JEE(Servlets,jsp)
+  Asp.net
+  PHP
+ etc.....
+
+3.Web Services -1998 to till
+    Data driven apps
+     built at server end, accessed by clients  such  as mobiles, client side browser apps.
+ SOAP - XML based web service
+ RESTFull -  Different format based web service - JSON,XML,PDF....
+....................................................................................
+			  Client Side Web apps
+
+1.SPA
+Single Page Web Apps -  2007 to till date
+   built at client side,accessed by clients browsers.
+  built using javascript,html 5,css 3 
+
+.....................................................................................
+			 React and Web Stack
+....................................................................................
+
+React was created to build SPA Web apps by face book at 2013.
+....................................................................................
+			React and its development model
+....................................................................................
+
+By using React what type of apps we can build?
+
+There are three types of apps you can build using react.
+
+1.Single Page Application- SPA - React.js with Redux
+2.Full Stack/Server-Side Rendering-SSR - NEXT.JS
+3.JAMStack/Static Site Generation-SSG-Like Static web apps- NEXT.JS
+....................................................................................
+We are going to build SPA.
+....................................................................................
+
+				     React
+
+   "React is modern SPA lib created by face book based on "Flux Design Pattern"
+
+
+Architecture for libs and frameworks:
+
+Plain JS
+			 Application(dom) -plain js
+			     |
+			 Javascript Engine
+			      |
+			  Browser Engine
+
+
+
+
+Framework/lib
+			 Application(JQuery)
+			     |
+		       ---------------------------
+			  JQuery Engine	------javascript programming		
+                       -------------------------------
+			      |
+			 Javascript Engine
+			      |
+			  Browser Engine
+
+
+
+What is jquery engine?
+  Jquery engine is also javascript program.
+
+
+
+
+Angular
+			 Application(Angular)
+			     |
+		       ---------------------------
+			  Angular Engine : Renderer(Ng2) Renderer2(Ng4,5),Ivy(6,7)		
+                       -------------------------------
+			      |
+			 Javascript Engine
+			      |
+			  Browser Engine
+
+React
+
+
+		       Application(React)
+			     |
+		       ---------------------------
+	              React Engine :React fiber-->React 16 on wards		
+                       -------------------------------
+			      |
+			 Javascript Engine
+			      |
+			  Browser Engine
+....................................................................................
+		React Future
+..................................................................................
+React was built by face book only for web browsers, later facebook decided to scale react for building other types of user application (mobile,iot applications).
+
+React can be used to build application for 
+........................................
+1.browsers : Desktop -  react js
+2.Mobile Apps : React Native
+
+face book is working on many futures projects related to react
+3.React VR : Virtual Reality.
+4.React Car : For car applications
+5.React TV  : React for TV.
+6.React IOT : any devices
+.............................................................................................
+				Setup React Project
+..............................................................................................
+
+Create React App - tool to setup project
+https://create-react-app.dev/
+
+Two ways of setting project 
+
+via npm global modules
+via npx modules
+
+via npm:
+
+Install tool:
+
+open cmd:
+
+install tool first
+
+npm install create-react-app -g
+
+create a app
+create-react-app my-app
+
+Create project directly without installing create-react-app tool
+
+npx create-react-app my-app
+............................................................................................
+
+			React Project layout- created by create-react-app
+.............................................................................................
+
+Folder Structure
+
+myapp
+ |
+ node_modules
+ package.json
+ package-lock.json
+ public 
+ src
+ readme.md
+
+
+node_modules
+  It is folder contains all libs files and folders downloaded from internet.
+  React lib has been downloaded and kept inside this folder only.
+
+package.json
+   Every javascript project(it can be any js project), has package.json file  
+   This file contains information about the project
+
+Basic information:
+ ->Name of the application "name" :"myapp"
+ ->version of the application "version": "1.0.0"
+ ->dedendencies
+     libs  required for dev ,testing, production
+    you can understand what version of lib is used in the current project
+ ->scripts
+     scripts contains information about how to start dev server,testing,production build.
+
+package-lock.json:
+  This file used by dev ops tools.
+
+
+public 
+  index.html
+  This is entry file in react application.
+  without this file we cant start the application
+
+src
+ |
+ index.js
+  App.js
+ This folder contains application code files.
+
+readme.md
+   this is documentation file
+.....................................................................................
+				  HTML
+
+HTML is core language for building any type of web apps.
+
+static - html page is created at server and sent to browsers
+dynamic -  html page is created at server by the programs on fly,sent to browser
+spa - html page is created at client side on fly and rendered in the client itself using javascript.
+ssr - html page is create at server side on fly,and lazy at client side using js .
+ssg - html pages are created during build time and sent to browsers
+.....................................................................................
+			   DOM programming 
+
+What is DOM?
+  Document Object model, which is spec to build and modify html pages on fly.
+
+Object oriented HTML, HTML elements are represented as objects.
+
+eg:
+ H1 - Object
+div - Object
+ p  - Object
+
+DOM helps to create DOM onfly to attach on existing document
+
+..........................................................................................
+				HTML works internally
+.............................................................................................
+
+HTML:
+
+1.HTML IS PL? - YES
+2.HTML Is compiled -YES
+3.HTML is excuted-YES
+
+java
+ -source .java
+ -compile -.class -assembly
+ -excute -jvm--result
+
+index.html -source code
+  html code is organized as hierachal model -  hierachial datastructure
+<html>
+<head></head>
+<title><title>
+<body>
+  <div>
+     <h1>Welcome</h1>
+  </div>
+</body>
+</html>
+
+Layout/Paint Engine: will convert nodes into pxs : final output
+..............................................................................................
+				Dynamic HTML - Inside Web Browser
+.............................................................................................
+
+Once the html has been rendered by the web browser, can we change the html(adding new element,updating existing element content,removing node,listing nodes).
+
+The company called Netscap communcation, the second web browser creator after line mode web browser.
+
+The NetsCap communication introduced the browser called netscap navigator , today firefox.
+
+The netscap introduced a new technology called how to change html after rendering.
+
+In 1996,Netscap communication,Started an RND project called "How to manipulate the tree"
+
+Tree is written in c language,then we need another c program to communicate.
+
+But NETSCAP decided not to use C pl.
+
+Netscap wanted to put java like implementation inside browser to manipulate "Tree".
+
+                        "The birth of Javascript"
+
+How to access nodes from javascript engine?
+  
+One spec was published ,As per that spec
+ "Document Object Model"
+    -How to represent document(elements/nodes) in object oriented way.->DOM
+
+ "Documents can be reprsented as Objects" : Object oriented Document Programming.
+............................................................................................
+How dom works?
+
+index.html           Broser runtime(C program)         Javascript Engine
+<h1>Hello</h1>       h1-Node                           h1- Object
+			Hello-Node			 Hello Object Property
+
+
+
+                 Every Html ELEMENT Inside Browser is "C Program"
+
+	       Every Html ELEMENT javascript engine is "Object"
+
+
+javascript developer ---->uses api --->to communicate Object---->js engine---->browser engine.	*******************************************************************************************	
+
+Who and when "H1" object is created?
+
+if you want to create object?
+
+ class/ function
+
+function Employee(){}  let emp = new Employee()
+
+
+<h1> => function HTMLHeadingElement(){} => let h =new HTMLHeadingElement() ?
+
+
+
+if you want to create object?
+
+ class/ function
+
+function Employee(){}  let emp = new Employee()
+
+<h1> => function HTMLHeadingElement(){} => let h =new HTMLHeadingElement() ?
+
+Note: For html elements, we cant create object directly, rather than JS Engine will create objects , return references to the developer to access.
+
+How via factory Objects: object helps to get other documents
+
+Factory Object : HTML Document =>body
+
+document.getElementById();
+   |
+Implicit object reference variable which points HTMLDocument OBject.
+
+
+What is our objective here? DOM Programming?
+
+
+Enter into DOM programming:
+
+1.write dom programming using javascript language.
+
+<body>
+  |
+HTMLDocument : body : factory Object
+
+
+Document apis:
+
+Finding HTML Elements:
+......................
+
+HTMLElement document.getElementById(id)	       Find an element by element id
+HTMLElement Document document.getElementsByTagName(name)	Find elements by tag name
+HTMLElement document.getElementsByClassName(name)	Find elements by class name
+HTMLElement document.querySelectory(selector)        find element/elements by selector
+
+
+Changing HTML Elements : update existing element
+......................
+element.innerHTML =  new html content	Change the inner HTML of an element
+element.attribute = new value	Change the attribute value of an HTML element
+element.style.property = new style	Change the style of an HTML element
+Method	Description
+element.setAttribute(attribute, value)	Change the attribute value of an HTML element
+
+Adding and Deleting Elements:
+
+
+document.createElement(element)	Create an HTML element
+document.removeChild(element)	Remove an HTML element
+document.appendChild(element)	Add an HTML element
+document.replaceChild(new, old)	Replace an HTML element
+.............................................................................................
+				DOM Programming
+.............................................................................................
+
+How to implement dom programming?
+
+1.using plain js
+  if we use plain js , it is very difficult to build large applications
+
+2.using frameworks and libs
+
+2000 - The first javascript framework - DOJO
+2002-2005 - JQuery - is the second most powerfull dom lib.
+After 2006 - many js libs and frameworks introduced.....
+.....................................................................................
+
+.............................................................................................
+			How to create dom node , attach on existing tree
+				using plain js
+
+				
+Note : 
+ index.js
+
+//How to create simple element using plain javascript
+
+function createElement() {
+    let Heading = document.createElement('h1')
+    console.log(Heading)
+    Heading.innerHTML = "Hello React!"
+    let rootElement = document.getElementById('root')
+    rootElement.appendChild(Heading)
+}
+createElement()
+.............................................................................................
+			How to create dom node , attach on existing tree
+				using react.js
+
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+
+//create react element
+const Heading = <h1>Hello React!</h1>
+
+//attach that react element with existing tree 
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(Heading)
+
+The code above , we can see mixure of javascript and html.
+
+How browser understands this code coimbination?
+
+  The browser never understands this code directly.
+
+What is this code is all about?
+    
+ Face book created a mini /small language for building react application - JSX language
+
+..............................................................................................
+				 Components
+.............................................................................................
+
+What is Component?
+   Component  is nothing but "Object".
+
+Component term introduced by MicroSoft in 1980s. According to Microsoft Component is object which is having "state(variables),behaviours(methods),User Interface(visual Representation)".
+
+Component represents User Interface
+Component is Object which represents User Interface.
+User interface in browser is represented by HTML element or elements
+
+Component can be represented some time , the object which helps to make up the Userinterface(invisible user interface).
+
+
+element is <h1>Hello</h1>
+
+elements are <div>
+               <div>
+                   <h1>Hello</h1>
+               </div>
+             </div>
+
+Plain Object:
+ Object without ui is called plain object.
+eg:
+   function Employee() {
+     this.id = 0;
+     this.calculate=function(){}
+   }
+
+   new Employee()
+
+DOM : Document Object Model
+ 
+Document -  html
+Object Model - Representation of HTML elements
+
+Why We use Components model/Architecture?
+  
+=>Componets are independant objects.
+=>Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+ 
+Eg : 
+ I am creating a component called "tax calculator".
+ 
+lets say i want to use the tax calculator inside my hr application and inside my sale applcation , and purchase application.
+
+.....................................................................................
+How to create Components in react?
+
+We have three patterns.
+
+1.Variable Pattern
+2.function pattern
+3.ES 6 class Pattern
+
+
+//component creational patterns
+//variable pattern
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+//variable pattern 
+const Heading = <h1>Hello React!</h1>
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(Heading)
+
+functions
+//component creational patterns
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+//functions pattern 
+// function Heading(){
+//     return <h1>Hello React</h1>
+// }
+//es 6 arrow functions 
+// const Heading = () => {
+//     return <h1>Hello React!</h1>
+// }
+const Heading = () => <h1>Hello React!</h1>
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<Heading></Heading>)
+................
+
+Class Pattern:
+//component creational patterns
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+//es 6 class Pattern
+class Heading extends React.Component {
+    //override render method to return react element
+    render() {
+        return <h1>Hello React!</h1>
+    }
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<Heading></Heading>)
+.....................................................................................
+..............................................................................................	
+				JSX Rules
+..............................................................................................
+
+JSX - Javascript and XML
+
+What is JSX?
+ JSX is dsl language to create user interfaces
+
+What is relationship with XML?
+
+ Inside JSX , we write javascript code and HTML code only not xml code.
+
+Why the term XML is used?
+
+ When we write JSX code, we need stable mark up standards.
+
+You know very well HTML has weak parser  that means 
+ <h1>hello
+when run the code , the html parser does not stop rendering hello, it never throws any error
+
+in order to avoid instability code inside jsx during compilation, JSX team adopted XML Parser rules, since XML parser has strong parser
+
+Basic XML  rules:
+
+1.every opened element must be closed
+  <h1>Hello</h1>
+  <Welcome></Welcome>
+ some elements may not have closing tag
+  <img /> : image element has no child elements : self closing. 
+
+2. In xml you must have one single root element.
+  all elements must be organized under single root element.
+
+ <h1>Welcome to React</h1>
+ <p>Path finder</p>
+
+In html what can be root element
+ <div>,<span>,all html 5 layout elements header,footer,section,aside...
+
+3.Component names should start with Uppercase,generally would be noun.
+
+EG:
+
+//component creational patterns
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+
+//jsx rule 1: every opened element must be closed.
+const Greeting = ()=> {
+    //return <h1>Hello  //=> <h1>Hello</h1>
+    //return <img src="" //=> <img src=""/>
+}
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<Greeting></Greeting>)
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+
+//jsx rule 2:all elements must be organized under single root element.
+// const Greeting = ()=> {
+//    return <h1>Rakuten Digitals</h1>
+//           <p>React is very nice framework</p>
+// }
+const Greeting = () => {
+    return <div>
+        <h1>Rakuten Digitals</h1>
+        <p>React is very nice framework</p>
+    </div>
+}
+const root = ReactDOM.createRoot(document.getElementById('root'))
+// root.render(<Greeting></Greeting>)
+root.render(<Greeting />)
+
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+
+//jsx rule 3:Component Name must start with uppercase-Noun
+
+// const greeting = () => {
+//     return <div>
+//         <h1>Rakuten Digitals</h1>
+//         <p>React is very nice framework</p>
+//     </div>
+// }
+const Greeting = () => {
+    return <div>
+        <h1>Rakuten Digitals</h1>
+        <p>React is very nice framework</p>
+    </div>
+}
+const root = ReactDOM.createRoot(document.getElementById('root'))
+// root.render(<greeting />)
+root.render(<Greeting />)
+
+				 How jsx code gets compiled?
+
+How code gets compiled?
+
+source code: jsx code
+
+function Welcome() {
+      return <h1>Welcome To React!</h1>;
+}
+	|
+     babel.js - compiler 
+|	
+|
+compiled code
+function Welcome() {
+  return React.createElement(
+    'h1',
+    null,
+    'Welcome To React!'
+  );
+}
+|
+runtime : react engine
+function Welcome() {
+  return React.createElement(
+    'h1',
+    null,
+    'Welcome To React!'
+  );
+}
+|
+//React.createElement
+function createElement(args){
+   document.createElement(args); // low level api call
+}
+.....................................................................................
+				Component Composition
+.....................................................................................
+
+How to break large ui into smaller and smallar.
+
+Why we need to create components?
+ -Resuablity
+
+DRY
+
+How to create Component tree?
+
+Lets look at the below markup and start thinking in the terms of components...
+
+<article>
+ <h1>My First Component</h1>
+ <ol>
+   <li>Components are building blocks</li>
+   <li>Components helps to reuse</li>
+   <li>Components helps to scale ui</li>
+ </ol>
+</article>
+
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+
+// const Blog = () => {
+//     return <article>
+//         <h1>React Components</h1>
+//         <ol>
+//             <li>Components are building blocks</li>
+//             <li>Components helps to reuse</li>
+//             <li>Components helps to scale ui</li>
+//         </ol>
+//     </article>
+// }
+
+const BlogHeader = () => <h1>React Components</h1>
+
+//React Fragements: Invisible container element used to escape compile time error when if you miss root element
+
+// const BlogList = () => <div>
+//     <li>Components are building blocks</li>
+//     <li>Components helps to reuse</li>
+//     <li>Components helps to scale ui</li>
+// </div>
+// const BlogList = () => <React.Fragment>
+//     <li>Components are building blocks</li>
+//     <li>Components helps to reuse</li>
+//     <li>Components helps to scale ui</li>
+// </React.Fragment> 
+
+//Fragements <> </>
+const BlogList = () => <>
+    <li>Components are building blocks</li>
+    <li>Components helps to reuse</li>
+    <li>Components helps to scale ui</li>
+</>
+
+const BlogContent = () => <ol>
+    <BlogList />
+</ol>
+
+const Article = () => <article>
+    <BlogHeader />
+    <BlogContent />
+</article>
+
+const Blog = () => {
+    return <>
+        <Article />
+        <Article />
+    </>
+}
+//entry Component or root component
+const App = () => {
+    return <div>
+        <Blog />
+        <Blog />
+        <Blog />
+        <Blog />
+ 
+    </div>
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+
+
+Assignment -1:
+
+Build Layouts based on compoenent composition
+
+ App
+  |
+ Page
+   Header
+     ->Logo
+     ->SearchBar
+   Body 
+     ->Have three Articles
+   Footer
+     ->Copyright
+
+....................................................................................
+			  Modularzation and Project layout
+.....................................................................................
+
+It means to spilt code,and to keep inside folders and files
+
+Is there a recommended way to structure React projects?
+
+React doesn’t have opinions on how you put files into folders. That said there are a few common approaches popular in the ecosystem you may want to consider.
+
+1.Grouping by features or routes - This is recommended
+2.Grouping by file types -  This is not recommended for large 
+projects
+
+
+common/
+  Avatar.js
+  Avatar.css
+  APIUtils.js
+  APIUtils.test.js
+feed/
+  index.js
+  Feed.js
+  Feed.css
+  FeedStory.js
+  FeedStory.test.js
+  FeedAPI.js
+profile/
+  index.js
+  Profile.js
+  ProfileHeader.js
+  ProfileHeader.css
+  ProfileAPI.js
+
+
+profile,feed,customers,products,payments which are "features"
+
+Grouping by file type
+
+api/
+  APIUtils.js
+  APIUtils.test.js
+  ProfileAPI.js
+  UserAPI.js
+components/
+  Avatar.js
+  Avatar.css
+  Feed.js
+  Feed.css
+  FeedStory.js
+  FeedStory.test.js
+  Profile.js
+  ProfileHeader.js
+  ProfileHeader.css
+
+..............................................................................................
+				  Dynamic Page - Data Binding
+..............................................................................................
+
+Types of web
+
+1.static web
+   -only html markup,hand coded.
+2.dynamic web
+   - html is created on fly with data
+
+How to add data in the component /how to bind data in the component?
+
+data can be represented in many ways.
+
+-primitives - numbers,strings,boolean
+-objects - literal objects, objects created out of class/function
+-arrays - it is also object but collection 
+
+How to bind data inside jsx?
+
+let name='subramanian'
+
+<h1>Hello {name} </h1>
+
+{} -  databinding syntax.
+
+data binding can be
+{variable}
+{expression} - {10*10} {getValue()} {emp.id}
+
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+
+//data binding {}
+let name = 'Subramanian Murugan'
+const Heading = () => <h1>Hello {name}</h1>
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<Heading></Heading>)
+.....................................................................................
+
+Data can be declared for a component in two ways.
+
+1.data is supplied from outside the component.
+2.data is supplied within the component
+
+
+1.Data is supplied from outside the component.
+
+When component receives data from the outside, this pattern is called as "property pattern" / props pattern.
+
+Outside the component means what? What is outside for the component?
+
+YOu know very well , react creates components and assembles them in hierachical order(tree)
+in the tree model, the one component called as "parent" component and other components are called child component and sibiling components.
+
+outside means "Parent".
+
+    "Data is supplied from the parent compoent to child component" - Props pattern /Property pattern
+
+
+eg:
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+//here props is just conventional variable name 
+// function Greeting(props) {
+//     console.log(props)
+//     return <h1>Hello {props.name}</h1>
+// }
+
+const Greeting = props => {
+    console.log(props)
+    return <h1>Hello {props.name}</h1>
+}
+const App = () => {
+    //imperative syntax
+    //return Greeting('Subramanian')
+    //declarative syntax
+    //props or property syntax <Greeting propName="Value" />
+    return <Greeting name="Subramanian" />  // => Greeting('Subramanian)
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+
+///////////////////////
+
+More Props
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+const Profile = props => {
+    return <div>
+        <h3>Id {props.id}</h3>
+        <h3>Name {props.name}</h3>
+        <h3>Status {props.status ? "Active" : "InActive"}</h3>
+    </div>
+}
+const App = () => {
+
+    return <>
+        <h1>Profile Information</h1>
+        <Profile id={1} name="Subramanian" status={true} />
+        <Profile id={2} name="Karthik" status={true} />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+
+....
+How to destrcture props and display?
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+//Extract props from the Property object and display
+// const Profile = props => {
+//     const { id, name, status } = props;
+//     return <div>
+//         <h3>Id {id}</h3>
+//         <h3>Name {name}</h3>
+//         <h3>Status {status ? "Active" : "InActive"}</h3>
+//     </div>
+// }
+
+// const Profile = ({ id, name, status }) => {
+//     return <div>
+//         <h3>Id {id}</h3>
+//         <h3>Name {name}</h3>
+//         <h3>Status {status ? "Active" : "InActive"}</h3>
+//     </div>
+// }
+
+const Profile = ({ id, name, status }) => <div>
+    <h3>Id {id}</h3>
+    <h3>Name {name}</h3>
+    <h3>Status {status ? "Active" : "InActive"}</h3>
+</div>
+
+const App = () => {
+
+    return <>
+        <h1>Profile Information</h1>
+        <Profile id={1} name="Subramanian" status={true} />
+        <Profile id={2} name="Karthik" status={true} />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+..............................................................................................
+			What if i dont supply Props to Component -Default Props
+.............................................................................................
+if you dont pass any property, we can supply default props which saves lot of runtime bugs.
+
+When you design component, it is highly recommended to have default Props- This is best Practice
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+const Profile = props => {
+    return <div>
+        <h3>Id {props.id}</h3>
+        <h3>Name {props.name}</h3>
+        <h3>Status {props.status ? "Active" : "InActive"}</h3>
+    </div>
+}
+//default Props
+Profile.defaultProps = {
+    id: 0,
+    name: 'default',
+    status: false
+}
+
+const App = () => {
+    return <>
+        <h1>Profile Information</h1>
+        <Profile id={1} name="Subramanian" status={true} />
+        <Profile id={2} name="Karthik" status={true} />
+        <Profile  />
+        <Profile name="Ram" />
+
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+....................................................................................
+			  Class compoents and Props
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+// class Profile extends React.Component {
+//     render() {
+//         return <div>
+//             <h3>Id {this.props.id}</h3>
+//             <h3>Name {this.props.name}</h3>
+//             <h3>Status {this.props.status ? "Active" : "InActive"}</h3>
+//         </div>
+//     }
+// }
+class Profile extends React.Component {
+    render() {
+        const { id, name, status } = this.props
+        return <div>
+            <h3>Id {id}</h3>
+            <h3>Name {name}</h3>
+            <h3>Status {status ? "Active" : "InActive"}</h3>
+        </div>
+    }
+}
+//default Props
+Profile.defaultProps = {
+    id: 0,
+    name: 'default',
+    status: false
+}
+
+const App = () => {
+    return <>
+        <h1>Profile Information</h1>
+        <Profile id={1} name="Subramanian" status={true} />
+        <Profile id={2} name="Karthik" status={true} />
+        <Profile />
+        <Profile name="Ram" />
+
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+....................................................................................
+			Object as Prop
+...................................................................................
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+// const Profile = props => {
+//     return <div>
+//         <h3>Id {props.profile.id}</h3>
+//         <h3>Name {props.profile.name}</h3>
+//         <h3>Status {props.profile.status ? "Active" : "InActive"}</h3>
+//     </div>
+// }
+
+const Profile = props => {
+    const { id, name, status, address: { city } } = props.profile
+    return <div>
+        <h3>Id {id}</h3>
+        <h3>Name {name}</h3>
+        <h3>City {city}</h3>
+        <h3>Status {status ? "Active" : "InActive"}</h3>
+    </div>
+}
+//default Props
+Profile.defaultProps = {
+    profile: {
+        id: 0,
+        name: 'default',
+        status: false,
+        address: {
+            city: 'city'
+        }
+    }
+}
+const App = () => {
+
+    let profile = {
+        id: 1,
+        name: 'Subramanian',
+        status: true,
+        address: {
+            city: 'Coimbatore'
+        }
+    }
+
+    return <>
+        <h1>Profile Information</h1>
+        <Profile profile={profile} />
+        <Profile/>
+
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+
+..............................................................................................
+			Property Validation or Property Constraints
+.............................................................................................
+
+Javascript is dynamic typed language, meaning that the type of variable is not verified during compile time.
+
+dyamic typed/weak typing
+
+var a=1;
+console.log(a) => 1 => type is number
+
+you can reinitalize the with different types
+a="hello"
+console.log(a) => "hello" => type is string
+
+In c: - Strongly typed  /static typed
+int a=10
+a="hello" -compile time error 
+
+Type script : Strongly static typed javascript
+
+let a:number =10;
+a="hello"
+
+
+Inside compoent if pass data , can i enforce the react that accept only the type what i want.
+
+Yes , we can do with help of property validator.
+Property validator gives only warning , it wont stop rendering incase there is any type error.
+
+
+in order to write property rule, react provides a separate lib "prop-types"
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import PropTypes from 'prop-types';
+
+const Profile = props => {
+    return <div>
+        <h3>Id {props.id}</h3>
+        <h3>Name {props.name}</h3>
+        <h3>Status {props.status ? "Active" : "InActive"}</h3>
+    </div>
+}
+//property Rules
+Profile.propTypes = {
+    id: PropTypes.number,
+    name:PropTypes.string,
+    status:PropTypes.bool
+}
+//default props
+Profile.defultProps = {
+    id:0,
+    name:'default Name',
+    status:false
+}
+
+const App = () => {
+
+    return <>
+        <h1>Profile Information</h1>
+        {/* <Profile id={"1"} name="Subramanian" status={true} /> */}
+        <Profile id={1} name="Subramanian" status={true} />
+        <Profile />
+
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+.....................................................................................	
+				Prop Drilling
+....................................................................................
+
+In Component driven methods, data is passed from the parent to child and child to its child and child as prop manually..
+
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+
+const Parent = props => {
+    return <>
+       <h2>Parent Component</h2>
+       <Child1 message={props.message} />
+    </>
+}
+const Child1 = props => {
+    return <>
+       <h2>Child1 Component</h2>
+       <Child2 message={props.message} />
+    </>
+}
+const Child2 = props => {
+    return <>
+       <h2>Child2 Component</h2>
+       <h3>Message : {props.message}</h3>
+    </>
+}
+
+const App = () => {
+
+    return <>
+        <Parent message="hello" />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+
+....................................................................................
+			 Props Drilling and More Props-Property Rethrow
+....................................................................................
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+
+const Parent = props => {
+    return <>
+        <h2>Parent Component</h2>
+        <Child1 message={props.message} firstName={props.firstName} lastName={props.lastName} />
+    </>
+}
+const Child1 = props => {
+    return <>
+        <h2>Child1 Component</h2>
+        <Child2 message={props.message} firstName={props.firstName} lastName={props.lastName} />
+    </>
+}
+const Child2 = props => {
+    return <>
+        <h2>Child2 Component</h2>
+        <h3>{props.message} {props.firstName} {props.lastName}</h3>
+    </>
+}
+
+const App = () => {
+
+    return <>
+        <Parent message="Hello" firstName="Subramanian" lastName="Murugan" />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+
+
+Look at the above code and see every component need to transfer props manually which makes the code complex.
+
+Solution : 
+  Rethrowing the props or Forwarding props using "JSX Spread syntax"
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+
+const Parent = props => {
+    return <>
+        <h2>Parent Component</h2>
+        {/* <Child1 message={props.message} firstName={props.firstName} lastName={props.lastName} /> */}
+        {/* Forwarding Props using jsx spread notation */}
+        <Child1 {...props} />
+    </>
+}
+const Child1 = props => {
+    return <>
+        <h2>Child1 Component</h2>
+        {/* Forwarding Props using jsx spread notation  and merging new props */}
+        <Child2 {...props} title="Child 2" />
+    </>
+}
+const Child2 = props => {
+    return <>
+        <h2>{props.title} Component</h2>
+        <h3>{props.message} {props.firstName} {props.lastName}</h3>
+    </>
+}
+
+const App = () => {
+
+    return <>
+        <Parent message="Hello" firstName="Subramanian" lastName="Murugan" />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+
+..............................................................................................
+				What  can be a prop
+.............................................................................................
+
+Prop can be 
+
+1.data - numbers,strings,boolean,objects,arrays
+2.function - function as prop
+3.component /any html element can be prop
+
+Prop can be 
+
+1.static prop - discussed already
+2.dynamic prop - to be discussed
+
+
+Component as Prop
+.................
+
+<Container/>  - The component has no child
+
+<Container>  - The component has child
+   <Header>    - It is passed as child to Container
+</Container>
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+
+const Card = props => <div>
+    {props.children}
+</div>
+
+const Avatar = props => {
+    return <>
+        <p>Name : {props.name}</p>
+    </>
+}
+const App = () => {
+    return <>
+        <Card>
+            {/* Passing Component as props */}
+            <Avatar name="Subramanian" />
+            <Avatar name="Subramanian" />
+            <Avatar name="Subramanian" />
+        </Card>
+        <Card>
+            <h1>Hello</h1>
+        </Card>
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+.....................................................................................
+				List Rendering-Arrays
+.....................................................................................
+
+Simple List:
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+//simple List Rendering
+// const NumberList = props => {
+//   return <div>
+//        {props.nums}
+//   </div>
+// }
+const NumberList = props => {
+    return <div>
+        <ul>
+            {
+                props.nums.map(item => {
+                    return <li>{item}</li>
+                })
+            }
+        </ul>
+    </div>
+}
+
+const App = () => {
+    let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    return <>
+        <NumberList nums={data} />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+
+...................................................................................
+
+Complex Data:
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { POSTS } from './mock-data/posts'
+
+// const Post = props => {
+//     const { posts } = props
+//     return <div>
+//         {
+//             posts.map(post => {
+//                 return <div>
+//                     <h2>ID {post.id} UserId {post.userId}</h2>
+//                     <h3>{post.title}</h3>
+//                     <p>{post.body}</p>
+//                 </div>
+//             })
+//         }
+//     </div>
+// }
+
+// const Post = ({ posts }) => <div>
+//     {
+//         posts.map(({ userId, id, title, body }) => <div key={id}>
+//             <h2>ID {id} UserId {userId}</h2>
+//             <h3>{title}</h3>
+//             <p>{body}</p>
+//         </div>)
+//     }
+// </div>
+
+const Post = ({ posts }) => <div>
+    {
+        posts.map(post => <div key={post.id}>
+            <PostDetails post={post} />
+        </div>)
+    }
+</div>
+// const PostDetails = ({post}) => <>
+//     <h2>ID {post.id} UserId {post.userId}</h2>
+//     <h3>{post.title}</h3>
+//     <p>{post.body}</p>
+// </>
+const PostDetails = ({ post: { id, userId, title, body } }) => <>
+    <h2>ID {id} UserId {userId}</h2>
+    <h3>{title}</h3>
+    <p>{body}</p>
+</>
+
+const App = () => {
+    return <>
+        <Post posts={POSTS} />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+....................................................................................
+			 Styling in React
+
+Styles are applied to the component in two ways
+
+1.Global Style 
+  importing style in index.js file , so that style to be shared across the app
+
+2.Component Specific Style
+   Having Component specific styles.
+
+
+style can be added using 
+
+1.class attribute 
+2.style attribute
+
+
+Note :
+
+<div class="App">
+
+ React will throw warning like below
+
+Warning: Invalid DOM property `class`. Did you mean `className`?
+    at div
+    at Post (http://localhost:3000/static/js/bundle.js:56:5)
+    at App
+
+According jsx, html attributes should not be given directly rather we need to follow the rule called
+
+ "camelCase" 
+eg
+class = > className
+onclick = onClick
+
+List :
+accept acceptCharset accessKey action allowFullScreen alt async autoComplete
+autoFocus autoPlay capture cellPadding cellSpacing challenge charSet checked
+cite classID className colSpan cols content contentEditable contextMenu controls
+controlsList coords crossOrigin data dateTime default defer dir disabled
+download draggable encType form formAction formEncType formMethod formNoValidate
+formTarget frameBorder headers height hidden high href hrefLang htmlFor
+httpEquiv icon id inputMode integrity is keyParams keyType kind label lang list
+loop low manifest marginHeight marginWidth max maxLength media mediaGroup method
+min minLength multiple muted name noValidate nonce open optimum pattern
+placeholder poster preload profile radioGroup readOnly rel required reversed
+role rowSpan rows sandbox scope scoped scrolling seamless selected shape size
+sizes span spellCheck src srcDoc srcLang srcSet start step style summary
+tabIndex target title type useMap value width wmode wrap
+
+https://reactjs.org/docs/dom-elements.html
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { POSTS } from './mock-data/posts'
+import { Header } from './header/Header'
+
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+
+
+// const Post = props => {
+//     const { posts } = props
+//     return <div>
+//         {
+//             posts.map(post => {
+//                 return <div>
+//                     <h2>ID {post.id} UserId {post.userId}</h2>
+//                     <h3>{post.title}</h3>
+//                     <p>{post.body}</p>
+//                 </div>
+//             })
+//         }
+//     </div>
+// }
+
+// const Post = ({ posts }) => <div>
+//     {
+//         posts.map(({ userId, id, title, body }) => <div key={id}>
+//             <h2>ID {id} UserId {userId}</h2>
+//             <h3>{title}</h3>
+//             <p>{body}</p>
+//         </div>)
+//     }
+// </div>
+
+const Post = ({ posts }) => <div className="App">
+    {
+        posts.map(post => <div key={post.id} className="card" style={{ width: '18rem' }}>
+            <PostDetails post={post} />
+        </div>)
+    }
+</div>
+// const PostDetails = ({post}) => <>
+//     <h2>ID {post.id} UserId {post.userId}</h2>
+//     <h3>{post.title}</h3>
+//     <p>{post.body}</p>
+// </>
+const PostDetails = ({ post: { id, userId, title, body } }) => <>
+    <div class="card-body">
+        <h5 className="card-title">id  {id} userId {userId}</h5>
+        <h5 className="card-title">{title}</h5>
+        <p className="card-body">{body}</p>
+    </div>
+</>
+
+const App = () => {
+    return <>
+        <Header>
+            <h1>IBM Blog</h1>
+        </Header>
+        <div className="container">
+            <div className="row">
+                <div className="col-sm">
+                  <Post posts={POSTS} />
+                </div>
+            </div>
+        </div>
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+.....................................................................................
+				State
+....................................................................................
+
+What is state?
+  Data is encapsulated inside compoent
+
+How to declare state?
+ =>inside class component - until react 16
+ =>inside functions - using Hooks- Recommended.
+How to interact with ui? - Event handling
+ 
+
+How to mutate state? - Pure functions
+
+
+Eg: How to declare State?
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+
+class Review extends React.Component {
+    //state declaration
+    state = {
+        like: 0,
+        dislike: 0
+    }
+    render() {
+        console.log('state ', this.state)
+        return <div className="container">
+            <h1>Review App- State</h1>
+            <h2>Like {this.state.like} Dislike {this.state.dislike}</h2>
+        </div>
+    }
+}
+
+
+const App = () => {
+    return <>
+        <Review />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+
+.....................................................................................
+
+Event Binding:
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+
+class Review extends React.Component {
+    //state declaration
+    state = {
+        like: 0,
+        dislike: 0
+    }
+    //listener 
+    onLike = () => {
+        //write biz logic to increment likes
+        console.log('onLike')
+    }
+
+    render() {
+        console.log('state ', this.state)
+        return <div className="container">
+            <h1>Review App- State</h1>
+            <h2>Like {this.state.like} Dislike {this.state.dislike}</h2>
+            {/* Event binding */}
+            <button onClick={this.onLike} className="btn btn-success" style={{ padding: 10, marginRight: 10 }}>Like</button>
+            <button className="btn btn-success" style={{ padding: 10, marginRight: 10 }}>Dislike</button>
+        </div>
+    }
+}
+
+
+const App = () => {
+    return <>
+        <Review />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+..................................................................................
+				 State Mutation
+
+
+
+if you run the code below, the UI update never be triggered
+
+Why?
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+
+class Review extends React.Component {
+    //state declaration
+    state = {
+        like: 0,
+        dislike: 0
+    }
+    //listener 
+    onLike = () => {
+        //write biz logic to increment likes
+        console.log('onLike')
+        this.state.like++
+        console.log('listener state ',this.state)
+        this.render()
+    }
+
+    render() {
+        console.log('render state ', this.state)
+        return <div className="container">
+            <h1>Review App- State</h1>
+            <h2>Like {this.state.like} Dislike {this.state.dislike}</h2>
+            {/* Event binding */}
+            <button onClick={this.onLike} className="btn btn-success" style={{ padding: 10, marginRight: 10 }}>Like</button>
+            <button className="btn btn-success" style={{ padding: 10, marginRight: 10 }}>Dislike</button>
+        </div>
+    }
+}
+
+
+const App = () => {
+    return <>
+        <Review />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+
+
+
+How React updates UI?
+
+via "render method"
+
+render:
+ 
+=>it is method called by "react engine".
+     can we call render directly inside event listener?
+        Yes,but no impact on ui update 
+    onIncrement = () => {
+         //increment value of state 
+        this.state.value = this.state.value + 1
+        console.log("value : ",this.state.value)
+        this.render()
+    }
+   Note : render should not be called directly
+
+
+...................................................................................
+		Functional Programming Principles and React
+..................................................................................
+Pure Functions:
+
+ Pure functions are defined by two rules
+Rule A and Rule B.
+
+Rule A:
+  If function receives input, the function returns the same input without any mutation.
+  Every Component with respect to props, are pure functions.
+//Pure functions Rule A:
+
+/**
+ *   If function receives input, the function returns the same input without any mutation.
+ */
+//this functio is pure or not?
+
+//this function is impure:React never recommends this type functions
+function updateProfile(profile, city) {
+    profile.city = city
+    return profile;
+}
+const profile = {
+    id: 1,
+    name: 'subramanian',
+    city: 'New York'
+}
+console.log('Before Update', profile)
+const updatedProfile = updateProfile(profile, 'Coimbatore')
+console.log('After Update', updatedProfile)
+
+
+//here the funciton never modifies the variable
+//this function just returns data as it it: Pure function
+//every component is pure function with respect to props
+function Header(props) {
+    return `<h1>${props.name}</h1>`
+}
+console.log(Header({ name: 'subramanian' }))
+
+React and Pure functions Rule A- and props
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+
+
+const Greeting = props => {
+    console.log(props)
+    //update props 
+    //props are read only
+    props.name ='foo'
+    return <h1>Hello {props.name}</h1>
+}
+const App = () => {
+    return <Greeting name="Subramanian" />  
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+.....................................................................................					Rule B
+.....................................................................................
+
+
+What if function receives input, need to be mutated but it should follow the pure function rule.
+
+With help of "Immutablity"
+
+What is immutable?
+
+creating new object every time when you update the object , immutablity.
+
+if the function does that , that function is called pure function.
+
+pure function must return, "immutable object".
+//Pure functions Rule B:
+/**
+ * 
+ What if function receives input, need to be mutated but it should follow the pure function rule.
+
+With help of "Immutablity"
+ */
+
+//pure functions : immutablity
+/**
+ * immutablity implementation patterns
+ *  1.using plain javascript
+ *  2.using Object.assign method
+ *  3.using es 7 spread operator
+ */
+
+function updateProfile(profile, city) {
+    //return new object : profile
+
+    ////1.using plain javascript
+    // return {
+    //     id: profile.id,
+    //     name: profile.name, 
+    //     city: city
+    // }
+    //2.using Object.assign method
+    //  return Object.assign({}, profile, { city: city })
+
+    //using spread operator
+    return { ...profile, city: city }
+}
+const profile = {
+    id: 1,
+    name: 'subramanian',
+    city: 'New York'
+}
+console.log('Before Update', profile)
+const updatedProfile = updateProfile(profile, 'Coimbatore')
+console.log('After Update', updatedProfile)
+//check mutable or immutable 
+console.log(profile === updatedProfile ? "Same Object" : "Different Object")
+
+List of Array immutable apis:
+
+1.concat == Adding new item
+2.map => iterate and transform,update
+3.filter,slice =>delete
+3.reverse,sort - sorting and reversion
+.....................................................................................
+			  Rule B :State Mutations
+.....................................................................................How to call render?
+render is called by react engine only.
+how react engine will triger render?
+  via React api "setState() ,forceUpdate()"
+
+
+Syntax:
+
+setState(updater, [callback])
+
+updater = it is function
+callback =it is also function which optional parameter
+
+updater:
+ function having state mutation logic
+
+step1:
+    this.setState(function(){
+            console.log('state mutation logic goes')
+        })
+
+updater function syntax:
+
+takes two args
+
+1.state  is just variable you can have any name - holds the value of state object
+ which is called as "previous state" or "old state"
+2.props is just variable holding current props variable- which is optional
+
+function(state,[props]){
+            console.log('state mutation logic goes')
+}
+
+function(prevState){
+            console.log('state mutation logic goes')
+}
+
+Updater function returns object, what object, if you want to understand this , we need to under one more functional programming principle called "Pure function 2nd Rule".
+
+Updater function returns object, what object, if you want to understand this , we need to understand one more functional programming principle called "Pure function 2nd Rule".
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+
+class Review extends React.Component {
+    //state declaration
+    state = {
+        like: 0, //0 => 1 =>2=>3
+        dislike: 0
+    }
+    //listener 
+    onLike = () => {
+        //implement pure functions
+        this.setState((oldState) => {
+            console.log('Old State/Previous State', oldState)
+            //must return immutable the state of compoent
+            // return {
+            //     like: oldState.like + 1,
+            //     dislike: oldState.dislike
+            // }
+            //return Object.assign({}, oldState, { like: oldState.like + 1 })
+            return { ...oldState, like: oldState.like + 1 }
+        })
+    }
+
+    render() {
+        console.log('current state ', this.state)
+        return <div className="container">
+            <h1>Review App- State</h1>
+            <h2>Like {this.state.like} Dislike {this.state.dislike}</h2>
+            {/* Event binding */}
+            <button onClick={this.onLike} className="btn btn-success" style={{ padding: 10, marginRight: 10 }}>Like</button>
+            {/* inline listener */}
+            <button onClick={() => {
+                this.setState(oldState => {
+                    return { ...oldState, dislike: oldState.dislike + 1 }
+                })
+
+            }} className="btn btn-success" style={{ padding: 10, marginRight: 10 }}>Dislike</button>
+        </div>
+    }
+}
+
+
+const App = () => {
+    return <>
+        <Review />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+.....................................................................................
+			..............................................................................................
+..............................................................................................		Event Listners Deep dive
+..............................................................................................
+
+javascript:
+
+btn.addEventListener('click',function(event){
+  //used to get dom object inside listener
+  //event propagation
+})
+
+SyntheticEvent:
+
+ _ it is Event object provided by react to refer dom elements inside react components.
+
+Event Object provides lot of apis
+
+api:
+
+boolean bubbles
+boolean cancelable
+DOMEventTarget currentTarget
+boolean defaultPrevented
+number eventPhase
+boolean isTrusted
+DOMEvent nativeEvent
+void preventDefault()
+boolean isDefaultPrevented()
+void stopPropagation()
+boolean isPropagationStopped()
+void persist()
+DOMEventTarget target
+number timeStamp
+string type
+
+target : To refer the DOM object
+..............................................................................................
+		 How to get Input from the User -How to use Syn Event Object
+...........................................................................................
+
+SyntheticEvent object is passed as arg to event listner
+
+ onIncrement = (evt) => {
+        
+ }
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+
+let nextId = 0;
+class Comments extends React.Component {
+    state = {
+        text: '',
+        comments: []
+    }
+
+    //event object: SyntheticEvent  
+    onSetValue = evt => {
+        console.log('loading', evt.target.value)
+        this.setState(oldState => {
+            return { ...oldState, text: evt.target.value }
+        })
+    }
+    onAddComment = evt => {
+        this.setState(oldState => {
+            let newComment = {
+                id: nextId++,
+                text: this.state.text
+            }
+            return { ...oldState, comments: oldState.comments.concat(newComment), text: '' }
+        })
+    }
+
+    render() {
+        console.log('current state ', this.state)
+        return <div className="container">
+            <h1>Comments App</h1>
+            <div>
+                <h3>Please Share Your Comments</h3>
+                <input value={this.state.text} onChange={this.onSetValue} style={{ padding: 10 }} /><button onClick={this.onAddComment} className="btn btn-success" style={{ margin: 10 }}>Add</button>
+                <div>
+                    <ul>
+                        {this.state.comments.map(comment => {
+                            return <li key={comment.id}>
+                                {comment.text}
+                            </li>
+                        })}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+
+const App = () => {
+    return <>
+        <Comments />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+...................................................................................
+			 Dynamic Prop: state and function as prop
+...................................................................................
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+
+
+/**
+ * The below component having
+ *  =>state declaration
+ * =>biz logic
+ * =>UI logic
+ *  In real time we should isloate biz logic,state into one layer
+ *  and UI logic must be in another layer
+ */
+
+
+let nextId = 0;
+
+class Comments extends React.Component {
+    state = {
+        text: 'default',
+        comments: []
+    }
+
+    //event object: SyntheticEvent  
+    onSetValue = evt => {
+        this.setState(oldState => {
+            return { ...oldState, text: evt.target.value }
+        })
+    }
+    onAddComment = evt => {
+        this.setState(oldState => {
+            let newComment = {
+                id: nextId++,
+                text: this.state.text
+            }
+            return { ...oldState, comments: oldState.comments.concat(newComment), text: '' }
+        })
+    }
+
+    render() {
+        return <>
+            {/* state as prop  and listener as prop*/}
+            <CommentsPage {...this.state} onSetValue={this.onSetValue} onAddComment={this.onAddComment} />
+        </>
+    }
+}
+
+const CommentsPage = props => {
+    console.log(props)
+    return <div className="container">
+        <h1>Comments App</h1>
+        <div>
+            <h3>Please Share Your Comments</h3>
+            <input value={props.text} onChange={props.onSetValue} style={{ padding: 10 }} /><button onClick={props.onAddComment} className="btn btn-success" style={{ margin: 10 }}>Add</button>
+            <div>
+                <ul>
+                    {props.comments.map(comment => {
+                        return <li key={comment.id}>
+                            {comment.text}
+                        </li>
+                    })}
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+
+
+const App = () => {
+    return <>
+        <Comments />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+..................................................................................	
+			 Component Life Cycle
+................................................................................
+
+Can be classified into 3 phases
+1.Mount
+2.Update
+3.UnMount
+
+
+1.Mounting
+ This is inital phase of an component
+
+ These methods are called in the following order when an instance of a component is being   created and inserted into the DOM:
+
+1.constructor() -
+2.static getDerivedStateFromProps()
+3.render()
+4.componentDidMount()
+
+Mount phase methods are called only once, execpt one method - render.
+
+eg:
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+
+
+
+class ParentComponent extends React.Component {
+    state = {
+        i: 0
+    }
+    //mount phase methods
+    constructor() {
+        super()
+        console.log('Parent Constructor is called')
+    }
+    render() {
+        console.log('Parent render is called')
+        return <div>
+            <h1>Parent Component</h1>
+            <ChildComponent />
+        </div>
+    }
+
+    componentDidMount() {
+        console.log('Parent ComponentDidMount is called')
+    }
+}
+
+
+
+class ChildComponent extends React.Component {
+
+    state = {
+        j: 0
+    }
+    //mount phase methods
+    constructor() {
+        super()
+        console.log('ChildComponent Constructor is called')
+    }
+    render() {
+        console.log('ChildComponent render is called')
+        return <div>
+            <h1>Child Component</h1>
+        </div>
+    }
+
+    componentDidMount() {
+        console.log('ChildComponent ComponentDidMount is called')
+    }
+
+
+}
+
+
+const App = () => {
+    return <>
+        <ParentComponent />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+
+
+Parent Constructor is called
+index.js:15 Parent render is called
+index.js:37 ChildComponent Constructor is called
+index.js:40 ChildComponent render is called
+index.js:48 ChildComponent ComponentDidMount is called
+index.js:23 Parent ComponentDidMount is called
+
+Note:
+
+constructors are not used now days-No focus on Constructor
+
+static getDerivedStateFromProps() -  less use , no need to focus.
+
+render()
+
+ -It is called when component prepares object tree - vdom
+ render -----cons---render---cons---render-Tree will be ready.
+
+Once the tree is ready, which mounts/inserts the VDOM into Real DOM via ReactDOM.render()
+
+ReactDOM.render() is entry and exit point of React Application,ReactDOM.render translates the Virtual DOM into real DOM.
+
+
+ReactDOM.render(<Component1/>)--->Component1.constructor -Component1.render ----Component2.constructor----Component2.render----Component3.Constructor--Component3.render => Tree is Ready---->ReactDOM.render(V.Tree)---|Insert in real DOM.
+..........................................................................................
+componentDidMount :
+
+componentDidMount is called after vdom inserted into real DOM.
+
+ReactDOM.render(<Component1/>)--->Component1.constructor -Component1.render ----Component2.constructor----Component2.render----Component3.Constructor--Component3.render => Tree is Ready---->ReactDOM.render(V.Tree)---|Insert in real DOM ---|Component3.componentDidMount---->Component2.componentDidMount---Component1.componentDidMount
+
+This is method is used heavily in the component life cycles.
+
+What are methods used every day?
+
+1.render
+2.componentDidMount.
+Use cases:
+1.For resource insentive works
+->Ajax calls
+->Web sockets
+->Timers code
+->Rxjs initalization
+................................................................................
+			API CALLs -Using Component Did Mount
+			Web Service Integration in React -Ajax
+............................................................................................
+
+How to integrate ajax in react?
+
+React has no any api for talking to webservice.
+You can use any popular ajax libs.
+
+1.fetch
+2.axios
+3.any ajax apis
+
+fetch
+
+Basic Api call:
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+
+
+class Todo extends React.Component {
+    state = {
+        todos: []
+    }
+    async componentDidMount() {
+        //api calls
+        const url = 'https://jsonplaceholder.typicode.com/todos'
+        try {
+            const todos = await (await fetch(url)).json()
+            this.setState(oldState=>{
+                return {...oldState, todos:oldState.todos.concat(todos)}
+            })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+    render() {
+        return <>
+            <h1>Todo App - WebService Integration</h1>
+            <ul>
+                {this.state.todos.map(todo => {
+                    return <li key={todo.id}>
+                        <span>{todo.title}</span>
+                    </li>
+                })}
+            </ul>
+        </>
+    }
+}
+
+
+const App = () => {
+    return <div className="container">
+        <Todo />
+    </div>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+.....................................................................................
+			Conditional Rendering
+
+
+There are three possibilites you have when you do ajax calls
+
+1.You may have data on time
+2.You may not have data on time - delay or slow
+    incase of slow data fetch we show "spinners"
+3.you may get error
+    server down,network failure,api malfunctions....
+
+You have to write code according to state of api
+
+ - success on time
+ - success with spinner
+ - error 
+
+if you have to write if condition to check these three status, according to the status we switch mode.
+
+How to write if ...else conditions in side jsx?
+   Conditional Rendering
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+
+
+const Error = props => {
+    return <>
+        <h2>{props.error}</h2>
+    </>
+}
+const Spinner = props => {
+    return <>
+        <h2 style={{ backgroundColor: 'yellow' }}>Loading...</h2>
+    </>
+}
+
+const TodoList = props => {
+    const { todos } = props
+    return <ul className="list-group">
+        {todos.map((todo, index) => (
+            <li key={index}  style={{listStyle:'none'}} >
+                <span style={{margin:10}}>
+                    {todo.id}
+                </span>
+                <span>
+                    {todo.title}
+                </span>
+            </li>
+        ))}
+    </ul>
+}
+
+class Todo extends React.Component {
+    state = {
+        isLoaded: false, //spinner status
+        todos: [], //data,
+        error: null
+    }
+    async componentDidMount() {
+        //api calls
+        const url = 'https://jsonplaceholder.typicode.com/todos'
+        try {
+            const todos = await (await fetch(url)).json()
+            this.setState(oldState => {
+                return { ...oldState, isLoaded: true, todos: oldState.todos.concat(todos) }
+            })
+        }
+        catch (err) {
+            console.log(err)
+            this.setState(oldState => {
+                return { ...oldState, isLoaded: true, err: err }
+            })
+        }
+    }
+    render() {
+        const { error, isLoaded, todos } = this.state;
+        //conditional Rendering
+        if (error) {
+            return <Error error={error} />
+        } else if (!isLoaded) {
+            return <Spinner />
+        } else {
+            return <TodoList todos={todos} />
+        }
+
+    }
+}
+
+
+
+const App = () => {
+    return <div className="container">
+        <Todo />
+    </div>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+.....................................................................................
+				Hooks
+....................................................................................
+What is hook?
+ It is a new feature introduced in react 16.
+ Simple abstraction for class compoents-  how to remove classes from react.
+
+Intention is functional component for every things.
+
+objective of hooks:
+
+1.to eleminate class components as much possible.
+2.Resuable application behaviours
+   eg:ajax calls
+
+
+Hook is just simple javascript function.
+which may take arg or may not.
+Which may or may not return something 	
+
+
+every hook function starts with
+  "use"+functionName ==>hook Syntax
+
+eg:
+"useState"
+"useContext"
+"useEffect"
+"useAjax"
+"useWebSocket"
+"useLayout"
+etc....
+you can create your own hooks as well.
+.....................................................................................
+			useState :Basic
+
+import React, { useState } from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+
+class Review__ extends React.Component {
+    //state declaration
+    state = {
+        like: 0, //0 => 1 =>2=>3
+        dislike: 0
+    }
+    //listener 
+    onLike = () => {
+        //implement pure functions
+        this.setState((oldState) => {
+            console.log('Old State/Previous State', oldState)
+            //must return immutable the state of compoent
+            // return {
+            //     like: oldState.like + 1,
+            //     dislike: oldState.dislike
+            // }
+            //return Object.assign({}, oldState, { like: oldState.like + 1 })
+            return { ...oldState, like: oldState.like + 1 }
+        })
+    }
+
+    render() {
+        console.log('current state ', this.state)
+        return <div className="container">
+            <h1>Review App- State</h1>
+            <h2>Like {this.state.like} Dislike {this.state.dislike}</h2>
+            {/* Event binding */}
+            <button onClick={this.onLike} className="btn btn-success" style={{ padding: 10, marginRight: 10 }}>Like</button>
+            {/* inline listener */}
+            <button onClick={() => {
+                this.setState(oldState => {
+                    return { ...oldState, dislike: oldState.dislike + 1 }
+                })
+
+            }} className="btn btn-success" style={{ padding: 10, marginRight: 10 }}>Dislike</button>
+        </div>
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////
+
+//in hooks state can be primitive too  where as class component must have state only objectPosition: 
+
+const Review = props => {
+    //declare state 
+    const [like, setLike] = useState(0) //inital state 
+    const [dislike, setDislike] = useState(0)
+
+    //listener
+    const onLike = evt => {
+        // setLike(like => {
+        //     return like + 1
+        // })
+        setLike(like + 1)
+    }
+    return <div className="container">
+        <h1>Review App- State</h1>
+        <h2>Like {like} Dislike {dislike}</h2>
+        <button onClick={onLike} className="btn btn-success" style={{ padding: 10, marginRight: 10 }}>Like</button>
+        <button onClick={() => {
+            // setDislike(dislike => {
+            //     return dislike + 1
+            // })
+            setDislike(dislike + 1)
+
+        }} className="btn btn-success" style={{ padding: 10, marginRight: 10 }}>Dislike</button>
+    </div>
+}
+
+
+
+const App = () => {
+    return <>
+        <Review />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+...................................................................................
+			useState : State and listener as Prop
+................................................................................
+import React, { useState } from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+
+const Review = props => {
+    //declare state 
+    const [like, setLike] = useState(0) //inital state 
+    const [dislike, setDislike] = useState(0)
+    return <>
+        <ReviewPage like={like} dislike={dislike} setLike={setLike} setDislike={setDislike} />
+    </>
+}
+
+const ReviewPage = props => {
+    const { like, dislike, setDislike, setLike } = props
+    return <div className="container">
+        <h1>Review App- State</h1>
+        <h2>Like {like} Dislike {dislike}</h2>
+        <button onClick={() => {
+            setLike(like + 1)
+        }} className="btn btn-success" style={{ padding: 10, marginRight: 10 }}>Like</button>
+        <button onClick={() => {
+            setDislike(dislike + 1)
+        }} className="btn btn-success" style={{ padding: 10, marginRight: 10 }}>Dislike</button>
+    </div>
+}
+
+
+const App = () => {
+    return <>
+        <Review />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+..................................................................................
+			Objects and Array inside useState
+...................................................................................
+
+import React, { useState } from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+
+
+//hooks and object literals
+
+const Review = props => {
+    //declare state 
+    const [review, setReview] = useState({ like: 0, dislike: 0 }) //inital state 
+
+    //listener
+    const onLike = evt => {
+        // setReview(oldReview => {
+        //     return { ...oldReview, like: oldReview.like + 1 }
+        // })
+        //short cut 
+        setReview({ ...review, like: review.like + 1 })
+    }
+    return <div className="container">
+        <h1>Review App- State</h1>
+        <h2>Like {review.like} Dislike {review.dislike}</h2>
+        <button onClick={onLike} className="btn btn-success" style={{ padding: 10, marginRight: 10 }}>Like</button>
+        <button onClick={() => {
+            // setReview(oldReview => {
+            //     return { ...oldReview, dislike: oldReview.dislike + 1 }
+            // })
+            setReview({ ...review, dislike: review.dislike + 1 })
+
+        }} className="btn btn-success" style={{ padding: 10, marginRight: 10 }}>Dislike</button>
+    </div>
+}
+
+
+
+const App = () => {
+    return <>
+        <Review />
+    </>
+}
+........
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+
+..................................................................................
+			 Forms and useState
+.................................................................................
+	import React, { useState } from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+
+
+const UserForm = props => {
+    const [form, setForm] = useState({
+        name: 'foo',
+        email: 'admin@foo.com'
+    })
+    return <>
+        <div>
+            <label>Name</label>
+            <input value={form.name} onChange={evt => {
+                setForm({
+                    ...form,
+                    name: evt.target.value
+                })
+            }} />
+        </div>
+        <div>
+            <label>Email</label>
+            <input value={form.email} onChange={evt => {
+                setForm({
+                    ...form,
+                    email: evt.target.value
+                })
+            }} />
+        </div>
+        <div>
+            <p>Name {form.name}  - Email {form.email}</p>
+        </div>
+    </>
+}
+
+
+
+const App = () => {
+    return <>
+        <UserForm />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+...................................................................................
+			Component Life Cycle Apis and Hooks
+
+=>mount
+  =>componentDidMount
+=>update
+  =>componentDidUpdate
+
+comonentDidMount:
+ Used for doing some resource intensive tasks, such as setting up ajax calls for inital page.
+ It is called after inital render
+
+compoentDidUpdate:
+  called after every update finishes.
+
+How to write these two life cycle methods inside functional components.
+
+"useEffect" Hook.
+  =>can replace both life cycle methods.
+mount and update phase
+.....................................................................................
+import React, { useEffect, useState } from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+
+const Error = props => {
+    return <>
+        <h2>{props.error}</h2>
+    </>
+}
+const Spinner = props => {
+    return <>
+        <h2 style={{ backgroundColor: 'yellow' }}>Loading...</h2>
+    </>
+}
+
+const TodoList = props => {
+    const { todos } = props
+    return <ul className="list-group">
+        {todos.map((todo, index) => (
+            <li key={index} style={{ listStyle: 'none' }} >
+                <span style={{ margin: 10 }}>
+                    {todo.id}
+                </span>
+                <span>
+                    {todo.title}
+                </span>
+            </li>
+        ))}
+    </ul>
+}
+
+
+
+const Todos = props => {
+    let initalState = {
+        isLoaded: false, //spinner status
+        items: [], //data,
+        error: null
+    }
+    const [todos, setTodos] = useState(initalState)
+   
+    async function fetchTodos() {
+        //api calls
+        const url = 'https://jsonplaceholder.typicode.com/todos'
+        try {
+            const values = await (await fetch(url)).json()
+            setTodos({ ...todos, isLoaded: true, items: todos.items.concat(values) })
+        }
+        catch (err) {
+            setTodos({ ...todos, isLoaded: true, err: err })
+        }
+    }
+    //componentDidMount
+    useEffect(() => {
+        fetchTodos()
+    }, [])
+    const { error, isLoaded, items } = todos
+    //conditional Rendering
+    if (error) {
+        return <Error error={error} />
+    } else if (!isLoaded) {
+        return <Spinner />
+    } else {
+        return <TodoList todos={items} />
+    }
+
+}
+
+const App = () => {
+    return <>
+        <Todos />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+....................................................................................
+			Complex State : Nexted State Mutations
+....................................................................................
+
+Adding new Prop and Updating existing prop in literal object.
+
+Add new prop on existing object?
+
+
+let something =  {
+  id:1,
+  name:'foo'
+}
+The object contains two properties, what if i want to add new Prop
+
+//eg:
+//impure function  
+// function addNewPower(hero) {
+//     hero.power = 'fly'
+//     return hero
+// }
+
+//pure function
+function addNewPower(hero) {
+    // hero.power = 'fly'
+    //if prop exits update else add 
+    return { ...hero, power: 'fly' }
+}
+
+let hero = {
+    id: 1,
+    name: 'foo'
+}
+let newHero = addNewPower(hero)
+console.log('Both Hero is same  ', hero === newHero)
+..................................................................................
+Complex state update - Nested Object update
+............................................
+//complex object update :
+
+
+//simple object update
+function updateHero(hero, role) {
+    return { ...hero, role: role }
+}
+
+let hero = {
+    id: 1,
+    name: 'foo',
+    role: 'Action'
+}
+let updatedHero = updateHero(hero, 'Dramma')
+console.log(hero === updatedHero ? 'same' : 'Different')
+
+console.log('Nest Properties')
+function incrementPoints(player, incrementBy) {
+    //increment by two 
+    return {
+        ...player,  // level -0 clone outter properties only 
+        house: {
+            ...player.house, // level 2
+            points: player.house.points + incrementBy         //clone all properties except points
+        }
+    }
+}
+
+let player = {
+    name: 'Subramanian',
+    house: {
+        name: 'RavenClaw',
+        points: 10 // increment this points
+    }
+}
+const updatedPlayer = incrementPoints(player, 2)
+console.log(player === updatedPlayer ? 'Same Player' : 'Different Player')
+...................................................................................
+
+let customer = {
+    id: 1,
+    name: 'Subramanian',
+    contact: {
+        address: {
+            city: 'Coimbatore'
+        },
+        communication: {
+            mobileno: '9000000000'
+        }
+    }
+}
+Write pure function to update Mobile No?
+
+function updateCustomer(customer, mobileNo) {
+
+    return {
+        ...customer, // level-0 id,name,contact
+        contact: {
+            ...customer.contact, // Level-1 // address
+            communication: {
+                ...customer.contact.communication, // Level -2
+                mobileno: mobileNo
+            }
+        }
+    }
+}
+let customer = {
+    id: 1,
+    name: 'Subramanian',
+    contact: {
+        address: {
+            city: 'Coimbatore'
+        },
+        communication: {
+            email: 'admin@gmail.com',
+            mobileno: '9000000000'
+        }
+    }
+}
+const updatedCustomer = updateCustomer(customer, '8098245789')
+console.log(updatedCustomer === customer ? 'Same Customer' : 'Different Customer')
+console.log(updatedCustomer)
+
+
+		       Can we simplify the above code?
+				 Yes
+	     We have a new lib to abstract all immutablity complexity
+			     "immer js"
+....................................................................................
+
+npm install immer
+
+import produce from "immer"
+
+function incrementPoints(player, incrementBy) {
+    //immutable function with plain js 
+    // return {
+    //     ...player,  // level -0 clone outter properties only 
+    //     house: {
+    //         ...player.house, // level 2
+    //         points: player.house.points + incrementBy         //clone all properties except points
+    //     }
+    // }
+
+    //mutable code but more readable.
+    //mutable style of writting immuable code:
+
+    // player.house.points = player.house.points + incrementBy
+    //return player
+    return produce(player, draftState => {
+        //write mutable logic
+        draftState.house.points += incrementBy
+    })
+}
+
+let player = {
+    name: 'Subramanian',
+    house: {
+        name: 'RavenClaw',
+        points: 10 // increment this points
+    }
+}
+const updatedPlayer = incrementPoints(player, 2)
+console.log(player === updatedPlayer ? 'Same Player' : 'Different Player')
+....................................................................................
+			React Component and immer js
+.....................................................................................
+
+import React, { useEffect, useState } from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+import produce from 'immer'
+
+
+class Player extends React.Component {
+    state = {
+        name: 'Subramanian',
+        house: {
+            name: 'RavenClaw',
+            points: 10 // increment this points
+        }
+    }
+    onAdd = evt => {
+        // this.setState((oldState) => {
+        //     return {
+        //         ...oldState,  // level -0 clone outter properties only 
+        //         house: {
+        //             ...oldState.house, // level 2
+        //             points: oldState.house.points + 2         //clone all properties except points
+        //         }
+        //     }
+        // })
+        //using immer:
+        this.setState((oldState) => {
+            return produce(oldState, draft => {
+                draft.house.points += 2
+            })
+        })
+    }
+
+    render() {
+        return <div>
+            <h1>State Mutation using Immer</h1>
+            <h1>Name : {this.state.name}</h1>
+            <h2>House  Name {this.state.house.name}</h2>
+            <h2>Points {this.state.house.points}</h2>
+            <button onClick={this.onAdd} className="btn btn-success">Add Point</button>
+        </div>
+    }
+}
+
+
+const App = () => {
+    return <>
+        <Player />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+.....................................................................................
+			Immer and hooks
+...................................................................................
+import React, { useEffect, useState } from 'react'
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+import './App.css'
+import produce from 'immer'
+
+const Player = props => {
+    const [player, setPlayer] = useState({
+        name: 'Subramanian',
+        house: {
+            name: 'RavenClaw',
+            points: 10 // increment this points
+        }
+    })
+    const onAdd = evt => {
+        // setPlayer({
+        //     ...player,  // level -0 clone outter properties only 
+        //     house: {
+        //         ...player.house, // level 2
+        //         points: player.house.points + 2         //clone all properties except points
+        //     }
+        // })
+        setPlayer(player => {
+            return produce(player, draft => {
+                draft.house.points += 2
+            })
+        })
+    }
+
+    return <div>
+        <h1>State Mutation using Immer</h1>
+        <h1>Name : {player.name}</h1>
+        <h2>House  Name {player.house.name}</h2>
+        <h2>Points {player.house.points}</h2>
+        <button onClick={onAdd} className="btn btn-success">Add Point</button>
+    </div>
+}
+
+const App = () => {
+    return <>
+        <Player />
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+..................................................................................
+				Redux
+...................................................................................
+
+What is Redux?
+   Redux is a lib,State management lib.
+
+As of now, we have kept state inside react component- View.
+To separate State from the view layer(react)
+
+We need to isloate state from the react and keep the state inside  lib called "Redux
+
+Redux is not only lib but also pattern for managining and updating application state, using event driven programming model called "actions"
+
+As of how state is encapulated inside component.
+
+How to declare state inside component?
+
+component-1
+
+ let state = {
+    counter:0
+ }
+ how to mutate -biz logic
+ setState(state=>{
+    return {...state,counter:state.counter+1}
+ })
+
+
+component-2
+ let state = {
+    counter:0
+ }
+ how to mutate -biz logic
+ setState(state=>{
+    return {...state,counter:state.counter+1}
+ })
+
+                        Redux and State  Management
+
+
+Redux is going to store all component state into one single object -Application State
+
+const appState = {
+  ....   
+}
+
+Core Concepts or Principles:
+............................
+
+1.State:
+   Redux maintains or stores the data in single object called as application state.
+2.Store
+   Store is object where Redux application state lives.
+   Store offers api to communicate from react and redux to react
+   Store is entry and exit point of react and redux
+3.reducer
+    You know very well how to mutate and where mutate state in react
+     ->Inside setState pure function.
+    Reducer is pure function which returns immutable object.
+
+4.actions
+    An action is like request in webserver, redux actions are plain javascript object
+ eg:
+  let counterAction = {
+	type:'counter/increment'
+  }
+ action may take input also called payload
+  let counterByAmount = {
+   type:'counter/increment',
+   payload:12
+ }
+
+5.Dispatcher 
+  It is transporter which transport action object from react to redux
+  Dispatcher is represented by a method called "dispatch"
+  dispatch is part of "Store object"
+  store.dispatch(action)
+..................................................................................					Building Redux
+...................................................................................
+
+in order to start redux we have two patterns
+
+1.old redux
+2.new redux called "Redux toolkit"
+
+We are going to use "Redux toolkit"
+
+For new Project:
+npx create-react-app myreduxapp --template redux
+
+for existing project
+
+npm install @reduxjs/toolkit  react-redux
+
+
+
+Reducer is a function:
+
+ reducer has to take two args - inital state, action
+
+
+React-Redux:
+ It is official react with redux binding lib, used to connect redux with react
+
+Roles:
+ =>Supply redux store object to the react
+ =>react can dispatch actions to redux
+ =>react can subscribe state changes from redux.
+
+Built in Object:
+ Provider
+   This is object/component reponsiable for sharing redux to react
+
+Note:
+ This is top level component in react and redux echo system
+
+  <Provider store={appStore}>
+	<Your Root Component>	
+ </Provider>
+
+Basic Example:
+..............
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import { configureStore } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//step 1: reducer
+const CounterReducer = (counter = 10, action) => {
+    //biz logic : immutable logic
+    switch (action.type) {
+        case 'counter/increment':
+            //return immutable logic
+            return counter + 1
+        default:
+            return counter; //default state/inital state
+    }
+}
+//Step 2: Create Store Object 
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        counter: CounterReducer
+    }
+})
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//Step 4 : Consume state from the redux, and send actions to redux for mutation
+const Counter = props => {
+    //Grab state from the redux
+    const counter = useSelector(state => {
+        //Get counter from the counter reducer
+        return state.counter //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+    //Write listener
+    const onIncrement = evt => {
+        //send action to redux to increment
+        let incrementAction = {
+            type: 'counter/increment'
+        }
+        dispatch(incrementAction)
+    }
+
+    return <div className="container">
+        <h1>Counter App</h1>
+        <h1>Counter : {counter}</h1>
+        <button onClick={onIncrement} className='btn btn-success'>+</button>
+    </div>
+
+}
+
+
+
+const App = () => {
+    return <>
+        {/* Step 3 */}
+        <Provider store={appStore}>
+            <Counter />
+        </Provider>
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+....................................................................................
+
+State as Literal Object:
+........................
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import { configureStore } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//step 1: reducer
+const CounterReducer = (counter = { value: 30 }, action) => {
+    //biz logic : immutable logic
+    switch (action.type) {
+        case 'counter/increment':
+            //return immutable logic
+            return { ...counter, value: counter.value + 1 }
+        default:
+            return counter; //default state/inital state
+    }
+}
+//Step 2: Create Store Object 
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        counter: CounterReducer
+    }
+})
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//Step 4 : Consume state from the redux, and send actions to redux for mutation
+const Counter = props => {
+    //Grab state from the redux
+    const counter = useSelector(state => {
+        //Get counter from the counter reducer
+        return state.counter //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+    //Write listener
+    const onIncrement = evt => {
+        //send action to redux to increment
+        let incrementAction = {
+            type: 'counter/increment'
+        }
+        dispatch(incrementAction)
+    }
+
+    return <div className="container">
+        <h1>Counter App</h1>
+        <h1>Counter : {counter.value}</h1>
+        <button onClick={onIncrement} className='btn btn-success'>+</button>
+    </div>
+
+}
+
+
+
+const App = () => {
+    return <>
+        {/* Step 3 */}
+        <Provider store={appStore}>
+            <Counter />
+        </Provider>
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+.....................................................................................
+
+Simplifying the Immutable Code using immer js produce api:
+..........................................................
+
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import { configureStore } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+import { produce } from 'immer'
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//step 1: reducer
+const CounterReducer = (counter = { value: 30 }, action) => {
+    //biz logic : immutable logic
+    switch (action.type) {
+        case 'counter/increment':
+            return produce(counter, draft => {
+                draft.value++
+            })
+        default:
+            return counter; //default state/inital state
+    }
+}
+//Step 2: Create Store Object 
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        counter: CounterReducer
+    }
+})
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//Step 4 : Consume state from the redux, and send actions to redux for mutation
+const Counter = props => {
+    //Grab state from the redux
+    const counter = useSelector(state => {
+        //Get counter from the counter reducer
+        return state.counter //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+    //Write listener
+    const onIncrement = evt => {
+        //send action to redux to increment
+        let incrementAction = {
+            type: 'counter/increment'
+        }
+        dispatch(incrementAction)
+    }
+
+    return <div className="container">
+        <h1>Counter App</h1>
+        <h1>Counter : {counter.value}</h1>
+        <button onClick={onIncrement} className='btn btn-success'>+</button>
+    </div>
+
+}
+
+
+
+const App = () => {
+    return <>
+        {/* Step 3 */}
+        <Provider store={appStore}>
+            <Counter />
+        </Provider>
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+....................................................................................
+
+How to write multiple reducers and consume data
+
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import { configureStore } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+import { produce } from 'immer'
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//step 1: reducer
+const CounterReducer = (counter = { value: 30 }, action) => {
+    //biz logic : immutable logic
+    switch (action.type) {
+        case 'counter/increment':
+            return produce(counter, draft => {
+                draft.value++
+            })
+        default:
+            return counter; //default state/inital state
+    }
+}
+//review Reducer
+
+const ReviewReducer = (review = { like: 0, dislike: 0 }, action) => {
+    switch (action.type) {
+        case 'review/like':
+            return produce(review, draft => {
+                draft.like++
+            })
+        case 'review/dislike':
+            return produce(review, draft => {
+                draft.dislike++
+            })
+        default:
+            return review; //default state/inital state
+    }
+}
+
+//Step 2: Create Store Object 
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        counter: CounterReducer,
+        review: ReviewReducer
+    }
+})
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//Step 4 : Consume state from the redux, and send actions to redux for mutation
+const Counter = props => {
+    //Grab state from the redux
+    const counter = useSelector(state => {
+        //Get counter from the counter reducer
+        return state.counter //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+    //Write listener
+    const onIncrement = evt => {
+        //send action to redux to increment
+        let incrementAction = {
+            type: 'counter/increment'
+        }
+        dispatch(incrementAction)
+    }
+
+    return <div className="container">
+        <h1>Counter Page</h1>
+        <h1>Counter : {counter.value}</h1>
+        <button onClick={onIncrement} className='btn btn-success'>+</button>
+    </div>
+
+}
+
+const Review = props => {
+    //Grab state from the redux
+    const review = useSelector(state => {
+        //Get Review from the Review reducer
+        return state.review //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+
+    return <div className="container">
+        <h1>Review Page</h1>
+        <h1>like : {review.like} dislike {review.dislike}</h1>
+        <button onClick={() => {
+            dispatch({ type: 'review/like' })
+        }} className='btn btn-success'>Like</button>
+        <button style={{ margin: 10 }} onClick={() => {
+            dispatch({ type: 'review/dislike' })
+        }} className='btn btn-success'>Dislike</button>
+    </div>
+
+}
+
+const App = () => {
+    return <>
+        {/* Step 3 */}
+        <Provider store={appStore}>
+            <Counter />
+            <hr />
+            <Review />
+        </Provider>
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+.....................................................................................
+				actions and payload
+
+Actions:
+  Action is object having type field
+ let myaction = {
+   type:'counter/increment'
+ }
+
+Action constants:
+  Are variables holding action names
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import { configureStore } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+import { produce } from 'immer'
+
+//action constants
+const counterincrement = 'counter/increment'
+const counterdecrement = 'counter/decrement'
+const reviewlike = 'review/like'
+const reviewdislike = 'review/dislike'
+
+
+
+const CounterReducer = (counter = { value: 30 }, action) => {
+    //biz logic : immutable logic
+    switch (action.type) {
+        case counterincrement:
+            return produce(counter, draft => {
+                draft.value++
+            })
+        case counterdecrement:
+            return produce(counter, draft => {
+                draft.value--
+            })
+        default:
+            return counter; //default state/inital state
+    }
+}
+
+const ReviewReducer = (review = { like: 0, dislike: 0 }, action) => {
+    switch (action.type) {
+        case reviewlike:
+            return produce(review, draft => {
+                draft.like++
+            })
+        case reviewdislike:
+            return produce(review, draft => {
+                draft.dislike++
+            })
+        default:
+            return review; //default state/inital state
+    }
+}
+
+//Step 2: Create Store Object 
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        counter: CounterReducer,
+        review: ReviewReducer
+    }
+})
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//Step 4 : Consume state from the redux, and send actions to redux for mutation
+const Counter = props => {
+    //Grab state from the redux
+    const counter = useSelector(state => {
+        //Get counter from the counter reducer
+        return state.counter //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+    //Write listener
+    const onIncrement = evt => {
+        //send action to redux to increment
+        let incrementAction = {
+            type:counterincrement
+        }
+        dispatch(incrementAction)
+    }
+
+    return <div className="container">
+        <h1>Counter Page</h1>
+        <h1>Counter : {counter.value}</h1>
+        <button onClick={onIncrement} className='btn btn-success'>+</button>
+    </div>
+
+}
+
+const Review = props => {
+    //Grab state from the redux
+    const review = useSelector(state => {
+        //Get counter from the counter reducer
+        return state.review //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+
+    return <div className="container">
+        <h1>Review Page</h1>
+        <h1>like : {review.like} dislike {review.dislike}</h1>
+        <button onClick={() => {
+            dispatch({ type: reviewlike })
+        }} className='btn btn-success'>Like</button>
+        <button style={{ margin: 10 }} onClick={() => {
+            dispatch({ type: reviewdislike })
+        }} className='btn btn-success'>Dislike</button>
+    </div>
+
+}
+
+const App = () => {
+    return <>
+        {/* Step 3 */}
+        <Provider store={appStore}>
+            <Counter />
+            <hr />
+            <Review />
+        </Provider>
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+.....................................................................................
+			How to send input to the reducer-Action creator
+.....................................................................................
+Action creator:
+  Action creator is function which returns action object
+  Action creators are used to get input from the ui and send to reducer.
+
+function increBy(incrementator){
+   return {
+    type:increment
+    payload:incrementator
+  } //action object
+}
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import { configureStore } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+import { produce } from 'immer'
+
+//action constants
+const counterincrement = 'counter/increment'
+const counterincrementBy = 'counter/incrementBy'
+
+const counterdecrement = 'counter/decrement'
+
+
+const CounterReducer = (counter = { value: 30 }, action) => {
+    //biz logic : immutable logic
+    switch (action.type) {
+        case counterincrement:
+            return produce(counter, draft => {
+                draft.value++
+            })
+        case counterincrementBy:
+            return produce(counter, draft => {
+                draft.value += action.payload
+            })
+        case counterdecrement:
+            return produce(counter, draft => {
+                draft.value--
+            })
+        default:
+            return counter; //default state/inital state
+    }
+}
+
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        counter: CounterReducer
+    }
+})
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//Step 4 : Consume state from the redux, and send actions to redux for mutation
+const Counter = props => {
+    //Grab state from the redux
+    const counter = useSelector(state => {
+        //Get counter from the counter reducer
+        return state.counter //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+
+    const onIncrementBy = evt => {
+        //action creator
+        const incrementActioncreator = payload => {
+            return {
+                type: counterincrementBy,
+                //payload:payload
+                payload
+            }
+        }
+        //trigger with payload
+        dispatch(incrementActioncreator(2))
+    }
+
+
+    return <div className="container">
+        <h1>Counter Page</h1>
+        <h1>Counter : {counter.value}</h1>
+        <button onClick={() => {
+            dispatch({ type: counterincrement })
+        }} className='btn btn-success'>+</button>
+        <button onClick={() => {
+            dispatch({ type: counterincrement })
+        }} className='btn btn-success'>-</button>
+
+        <button onClick={onIncrementBy} className='btn btn-success'>IncrementBy</button>
+    </div>
+
+}
+
+const App = () => {
+    return <>
+        {/* Step 3 */}
+        <Provider store={appStore}>
+            <Counter />
+
+        </Provider>
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+.....................................................................................
+			 Reducers -Deep dive
+.....................................................................................
+Redux toolkit offers various ways to write reducers.
+
+Way 1:
+  Plain js pattern - old pattern
+
+const CounterReducer = (counter = { value: 30 }, action) => {
+    //biz logic : immutable logic
+    switch (action.type) {
+        case counterincrement:
+            return produce(counter, draft => {
+                draft.value++
+            })
+        case counterincrementBy:
+            return produce(counter, draft => {
+                draft.value += action.payload
+            })
+        case counterdecrement:
+            return produce(counter, draft => {
+                draft.value--
+            })
+        default:
+            return counter; //default state/inital state
+    }
+}
+....................................................................................
+
+way 2-Abstract reducers using createReducer api from redux toolkit.
+.....................................................................................
+
+createReducer:
+  It helper api which streamlines the implementation of old reducers.
+
+createReducer uses two coding patterns:
+
+1.builder callback pattern
+2.map object notation pattern
+
+Recommended one is builder callback pattern.
+
+
+syntax:
+const counterReducer = createReducer(initalState, builder => {
+    //addCase takes two arg one is action name and produce function logic
+    builder.addCase(increment, (state, action) => {
+        state.value++
+    }).addCase(incrementBy, (state, action) => {
+        state.value += action.payload
+    }).addCase(decrement, (state, action) => {
+        state.value--
+    }).addDefaultCase((state, action) => {
+        console.log('default case')
+    })
+})
+
+
+Builder Callback with createReducer:
+
+
+
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import { configureStore, createReducer } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+
+//action constants
+const increment = 'counter/increment'
+const incrementBy = 'counter/incrementBy'
+const decrement = 'counter/decrement'
+
+//reducer using createReducer api using builder callback pattern
+const initalState = { value: 10 }
+//createReducer takes two args one is initalState and another one is function which takes builder object as arg.
+//in createReducer immer js is built in we dont need to use produce function
+const counterReducer = createReducer(initalState, builder => {
+    //addCase takes two arg one is action name and produce function logic
+    builder.addCase(increment, (state, action) => {
+        state.value++
+    }).addCase(incrementBy, (state, action) => {
+        state.value += action.payload
+    }).addCase(decrement, (state, action) => {
+        state.value--
+    }).addDefaultCase((state, action) => {
+        console.log('default case')
+    })
+})
+
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        counter: counterReducer
+    }
+})
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//Step 4 : Consume state from the redux, and send actions to redux for mutation
+const Counter = props => {
+    //Grab state from the redux
+    const counter = useSelector(state => {
+        //Get counter from the counter reducer
+        return state.counter //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+
+    const onIncrementBy = evt => {
+        //action creator
+        const incrementActioncreator = payload => {
+            return {
+                type: incrementBy,
+                //payload:payload
+                payload
+            }
+        }
+        //trigger with payload
+        dispatch(incrementActioncreator(2))
+    }
+
+
+    return <div className="container">
+        <h1>Counter Page</h1>
+        <h1>Counter : {counter.value}</h1>
+        <button onClick={() => {
+            dispatch({ type: increment })
+        }} className='btn btn-success'>+</button>
+        <button onClick={() => {
+            dispatch({ type: decrement })
+        }} className='btn btn-success'>-</button>
+
+        <button onClick={onIncrementBy} className='btn btn-success'>IncrementBy</button>
+    </div>
+
+}
+
+
+
+const App = () => {
+    return <>
+        <Provider store={appStore}>
+            <Counter />
+        </Provider>
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+
+...................................................................................
+			createReducer with map object notation
+...................................................................................
+
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import { configureStore, createReducer } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+
+//action constants
+const increment = 'counter/increment'
+const incrementBy = 'counter/incrementBy'
+const decrement = 'counter/decrement'
+
+//reducer using createReducer api using Map Object notation  pattern
+const initalState = { value: 30 }
+const counterReducer = createReducer(initalState, {
+    'counter/increment': (state, action) => {
+        console.log(state.value)
+        state.value++
+    },
+    'counter/decrement': (state, action) => {
+        console.log(state.value)
+        state.value--
+    },
+    'counter/incrementBy': (state, action) => {
+        console.log(state.value)
+        state.value = state.value + action.payload
+    }
+})
+
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        counter: counterReducer
+    }
+})
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//Step 4 : Consume state from the redux, and send actions to redux for mutation
+const Counter = props => {
+    //Grab state from the redux
+    const counter = useSelector(state => {
+        //Get counter from the counter reducer
+        return state.counter //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+
+    const onIncrementBy = evt => {
+        //action creator
+        const incrementActioncreator = payload => {
+            return {
+                type: incrementBy,
+                //payload:payload
+                payload
+            }
+        }
+        //trigger with payload
+        dispatch(incrementActioncreator(2))
+    }
+
+
+    return <div className="container">
+        <h1>Counter Page</h1>
+        <h1>Counter : {counter.value}</h1>
+        <button onClick={() => {
+            dispatch({ type: increment })
+        }} className='btn btn-success'>+</button>
+        <button onClick={() => {
+            dispatch({ type: decrement })
+        }} className='btn btn-success'>-</button>
+
+        <button onClick={onIncrementBy} className='btn btn-success'>IncrementBy</button>
+    </div>
+
+}
+
+
+
+const App = () => {
+    return <>
+        <Provider store={appStore}>
+            <Counter />
+        </Provider>
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+
+Map Object Noation cases:
+const counterReducer = createReducer(initalState, {
+    'counter/increment': (state, action) => {
+        console.log(state.value)
+        state.value++
+    },
+    'counter/decrement': (state, action) => {
+        console.log(state.value)
+        state.value--
+    },
+    'counter/incrementBy': (state, action) => {
+        console.log(state.value)
+        state.value = state.value + action.payload
+    }
+})
+Here 'counter/increment' is hardcoded which is not recommended if you have action names
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import { configureStore, createReducer } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+
+//action constants
+const increment = 'counter/increment'
+const incrementBy = 'counter/incrementBy'
+const decrement = 'counter/decrement'
+
+//reducer using createReducer api using Map Object notation  pattern
+const initalState = { value: 30 }
+// const counterReducer = createReducer(initalState, {
+//     //actionName hardcorded
+//     'counter/increment': (state, action) => {
+//         console.log(state.value)
+//         state.value++
+//     },
+//     'counter/decrement': (state, action) => {
+//         console.log(state.value)
+//         state.value--
+//     },
+//     'counter/incrementBy': (state, action) => {
+//         console.log(state.value)
+//         state.value = state.value + action.payload
+//     }
+// })
+
+const counterReducer = createReducer(initalState, {
+    //action Name from the variable
+    [increment]: (state, action) => {
+        console.log(state.value)
+        state.value++
+    },
+    [decrement]: (state, action) => {
+        console.log(state.value)
+        state.value--
+    },
+    [incrementBy]: (state, action) => {
+        console.log(state.value)
+        state.value = state.value + action.payload
+    }
+})
+
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        counter: counterReducer
+    }
+})
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//Step 4 : Consume state from the redux, and send actions to redux for mutation
+const Counter = props => {
+    //Grab state from the redux
+    const counter = useSelector(state => {
+        //Get counter from the counter reducer
+        return state.counter //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+
+    const onIncrementBy = evt => {
+        //action creator
+        const incrementActioncreator = payload => {
+            return {
+                type: incrementBy,
+                //payload:payload
+                payload
+            }
+        }
+        //trigger with payload
+        dispatch(incrementActioncreator(2))
+    }
+
+
+    return <div className="container">
+        <h1>Counter Page</h1>
+        <h1>Counter : {counter.value}</h1>
+        <button onClick={() => {
+            dispatch({ type: increment })
+        }} className='btn btn-success'>+</button>
+        <button onClick={() => {
+            dispatch({ type: decrement })
+        }} className='btn btn-success'>-</button>
+
+        <button onClick={onIncrementBy} className='btn btn-success'>IncrementBy</button>
+    </div>
+
+}
+
+
+
+const App = () => {
+    return <>
+        <Provider store={appStore}>
+            <Counter />
+        </Provider>
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+....................................................................................
+		   How to create Actions using createAction 
+
+
+ createAction is helper fuction to create action.
+ it helps to create action creator too.
+
+ syntax:
+  function createAction(type,prepareAction?)
+
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import { configureStore, createAction, createReducer } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+
+//action constants
+// const increment = 'counter/increment'
+// const incrementBy = 'counter/incrementBy'
+// const decrement = 'counter/decrement'
+
+//action creators
+const increment = createAction('counter/increment')
+const incrementBy = createAction('counter/incrementBy')
+const decrement = createAction('counter/decrement')
+
+//reducer using createReducer api using Map Object notation  pattern
+const initalState = { value: 30 }
+
+const counterReducer = createReducer(initalState, {
+    //action Name from the variable
+    [increment]: (state, action) => {
+        console.log(state.value)
+        state.value++
+    },
+    [decrement]: (state, action) => {
+        console.log(state.value)
+        state.value--
+    },
+    [incrementBy]: (state, action) => {
+        console.log(state.value)
+        state.value = state.value + action.payload
+    }
+})
+
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        counter: counterReducer
+    }
+})
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//Step 4 : Consume state from the redux, and send actions to redux for mutation
+const Counter = props => {
+    //Grab state from the redux
+    const counter = useSelector(state => {
+        //Get counter from the counter reducer
+        return state.counter //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+
+    const onIncrementBy = evt => {
+            //trigger with payload
+        dispatch(incrementBy(2))
+    }
+
+
+    return <div className="container">
+        <h1>Counter Page</h1>
+        <h1>Counter : {counter.value}</h1>
+        <button onClick={() => {
+            dispatch(increment())
+        }} className='btn btn-success'>+</button>
+        <button onClick={() => {
+            dispatch(decrement())
+        }} className='btn btn-success'>-</button>
+
+        <button onClick={onIncrementBy} className='btn btn-success'>IncrementBy</button>
+    </div>
+
+}
+
+
+
+const App = () => {
+    return <>
+        <Provider store={appStore}>
+            <Counter />
+        </Provider>
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+............................................................................
+			What if you see all in one place
+			  createSlice
+.................................................................................
+
+createSlice is abstraction for createAction and createReducer
+   You can auto generation actions and reducers out of slice.
+
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import { configureStore, createSlice, } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+
+//slice = {reducers +actions}
+const counterSlice = createSlice({
+    name: 'counter',  //name used in action types : 'counter/increment'
+    initialState: {
+        value: 30
+    },
+    reducers: {
+        //object notation pattern
+        increment(state) {
+            state.value++
+        },
+        decrement(state) {
+            state.value--
+        },
+        incrementBy(state, action) {
+            state.value += action.payload
+        }
+    },
+    //builder callback api : it is recommended for typescript
+    extraReducers: builder => {
+        //builder.addCase
+        builder.addDefaultCase((state, action) => { })
+    }
+
+})
+console.log(counterSlice)
+//extract actions 
+const { increment, decrement, incrementBy } = counterSlice.actions
+console.log(increment())
+const counterReducer = counterSlice.reducer
+
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        counter: counterReducer
+    }
+})
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//Step 4 : Consume state from the redux, and send actions to redux for mutation
+const Counter = props => {
+    //Grab state from the redux
+    const counter = useSelector(state => {
+        //Get counter from the counter reducer
+        return state.counter //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+
+    const onIncrementBy = evt => {
+        //trigger with payload
+        dispatch(incrementBy(2))
+    }
+
+
+    return <div className="container">
+        <h1>Counter Page</h1>
+        <h1>Counter : {counter.value}</h1>
+        <button onClick={() => {
+            dispatch(increment())
+        }} className='btn btn-success'>+</button>
+        <button onClick={() => {
+            dispatch(decrement())
+        }} className='btn btn-success'>-</button>
+
+        <button onClick={onIncrementBy} className='btn btn-success'>IncrementBy</button>
+    </div>
+
+}
+
+
+
+const App = () => {
+    return <>
+        <Provider store={appStore}>
+            <Counter />
+        </Provider>
+    </>
+}
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+			.....................................................................................
+				Middlewares
+.....................................................................................
+
+Cross cutting concern.
+
+eg:
+logging
+
+
+Regular work flow:
+  store.dispatch(action)--------------------------|store-----Reducer---NewState
+
+Middleware work flow:
+ 
+			     middlewares
+store.dispatch(action)------------|||--------------|store-----Reducer---NewState
+
+
+configureStore
+ has default middlewares already
+
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        counter: counterReducer
+    },
+    middleware:[m1,m2,m3]
+})
+
+=>Immutability check middleware
+=>Serializability check middleware
+=>Thunk -> Async flows - api calls
+
+By default configureStore has three middlewares.
+
+if you want to add your own middleware /third party middleware , how to add it.
+
+Syntax -1 
+
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: [thunk, logger],
+})
+
+// Store specifically has the thunk and logger middleware applied
+
+//Syntax-2
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
+})
+
+Eg: 
+ Adding third party logger middleware
+
+npm i --save redux-logger
+
+
+import logger from 'redux-logger'
+
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
+})
+...
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import { configureStore, createSlice, } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+import logger from 'redux-logger'
+//slice = {reducers +actions}
+const counterSlice = createSlice({
+    name: 'counter',  //name used in action types : 'counter/increment'
+    initialState: {
+        value: 30
+    },
+    reducers: {
+        //object notation pattern
+        increment(state) {
+            state.value++
+        },
+        decrement(state) {
+            state.value--
+        },
+        incrementBy(state, action) {
+            state.value += action.payload
+        }
+    },
+    //builder callback api : it is recommended for typescript
+    extraReducers: builder => {
+        //builder.addCase
+        builder.addDefaultCase((state, action) => { })
+    }
+
+})
+//extract actions 
+const { increment, decrement, incrementBy } = counterSlice.actions
+const counterReducer = counterSlice.reducer
+
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        counter: counterReducer
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
+})
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//Step 4 : Consume state from the redux, and send actions to redux for mutation
+const Counter = props => {
+    //Grab state from the redux
+    const counter = useSelector(state => {
+        //Get counter from the counter reducer
+        return state.counter //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+
+    const onIncrementBy = evt => {
+        //trigger with payload
+        dispatch(incrementBy(2))
+    }
+
+
+    return <div className="container">
+        <h1>Counter Page</h1>
+        <h1>Counter : {counter.value}</h1>
+        <button onClick={() => {
+            dispatch(increment())
+        }} className='btn btn-success'>+</button>
+        <button onClick={() => {
+            dispatch(decrement())
+        }} className='btn btn-success'>-</button>
+
+        <button onClick={onIncrementBy} className='btn btn-success'>IncrementBy</button>
+    </div>
+
+}
+
+
+
+const App = () => {
+    return <>
+        <Provider store={appStore}>
+            <Counter />
+        </Provider>
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+.....................................................................................
+		      WebService calls and Redux
+.....................................................................................
+
+All web service calls must go via redux middleware only.
+Redux offers a special middleware called "thunk" - through which we can make api calls.
+Redux tool kit offers thunk as default middleware, so we dont need to install thunk middleware and configure
+
+
+Async Actions using Promises:
+..............................
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import { configureStore, createAsyncThunk, createSlice, } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+import logger from 'redux-logger'
+
+
+//add async behaviour
+//api Which returns promise :
+export function fetchCount(amount = 1) {
+    return new Promise((resolve) =>
+        // setTimeout(() => resolve({ data: amount }), 500)
+        setTimeout(resolve, 5000, amount)
+    );
+}
+//create middleware which executes async task: createAsyncThunk
+const incrementAsync = createAsyncThunk('counter/fetchCount', async (amount) => {
+    const response = await fetchCount(amount);
+    // The value we return becomes the `fulfilled` action payload
+    return response;
+})
+
+const counterSlice = createSlice({
+    name: 'counter',  //name used in action types : 'counter/increment'
+    initialState: {
+        value: 10,
+        status: 'idle', //to track the status of promise idle | pending | fulfilled
+    },
+    reducers: {
+        increment(state) {
+            state.value++
+        },
+        decrement(state) {
+            state.value--
+        },
+        incrementBy(state, action) {
+            state.value += action.payload
+        }
+    },
+    //builder callback api : it is recommended for typescript
+    extraReducers: builder => {
+        //builder.addCase
+        console.log(builder)
+        builder.addCase(incrementAsync.pending, (state) => {
+            state.status = 'loading';
+        }).addCase(incrementAsync.fulfilled, (state, action) => {
+            state.status = 'fulfilled';
+            state.value = state.value + action.payload
+        })
+    }
+
+})
+//extract actions 
+const { increment, decrement, incrementBy } = counterSlice.actions
+const counterReducer = counterSlice.reducer
+
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        counter: counterReducer
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
+})
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//Step 4 : Consume state from the redux, and send actions to redux for mutation
+const Counter = props => {
+    //Grab state from the redux
+    const counter = useSelector(state => {
+        //Get counter from the counter reducer
+        return state.counter //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+
+    const onIncrementBy = evt => {
+        //trigger with payload
+        dispatch(incrementBy(2))
+    }
+
+
+    return <div className="container">
+        <h1>Counter Page</h1>
+        <h1>Counter : {counter.value} {counter.status}</h1>
+        <button onClick={() => {
+            dispatch(increment())
+        }} className='btn btn-success'>+</button>
+        <button onClick={() => {
+            dispatch(decrement())
+        }} className='btn btn-success'>-</button>
+
+        <button onClick={onIncrementBy} className='btn btn-success'>IncrementBy</button>
+        <button
+            onClick={() => dispatch(incrementAsync(10))}
+        >
+            Add Async
+        </button>
+    </div>
+
+}
+
+const App = () => {
+    return <>
+        <Provider store={appStore}>
+            <Counter />
+        </Provider>
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+...................................................................................
+			  Redux -Toolkit async web service calls
+.....................................................................................
+
+import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.css'
+import { configureStore, createAsyncThunk, createSlice, } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import logger from 'redux-logger'
+
+//api 
+function fetchTodos() {
+    const url = 'https://jsonplaceholder.typicode.com/todos'
+    return fetch(url)
+}
+const fetchTodosAsync = createAsyncThunk('todos/fetch', async () => {
+    const todos = await (await fetchTodos()).json()
+    return todos
+})
+
+const TodoSlice = createSlice({
+    name: 'todos',
+    initialState: {
+        entities: [],
+        loading: 'idle'
+    },
+    reducers: {},
+    extraReducers: builder => {
+        builder.addCase(fetchTodosAsync.fulfilled, (state, action) => {
+            state.loading = 'fulfilled'
+            state.entities.push(action.payload)
+        })
+    }
+})
+const TodoReducer = TodoSlice.reducer
+
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        todo: TodoReducer
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
+})
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//Step 4 : Consume state from the redux, and send actions to redux for mutation
+const Todos = props => {
+    const todos = useSelector(state => {
+        return state.todo
+    })
+    // console.log(todos.entities[0])
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchTodosAsync())
+    }, [])
+    
+    const { loading, entities } = todos
+    console.log(entities)
+    if (loading === 'fulfilled') {
+        return <ul>
+            {
+                entities[0].map(todo => {
+                    return <li key={todo.id}>{todo.title}</li>
+                })
+            }
+        </ul>
+    }
+}
+
+const App = () => {
+    return <>
+        <Provider store={appStore}>
+            <Todos />
+        </Provider>
+    </>
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
+.....................................................................................
+	       How to build single page web apps -Router
+.....................................................................................
+
+Create new App:
+...............
+
+npx create-react-app routerreduxreact --template redux
+
+
+React-Router:
+  It is a lib for building spa.
+
+How to install react router?
+ 
+ npm install react-router-dom
+
+
+Core concepts:
+  In spa there is only one physical page - index.html
+  Rest of every thing is going to be virtual pages or partials
+  Every page is component and its tree.
+
+MenuBar
+ Menu Item
+
+Url mapping or path mapping
+component binding with an url.
+
+
+Basic Router :
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './index.css';
+
+
+const Home = props => <h1>Home</h1>
+const Counter = props => <h1>Counter</h1>
+
+
+//router configuration
+const router = createBrowserRouter([
+    {
+        path: "/", //url mapping
+        element: <Home />
+    },
+    {
+        path: "/counter", //url mapping
+        element: <Counter />
+    }
+
+])
+
+const App = props => {
+    return <div>
+        <h1>React Router App</h1>
+        {/* <Home/>
+        <Counter/> */}
+        <RouterProvider router={router} />
+
+    </div>
+}
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<App />);
+
+How to test the above app?
+
+ http://localhost:3000
+ http://localhost:3000/counter
+....................................................................................
+		    Navigating between Pages
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
+import './index.css';
+
+//components
+const Home = props => <h1>Home</h1>
+const AboutUs = props => <h1>About Us</h1>
+const Counter = props => <h1>Counter</h1>
+const DashBoard = props => <h1>Dashboard</h1>
+
+
+//create Layout Component
+const Layout = props => {
+    // Menus
+    return <nav>
+        <ul>
+            <li>
+                <Link to="/">Home</Link>
+            </li>
+            <li>
+                <Link to="/about">About</Link>
+            </li>
+            <li>
+                <Link to="/dashboard">Dashboard</Link>
+            </li>
+            <li>
+                <Link to="/counter">Counter</Link>
+            </li>
+        </ul>
+        <hr />
+        {/* Place holder to render compoents */}
+        <Outlet />
+    </nav>
+}
+
+// Root Navigation
+const App = props => {
+    return <div>
+        <h1>Router App</h1>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="about" element={<AboutUs />} />
+                <Route path="dashboard" element={<DashBoard />} />
+                <Route path="counter" element={<Counter />} />
+            </Route>
+        </Routes>
+    </div>
+}
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<>
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+</>);
+...................................................................................
+			  Counter redux logic with Router
+..................................................................................
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
+import './index.css';
+import { configureStore, createAsyncThunk, createSlice, } from '@reduxjs/toolkit'
+import { Provider, useDispatch, useSelector } from 'react-redux'
+
+
+const counterSlice = createSlice({
+    name: 'counter',  //name used in action types : 'counter/increment'
+    initialState: {
+        value: 30
+    },
+    reducers: {
+        //object notation pattern
+        increment(state) {
+            state.value++
+        },
+        decrement(state) {
+            state.value--
+        },
+        incrementBy(state, action) {
+            state.value += action.payload
+        }
+    },
+    //builder callback api : it is recommended for typescript
+    extraReducers: builder => {
+        //builder.addCase
+        builder.addDefaultCase((state, action) => { })
+    }
+
+})
+//extract actions 
+const { increment, decrement, incrementBy } = counterSlice.actions
+const counterReducer = counterSlice.reducer
+
+const appStore = configureStore({
+    reducer: {
+        //list of Reducers
+        counter: counterReducer
+    },
+})
+
+
+//components
+const Home = props => <h1>Home</h1>
+const AboutUs = props => <h1>About Us</h1>
+const DashBoard = props => <h1>Dashboard</h1>
+const Counter = props => {
+    //Grab state from the redux
+    const counter = useSelector(state => {
+        //Get counter from the counter reducer
+        return state.counter //appState.reducerName
+    })
+    //Get Dispatcher 
+    const dispatch = useDispatch()
+
+    const onIncrementBy = evt => {
+        //trigger with payload
+        dispatch(incrementBy(2))
+    }
+
+
+    return <div className="container">
+        <h1>Counter Page</h1>
+        <h1>Counter : {counter.value}</h1>
+        <button onClick={() => {
+            dispatch(increment())
+        }} className='btn btn-success'>+</button>
+        <button onClick={() => {
+            dispatch(decrement())
+        }} className='btn btn-success'>-</button>
+
+        <button onClick={onIncrementBy} className='btn btn-success'>IncrementBy</button>
+    </div>
+
+}
+
+//create Layout Component
+const Layout = props => {
+    // Menus
+    return <nav>
+        <ul>
+            <li>
+                <Link to="/">Home</Link>
+            </li>
+            <li>
+                <Link to="/about">About</Link>
+            </li>
+            <li>
+                <Link to="/dashboard">Dashboard</Link>
+            </li>
+            <li>
+                <Link to="/counter">Counter</Link>
+            </li>
+        </ul>
+        <hr />
+        {/* Place holder to render compoents */}
+        <Outlet />
+    </nav>
+}
+
+// Root Navigation
+const App = props => {
+    return <div>
+        <h1>Router App</h1>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="about" element={<AboutUs />} />
+                <Route path="dashboard" element={<DashBoard />} />
+                <Route path="counter" element={<Counter />} />
+            </Route>
+        </Routes>
+    </div>
+}
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<>
+    {/* Redux Provider must be top level component */}
+    <Provider store={appStore}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>
+</>);
+.....................................................................................
+			 Master -Details Navigation
+.....................................................................................
+
+Web Service Api calls and build menus dynamically , navigate next page and programmetic navigate.
+
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route, Link, Outlet, useParams, useNavigate } from 'react-router-dom';
+import './index.css';
+import React, { useEffect, useState } from 'react'
+//components
+const Home = props => <h1>Home</h1>
+const AboutUs = props => <h1>About Us</h1>
+const Counter = props => <h1>Counter</h1>
+const DashBoard = props => <h1>Dashboard</h1>
+
+const Error = props => {
+    return <>
+        <h2>{props.error}</h2>
+    </>
+}
+const Spinner = props => {
+    return <>
+        <h2 style={{ backgroundColor: 'yellow' }}>Loading...</h2>
+    </>
+}
+
+const TodoList = props => {
+    const { todos } = props
+    return <ul className="list-group">
+        {todos.map((todo, index) => (
+            <li key={index} style={{ listStyle: 'none' }} >
+                <span style={{ margin: 10 }}>
+                    {todo.id}
+                </span>
+                <span>
+                    <Link to={`/details/${todo.id}`}>{todo.title}</Link>
+                </span>
+            </li>
+        ))}
+    </ul>
+}
+
+
+
+const Todos = props => {
+    let initalState = {
+        isLoaded: false, //spinner status
+        items: [], //data,
+        error: null
+    }
+    const [todos, setTodos] = useState(initalState)
+
+    async function fetchTodos() {
+        //api calls
+        const url = 'https://jsonplaceholder.typicode.com/todos'
+        try {
+            const values = await (await fetch(url)).json()
+            setTodos({ ...todos, isLoaded: true, items: todos.items.concat(values) })
+        }
+        catch (err) {
+            setTodos({ ...todos, isLoaded: true, err: err })
+        }
+    }
+    //componentDidMount
+    useEffect(() => {
+        fetchTodos()
+    }, [])
+    const { error, isLoaded, items } = todos
+    //conditional Rendering
+    if (error) {
+        return <Error error={error} />
+    } else if (!isLoaded) {
+        return <Spinner />
+    } else {
+        return <TodoList todos={items} />
+    }
+
+}
+const TodoDetailsPage = props => {
+    let { id } = useParams();
+    let params = useParams()
+    console.log(params)
+    const navigate = useNavigate();
+
+    return <>
+        <h1>Details {id}</h1>
+        <button onClick={() => {
+            navigate('/todos')
+        }}>Todos</button>
+    </>
+}
+
+//create Layout Component
+const Layout = props => {
+    // Menus
+    return <nav>
+        <ul>
+            <li>
+                <Link to="/">Home</Link>
+            </li>
+            <li>
+                <Link to="/about">About</Link>
+            </li>
+            <li>
+                <Link to="/dashboard">Dashboard</Link>
+            </li>
+            <li>
+                <Link to="/counter">Counter</Link>
+            </li>
+            <li>
+                <Link to="/todos">Todos</Link>
+            </li>
+        </ul>
+        <hr />
+        {/* Place holder to render compoents */}
+        <Outlet />
+    </nav>
+}
+
+// Root Navigation
+const App = props => {
+    return <div>
+        <h1>Router App</h1>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="about" element={<AboutUs />} />
+                <Route path="dashboard" element={<DashBoard />} />
+                <Route path="counter" element={<Counter />} />
+                <Route path="todos" element={<Todos />} />
+                <Route path="details/:id" element={<TodoDetailsPage />} />
+            </Route>
+        </Routes>
+    </div>
+}
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<>
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+</>);
+.....................................................................................
+			Page Not found
+.....................................................................................
+<Route path="*" element={}/>
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route, Link, Outlet, useParams, useNavigate } from 'react-router-dom';
+import './index.css';
+import React, { useEffect, useState } from 'react'
+//components
+const Home = props => <h1>Home</h1>
+const AboutUs = props => <h1>About Us</h1>
+const Counter = props => <h1>Counter</h1>
+const DashBoard = props => <h1>Dashboard</h1>
+
+const Error = props => {
+    return <>
+        <h2>{props.error}</h2>
+    </>
+}
+const Spinner = props => {
+    return <>
+        <h2 style={{ backgroundColor: 'yellow' }}>Loading...</h2>
+    </>
+}
+
+const TodoList = props => {
+    const { todos } = props
+    return <ul className="list-group">
+        {todos.map((todo, index) => (
+            <li key={index} style={{ listStyle: 'none' }} >
+                <span style={{ margin: 10 }}>
+                    {todo.id}
+                </span>
+                <span>
+                    <Link to={`/details/${todo.id}`}>{todo.title}</Link>
+                </span>
+            </li>
+        ))}
+    </ul>
+}
+
+
+
+const Todos = props => {
+    let initalState = {
+        isLoaded: false, //spinner status
+        items: [], //data,
+        error: null
+    }
+    const [todos, setTodos] = useState(initalState)
+
+    async function fetchTodos() {
+        //api calls
+        const url = 'https://jsonplaceholder.typicode.com/todos'
+        try {
+            const values = await (await fetch(url)).json()
+            setTodos({ ...todos, isLoaded: true, items: todos.items.concat(values) })
+        }
+        catch (err) {
+            setTodos({ ...todos, isLoaded: true, err: err })
+        }
+    }
+    //componentDidMount
+    useEffect(() => {
+        fetchTodos()
+    }, [])
+    const { error, isLoaded, items } = todos
+    //conditional Rendering
+    if (error) {
+        return <Error error={error} />
+    } else if (!isLoaded) {
+        return <Spinner />
+    } else {
+        return <TodoList todos={items} />
+    }
+
+}
+const TodoDetailsPage = props => {
+    let { id } = useParams();
+    let params = useParams()
+    console.log(params)
+    const navigate = useNavigate();
+
+    return <>
+        <h1>Details {id}</h1>
+        <button onClick={() => {
+            navigate('/todos')
+        }}>Todos</button>
+    </>
+}
+
+
+//create Layout Component
+const Layout = props => {
+    // Menus
+    return <nav>
+        <ul>
+            <li>
+                <Link to="/">Home</Link>
+            </li>
+            <li>
+                <Link to="/about">About</Link>
+            </li>
+            <li>
+                <Link to="/dashboard">Dashboard</Link>
+            </li>
+            <li>
+                <Link to="/counter">Counter</Link>
+            </li>
+            <li>
+                <Link to="/todos">Todos</Link>
+            </li>
+        </ul>
+        <hr />
+        {/* Place holder to render compoents */}
+        <Outlet />
+    </nav>
+}
+
+// Root Navigation
+const App = props => {
+    return <div>
+        <h1>Router App</h1>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="about" element={<AboutUs />} />
+                <Route path="dashboard" element={<DashBoard />} />
+                <Route path="counter" element={<Counter />} />
+                <Route path="todos" element={<Todos />} />
+                <Route path="details/:id" element={<TodoDetailsPage />} />
+                {/* Nested Routing : Menu with in another:Sub Menu */}
+                <Route path="user" element={<User/>}/>
+                {/* No match found */}
+                <Route path="*" element={<h1>Page Not Found</h1>} />
+
+            </Route>
+        </Routes>
+    </div>
+}
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<>
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+</>);
+....................................................................................
+				Nested Routing
+....................................................................................
+
+Menu
+ |
+  Sub Menu
+
+User
+ |
+ Profile
+ Account
+
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route, Link, Outlet, useParams, useNavigate } from 'react-router-dom';
+import './index.css';
+import React, { useEffect, useState } from 'react'
+//components
+const Home = props => <h1>Home</h1>
+const AboutUs = props => <h1>About Us</h1>
+const Counter = props => <h1>Counter</h1>
+const DashBoard = props => <h1>Dashboard</h1>
+
+const Error = props => {
+    return <>
+        <h2>{props.error}</h2>
+    </>
+}
+const Spinner = props => {
+    return <>
+        <h2 style={{ backgroundColor: 'yellow' }}>Loading...</h2>
+    </>
+}
+
+const TodoList = props => {
+    const { todos } = props
+    return <ul className="list-group">
+        {todos.map((todo, index) => (
+            <li key={index} style={{ listStyle: 'none' }} >
+                <span style={{ margin: 10 }}>
+                    {todo.id}
+                </span>
+                <span>
+                    <Link to={`/details/${todo.id}`}>{todo.title}</Link>
+                </span>
+            </li>
+        ))}
+    </ul>
+}
+
+
+
+const Todos = props => {
+    let initalState = {
+        isLoaded: false, //spinner status
+        items: [], //data,
+        error: null
+    }
+    const [todos, setTodos] = useState(initalState)
+
+    async function fetchTodos() {
+        //api calls
+        const url = 'https://jsonplaceholder.typicode.com/todos'
+        try {
+            const values = await (await fetch(url)).json()
+            setTodos({ ...todos, isLoaded: true, items: todos.items.concat(values) })
+        }
+        catch (err) {
+            setTodos({ ...todos, isLoaded: true, err: err })
+        }
+    }
+    //componentDidMount
+    useEffect(() => {
+        fetchTodos()
+    }, [])
+    const { error, isLoaded, items } = todos
+    //conditional Rendering
+    if (error) {
+        return <Error error={error} />
+    } else if (!isLoaded) {
+        return <Spinner />
+    } else {
+        return <TodoList todos={items} />
+    }
+
+}
+const TodoDetailsPage = props => {
+    let { id } = useParams();
+    let params = useParams()
+    console.log(params)
+    const navigate = useNavigate();
+
+    return <>
+        <h1>Details {id}</h1>
+        <button onClick={() => {
+            navigate('/todos')
+        }}>Todos</button>
+    </>
+}
+
+
+//create Layout Component
+const Layout = props => {
+    // Menus
+    return <nav>
+        <ul>
+            <li>
+                <Link to="/">Home</Link>
+            </li>
+            <li>
+                <Link to="/about">About</Link>
+            </li>
+            <li>
+                <Link to="/dashboard">Dashboard</Link>
+            </li>
+            <li>
+                <Link to="/counter">Counter</Link>
+            </li>
+            <li>
+                <Link to="/todos">Todos</Link>
+            </li>
+            <li>
+                <Link to="/user">User</Link>
+            </li>
+        </ul>
+        <hr />
+        {/* Place holder to render compoents */}
+        <Outlet />
+    </nav>
+}
+
+const Profile = props => {
+    return <h2>Profile</h2>
+}
+const Account = props => {
+    return <h2>Account</h2>
+}
+const User = props => {
+    return <>
+        <h1>User Page</h1>
+        <nav>
+            <Link to="profile">Profile</Link> |
+            <Link to="account">Account</Link>
+        </nav>
+        {/* Place holder to render compoents */}
+        <Outlet/>
+    </>
+}
+
+// Root Navigation
+const App = props => {
+    return <div>
+        <h1>Router App</h1>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="about" element={<AboutUs />} />
+                <Route path="dashboard" element={<DashBoard />} />
+                <Route path="counter" element={<Counter />} />
+                <Route path="todos" element={<Todos />} />
+                <Route path="details/:id" element={<TodoDetailsPage />} />
+                {/* Nested Routing : Menu with in another:Sub Menu */}
+                <Route path="user" element={<User />}>
+                    {/* Sub Routing */}
+                    <Route index element={<Profile/>}/>
+                    <Route path="profile" element={<Profile/>} />
+                    <Route path="account" element={<Account/>} />
+                </Route>
+                {/* No match found */}
+                <Route path="*" element={<h1>Page Not Found</h1>} />
+
+            </Route>
+        </Routes>
+    </div>
+}
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<>
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+</>);
+.................................................................................
+
+
+
+
+
+
+
+
