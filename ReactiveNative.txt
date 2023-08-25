@@ -1,0 +1,6409 @@
+				React Native
+.....................................................................................
+What is React Native?
+
+1.React Native is lib for building native mobile apps 
+2.React Native combines the best parts of native development with React, a best-in-class  JavaScript library for building user interfaces.
+
+Mobile App development:
+
+ Mobile apps are built using mobile platforms and os.
+
+Mobile platforms:
+1.Android
+2.Ios
+Mobile App development:
+
+ Mobile apps are built using mobile platforms and os.
+
+Mobile platforms:
+1.Android
+2.Ios
+
+Mobile devices are acting front end devices, user interfaces communicates back end services.
+
+Dev:
+ 1.user interface developer/front end developer
+ 2.back end developer
+ 3.full stack developer.
+
+Front end developer who dev apps for  front devices.
+
+Devices:
+ 1.computers - desktop
+ 2.Hand held devices- Mobiles,Tabs..
+ 3.TV,Game consoles
+ 4.IOT devices- It could be any - watches,car,industrial apps,
+
+Dev generally build apps for desktops:
+  Standalone desktop apps
+  Browser based apps- javascript,html,css - react,angular,vue.....
+
+Mobile /Tab apps:
+ Dev builds apps for android platform using java , kotlin pl.
+ in iOS development, you use Swift or Objective-C.
+....................................................................................
+			 How to build Mobile App
+....................................................................................
+Types of mobile Apps:
+.....................
+
+1.Native Mobile
+2.Web apps
+3.Hybrid apps
+
+1.Native Mobile
+   Mobile App built by using native platform languages- java/kotiln / Swift.
+2.Web apps
+   Apps built for browsers -Mobile browsers
+3.Hybrid  apps
+   built apps using javascript but it wont run inside browser, runs inside mobile using
+  container(WebView).
+
+
+Hybrid apps:
+
+ Application built using javascript,css,html,looks like native apps.
+
+Why Hybrid Apps?
+
+-incase native apps, we need to maintain two code base for both platform.
+
+Why not to build one single portable app for all platforms?
+
+ That is birth of hybrid apps.
+
+Hybrids apps can be built using existing web tech- js,css,html.
+Js is simple dom language, how to acess platform services such as contacts,networks,storage..
+- a lib was created -cordova , based on cordova adobe started building a framework on top of the cordova , called phoneGap.
+
+...........................................................................................
+
+How to build mobile native apps in portable way using same javascript technology without html and css?
+
+Generally native apps are built using native platform languages like "kotlin/java"
+or swift.
+Building native apps using javascript language
+            That is birth of React Native.
+
+One language for both platforms.
+.....................................................................................
+React Native Architecture :
+...........................
+
+Application Architecture.
+React Native Runtime Archtecture.
+
+
+Application Architecture:
+  React native apps are written using react core principles.
+ -Component
+ -Props
+ -State
+ -Event Handling
+ -Context api
+ -Redux
+ +
+ Mobile Features
+  Network
+  Sensors
+  Contacts
+  Locations
+  Permission
+  Auido
+  Video
+  etc...
+How to design user interfaces?
+ In browser based apps ,we use html,css
+ In Mobile apps we never use html , css
+
+Since react uses html and css to create markup using "JSX" language which is for browser.
+
+For Mobile apps , react uses "Mobile Markup syntax" using jsx language which is for mobile apps.
+
+React native uses Platform independent markup syntax for "user interface elements"
+for eg: 
+
+ If i use Button element/component - i dont mean the button for ios or android.
+
+React Native Architecture :
+...........................
+
+React native applications are written using react(js) core principles
+ -Component
+ -Props
+ -State
+ -Event Handling
+
+Every react native apps are simple javascript code.
+
+In React Native, there is no webview concept. React native never run inside browser.
+
+Types of React Native code:
+
+React Native code consist of Two things:
+.......................................
+
+1.UI MARK UP Code
+   -  incase of react , html is mark up
+
+UI Mark Up code for React native:
+
+React native does not use html language to build ui elements.
+React Native provides a high level ui components already written, so we can use those
+components only.Why?
+ We are building portable application either for android or ios.
+So we need generic concept for both  platforms. 
+For that React native provides a generic components for both platforms.
+
+Compilation:
+
+What is it? What is happening during compilation?
+
+Source code is converted into another source code - Compilation.
+Another code is platform specific code. android code or ios code.
+if i wirte ui components, ui components will be converted to platform spefic components.
+javascript code will be emitted as it is-app code.
+
+
+
+2.Application logic code
+   - js code - apis,state,props......
+
+
+1.Source Code
+    written in react - UI Code and app logic
+
+2.Compiled code
+    code converted into platform specific code.
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+How react native apps are executed?  Execution Model:
+.....................................................
+
+All views are executed by platform runtimes eg: android by art.
+All javascript is executed by Hermes  Js engine.
+/////////////////////////////////////////////////////////////////////////////////////....................................................................................
+				How to begin react native apps
+.....................................................................................
+
+React native apps can be built using two work flows.
+
+1.Native Work flow
+
+ If you are already familiar with mobile development, you may want to use React Native CLI.
+ It requires Xcode or Android Studio to get started. If you already have one of these tools installed, you should be able to get up and running within a few minutes. If they are not installed, you should expect to spend about an hour installing and configuring them.
+
+2.Expo Work Flow.
+  If you are new to mobile development, the easiest way to get started is with Expo CLI. Expo is a set of tools built around React Native and, while it has many features, the most relevant feature for us right now is that it can get you writing a React Native app within minutes
+
+Native work flow:
+ 
+if you want to build professional mobile app you need lot of infrastructure.
+ UI Components
+    -Views,Text,Labels,ListViews,ScrollView,TabView...........
+
+React native core team provides all core components necessary to build mobile apps.
+
+What if i want more components which is not supported by react core team.
+
+-Community -https://reactnative.directory/
+
+Expo Work flow:
+...............
+What is expo?
+
+ Expo is a framework and a platform for universal React applications. It is a set of tools and services built around React Native and native platforms that help you develop, build, deploy, and quickly iterate on iOS, Android, and web apps from the same JavaScript/TypeScript codebase.
+...................................................................................
+Native work flow setup:
+......................
+
+Setup:
+1.node.js
+2.jdk 11 - openjdk -microsoft openjdk
+3.set JAVA_HOME
+4.Install Android Studio
+5.Install Android SDK
+6.Configure sdk home and path 
+7.vs code
+
+Creating a new application
+..........................
+
+npx react-native@latest init AwesomeProject
+.....................................................................................
+
+Folders and files of React Native Project:
+.........................................
+
+package.json
+
+-react
+-react-native
+
+
+babel.config.js
+  Transpiler configuration for converting jsx code into javascript code.
+
+metro.js
+The JavaScript bundler for React Native
+It transforms code into native and js code.
+
+tsconfig.json
+  If you build react native with typescript then you can configure this file.
+
+app.json
+  Application configuration which is supplied to build system to create mobile apps.
+
+index.js
+  It is entry file for react native apps.
+
+App.js /App.tsx(typescript syntax):
+   It is entry component.
+
+How to start React native app?
+
+AppRegistry:
+
+ AppRegistry is the js entry point to running all React native apps.
+App Root components should register themselves with AppRegistry.registerComponent, then the native system can load the bundle for the app and then actually run the app when its ready by invoking AppRegistry.runApplication
+  
+AppRegistry.registerComponent(appName, () => App);
+
+
+ios and android folders
+  These folders are going to have platform specific code.
+....................................................................................
+
+React native concepts:
+
+1.components
+  Component is a widget(button,textbox,image)
+
+React Native offers platform independent and platform specific built in components.
+
+In react js , Components can be created in many ways
+
+1.variable pattern
+  
+  const Header=<h1>Header</h1>
+
+2.functional pattern
+  const Header = props=><h1>Header</h1>
+
+3.class pattern
+  class Header extends React.Component {
+
+ 	render(){
+	  return <h1>Header</h1>
+	}
+  }
+
+In React native also we can create components in the same way.
+
+React Native does not offer any html elements in order to start.
+
+Basic Components:
+.................
+Container components:
+
+  In React                                    In React Native
+
+  <div><header><footer>                       <View>
+
+Container:
+
+<View>
+ =>It is most fundamental component for building a UI.
+ =>View is a container that supports layouts,mobile features such as touch,accessiblity
+=>View maps directly to the native view equivalent on what ever platform React Native is running on whether it is "UIView,android.view, div"
+
+Displaying Text:Text
+....................
+A Component for displaying text
+
+<Text>Your Text</Text>
+
+App.js
+import { View, Text } from 'react-native';
+
+const App = () => {
+    return (
+        <View>
+            <Text>Hello,React Native</Text>
+        </View>
+    );
+};
+
+export default App;
+.....................................................................................
+			 Component Composition
+...................................................................................
+
+Folder structure of React Native apps:
+
+React native team does not give any standard structure to organize the project,
+There is mostly recommended structure
+
+AwesomeProject:
+  -components
+     users
+       -User.jsx
+       -user.api.js
+  -screens
+     home
+     dashboard
+  -store
+  -index.js
+  -App.js /tsx
+
+
+eg:
+
+AwesomeProject/components/Greeter.jsx
+
+import { View, Text } from 'react-native'
+import Hello from './Hello';
+
+const Greeter = () => {
+    return <View>
+        <Text>Welcome to React Native</Text>
+        <Hello />
+    </View>
+}
+export default Greeter;
+
+
+AwesomeProject/components/Hello.jsx
+
+import { View, Text } from 'react-native'
+
+const Hello = () => {
+    return <View>
+        <Text>Hello React Native!</Text>
+    </View>
+}
+export default Hello;
+.....................................................................................
+			  How to make your ui more interactive
+
+Data Binding.
+
+React data binding techniques;
+
+In react data can be handled in two ways
+
+1.Props pattern
+2.State Pattern
+
+Props Pattern:
+ Passing data from the parent component to child component.
+
+<Hello propName={Propvalue}/>
+
+Hello.jsx
+import { View, Text } from 'react-native'
+
+// const Hello = props => {
+//     return <View>
+//         <Text>{props.text}</Text>
+//     </View>
+// }
+// const Hello = props => {
+//     const { text } = props
+//     return <View>
+//         <Text>{text}</Text>
+//     </View>
+// }
+// const Hello = ({text}) => {
+//     return <View>
+//         <Text>{text}</Text>
+//     </View>
+// }
+const Hello = ({ text }) => <View>
+    <Text>{text}</Text>
+</View>
+
+export default Hello;
+
+Greeter.jsx
+import { View, Text } from 'react-native'
+import Hello from './Hello';
+
+const Greeter = () => {
+    return <View>
+        <Text>Welcome to React Native</Text>
+        <Hello text="Hello React Native" />
+        <Hello text="Hello Mobile" />
+    </View>
+}
+export default Greeter;
+...
+
+Assigment:
+Create User Component pass user details from the app component
+ => user id,name,address: { city,state },status:boolean
+
+Default Props
+Prop Validation
+class Components
+What can be prop
+
+Default Props:
+ if we dont supply props, the default props can be passed.
+import { View, Text } from 'react-native'
+
+const Greeter = props => {
+    return <View>
+        <Text>{props.message}</Text>
+    </View>
+}
+//default props:if props not supplied we can set default props
+Greeter.defaultProps = {
+    message: 'Welcome'
+}
+//Customer
+const Customer = props => {
+    return <View>
+        <Text>Id : {props.customer.id}</Text>
+    </View>
+}
+// default Props
+Customer.defaultProps = {
+    customer: {
+        id: 0,
+        name: 'Name',
+        address: {
+            city: 'City'
+        }
+    }
+}
+
+const App = () => {
+    const customer = {
+        id: 1,
+        name: 'Subramanian',
+        address: {
+            city: 'Coimbatore'
+        }
+    }
+    return <View>
+        <Greeter message="Hello" />
+        <Greeter />
+        <Customer customer={customer} />
+        <Customer />
+
+    </View>
+}
+export default App;
+....................................................................................
+				Prop validation
+....................................................................................
+
+You know very well javascript is dynamic typed language, the type of variable is only validated during runtime not in compile time.
+
+int a =10;
+a=true
+
+var or let  a =10
+a=true
+a="hello"
+
+Steps
+how to validate prop?
+
+npm install --save prop-types
+
+/* eslint-disable prettier/prettier */
+//prop validation 
+
+import { View, Text } from 'react-native'
+import PropTypes from 'prop-types'; // ES6
+
+const Greeter = props => {
+    return <View>
+        <Text>{props.message}</Text>
+    </View>
+}
+//default props:if props not supplied we can set default props
+Greeter.defaultProps = {
+    message: 'Welcome'
+}
+//prop validation
+Greeter.propTypes = {
+    message: PropTypes.string
+}
+
+const App = () => {
+      return <View>
+        <Greeter message="Hello" />
+        {/* <Greeter message={10} /> */}
+        <Greeter message="welcome"/>
+    </View>
+}
+export default App;
+....................................................................................
+				Class Components
+
+import { View, Text } from 'react-native'
+import PropTypes from 'prop-types'; // ES6
+import React from 'react';
+
+class Greeter extends React.Component {
+    render() {
+        return <View>
+            <Text>{this.props.message}</Text>
+        </View>
+    }
+}
+
+//default props:if props not supplied we can set default props
+Greeter.defaultProps = {
+    message: 'Welcome'
+}
+//prop validation
+Greeter.propTypes = {
+    message: PropTypes.string
+}
+
+const App = () => {
+    return <View>
+        <Greeter message="Hello" />
+        <Greeter/>
+
+    </View>
+}
+export default App;
+.....................................................................................
+			Different types of Props
+.....................................................................................
+
+1.Data as prop
+  any type of data can be passed as prop from parent component to child compoent.
+ primitives(string,numbers,booleans)
+ objects
+ Arrays
+2.Component as prop 
+   The component can be prop to another component.
+  
+  Rendering component:
+   <Greeter/> - self closing : the component do not have any nested/child element
+   <Greeter></Greeter> :The component is enclosed it may take nested /child element
+  
+ <Greeter>
+    <Hello/>
+    <Hai>
+	<Text>Your text</Text>
+    </Hai>
+ </Greeter>
+
+eg:
+import { View, Text } from 'react-native'
+
+const Greeter = props => {
+
+    return <View>
+        <Text>{props.children}</Text>
+    </View>
+}
+const Hello = props => {
+    return <Text>Hello</Text>
+}
+
+const App = () => {
+    return <View>
+        <Greeter>
+            <Hello />
+        </Greeter>
+    </View>
+}
+export default App;
+
+3.Dynamic Prop : State as prop
+.....................................................................................   			      List 
+
+render more items on single screen:
+import { View, Text } from 'react-native'
+
+const App = () => {
+    return <View>
+          <Text>Hello</Text>
+          <Text>Hello</Text> 
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text> 
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text> 
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text> 
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text> 
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text> 
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text> 
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text> 
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+          <Text>Hello</Text>
+    </View>
+}
+export default App;
+
+When you render this , you will not able to see more items on single screen.
+..................................................................................
+				Scroll Behaviour
+....................................................................................
+			Types of Views
+
+ ->View
+ ->ScrollView
+ ->ListView
+    ->FlatList
+    ->SectionList
+
+->View
+   View is going to hold child elements , act as container
+->ScrollView
+   View is going to hold child elements,act as container with scrollbar 
+
+ScrollView:
+  It is generic scrolling container that can multiple elements/components.
+  ScrollView supports horizontal or Vertical View.
+
+import {Text, ScrollView } from 'react-native'
+
+const App = () => {
+    return <ScrollView>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+    </ScrollView>
+}
+export default App;
+...................................................................................
+				List View
+.....................................................................................
+
+FlatList:
+=>FlatList component displays a scrolling list of changing but with structured data.
+=>FlatList works well for long list of data,where no of items change over time.
+=>FlatList provides good perfomance benefits over ScrollView
+
+   ScrollView displays the data/items at once, if we have more items , it will take    time
+   FlatList only renders elements that are currently showing on the screen, not all    elements at once
+
+In React:
+
+{array.map(item=><li>{item.text}</li>}
+
+FlatList:
+
+ <FlatList data={TODOS} renderItem={(obj)=>{
+     return <Text >{obj.item.todo.title}</Text>
+ }} />
+
+data:
+  Data prop is called datasource which is plain array
+
+renderItem:
+  Takes an item from data prop and renders it into the list.
+ 
+renderItem({
+ item:ItemObject(todo,Customer),
+ index:number,
+ separators: {
+   highlight:()=>{},
+   unhighlight:()=>{},
+   updateProps:(select:'loading'|'trailing',newProps:any)
+  
+ }
+})
+
+keyExtractor:
+  keyExtractor={(item)=>item.id}
+
+....
+
+import { FlatList, Text, View } from 'react-native'
+import TODOS from './mockdata/todos'
+
+
+const Todo = props => {
+    return <View>
+        <Text>Todo</Text>
+        {/* <FlatList
+            data={props.todos}
+            renderItem={(obj) => {
+                console.log(obj)
+                return <Text>{obj.item.title}</Text>
+            }} /> */}
+        {/* <FlatList
+            data={props.todos}
+            renderItem={({item}) => {
+                console.log(item)
+                return <Text>{item.title}</Text>
+            }} /> */}
+        {/* <FlatList
+            data={props.todos}
+            renderItem={({ item: { title } }) => {
+                return <Text>{title}</Text>
+            }} /> */}
+        <FlatList
+            data={props.todos}
+            renderItem={({ item: { title } }) => <Text>{title}</Text>}
+            keyExtractor={item => item.id}
+        />
+    </View>
+}
+
+
+const App = () => {
+    return <View>
+        <Todo todos={TODOS} />
+    </View>
+
+}
+export default App;
+...................................................................................
+                          Section List
+..................................................................................
+
+It is special list which shows data based on category, showing nested array data
+
+<SectionList sections={list} renderItem=>{} renderSectionHeader={} keyExtractor={} >
+
+Array must have data key to render item.
+
+mock-data/courses.js
+const COURSELIST = [
+  {
+    title: 'User Interface',
+    data: [
+      'HTML',
+      'CSS',
+      'javascript',
+      'Android',
+      'IOS',
+      'Flutter',
+      'React',
+      'Angular',
+      'Vue',
+    ],
+  },
+  {
+    title: 'Back end',
+    data: ['Java', 'C#', 'Microservices', 'Python'],
+  },
+  {
+    title: 'Data Stores',
+    data: ['mysql', 'oracle', 'mongo', 'redis'],
+  },
+];
+export default COURSELIST;
+.....................................................................................
+//Section List 
+import { SectionList, Text, View } from 'react-native'
+import COURSELIST from './mockdata/course'
+
+
+const Course = props => {
+    console.log(props)
+    return <View>
+        <SectionList
+            sections={props.courselist}
+            renderItem={({item}) => {
+                console.log(item)
+                return <Text>{item}</Text>
+            }}
+            keyExtractor={(item, index) => {
+                return item + index
+            }}
+            renderSectionHeader={({ section: { title } }) => {
+                return <Text>{title}</Text>
+            }}
+        />
+        
+       
+
+    </View>
+}
+
+
+const App = () => {
+    return <View>
+        <Course courselist={COURSELIST} />
+    </View>
+
+}
+export default App;
+....................................................................................
+				Styling
+...................................................................................
+In react styles are added through css, react native does not have css language because no html is used.
+
+React Native does not allow css directly.
+We are going to use "javascript style apis"
+Javascript has api to add styles via code.
+
+You must have knowledge to identify the css "js" properties.
+
+
+In html how to apply style via js:
+
+document.getElementById(id).style.property = new style
+element.style.propery =value
+
+https://www.w3schools.com/jsref/dom_obj_style.asp
+
+React Native uses a Object to add styles.
+ =>StyleSheet
+
+StyleSheet:
+ It is  abstraction to css.
+
+import { StyleSheet, Text, View } from 'react-native'
+
+const Message = props => {
+    return <Text style={styles.label}>{props.message}</Text>
+}
+
+const App = () => {
+    return <View>
+        <Message message="Hello" />
+    </View>
+
+}
+export default App;
+
+//Style sheet Object 
+const styles = StyleSheet.create({
+    label: {
+        fontSize: 90,
+        fontWeight:'bold',
+        fontFamily: "TGaramond",
+        color:'#61dafb',
+        borderWidth:4
+    }
+})
+
+
+<div style={{backgroundColor:'red'}} />
+
+Syntax:
+
+ const styles = StyleSheet.create({
+  styleProperty:PropValue,
+  styleProperty: {
+      prop1:value1,
+      prop2:value2,
+      prop3:value3
+   
+  }
+ })
+
+How to declare inline style?
+
+   <Text style={{
+            fontSize: 90,
+            fontWeight: 'bold',
+            fontFamily: "TGaramond",
+            color: '#61dafb',
+            borderWidth: 4
+        }}>{props.message}</Text>
+
+.....................................................................................
+			Height and width
+.....................................................................................
+
+How any ui element(graphical elements) are reprsented in computers?
+
+Any element is represented as "Rectangle box".
+if it is box which is some basic properites called "height and width".
+
+Every element has default width and height.
+
+Width of the element is width of the container element by default.
+Container element is element which contains other elements
+In browser we start with div as root container, in react native we use "View"
+
+height of the element is height of the element itself by default.
+....................................................................................
+
+In Browser width and height is measured in the pixels or in %.
+There are two ways you can give measures
+
+=>fixed  -  50px
+=>fluid - reponsive 50%
+
+React Native and Fixed Dimensions:
+..................................
+
+=>The general way to set the dimensions of a component is by adding a fixed width and hight to style.
+=>All dimensions in react native is unitless and represent density-independent pixels.
+eg:
+import { StyleSheet, Text, View } from 'react-native'
+
+const Message = props => {
+    return <>
+        <Text style={styles.label}>{props.message}</Text>
+        <Text style={{
+            fontSize: 90,
+            fontWeight: 'bold',
+            fontFamily: "TGaramond",
+            color: '#61dafb',
+            borderWidth: 4
+        }}>{props.message}</Text>
+
+    </>
+}
+
+const App = () => {
+    return <View>
+        <Message message="Hello" />
+    </View>
+
+}
+export default App;
+
+//Style sheet Object 
+const styles = StyleSheet.create({
+    label: {
+        fontSize: 90,
+        fontWeight: 'bold',
+        fontFamily: "TGaramond",
+        color: '#61dafb',
+        borderWidth: 4,
+        width: 220
+    }
+})
+...................................................................................
+
+Percentage Dimensions:
+ It is similar to responsive web design
+=>The parent dimenstions are required to calulate % based width for child element.
+=>The drawback of this measurements we need to take care of manual calculation.
+  
+import { View } from 'react-native'
+
+const MyComponent = props => {
+    return <View style={{ height: '100%', width: '100%', backgroundColor: 'yellow' }}>
+        <View style={{ height: '15%', backgroundColor: 'red' }} />
+        <View style={{ height: '35%', width: '66%', backgroundColor: 'skyblue' }} />
+        <View style={{ height: '50%', width: '33%', backgroundColor: 'steelblue' }} />
+    </View >
+}
+
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+...................................................................................
+			Layouts Design using Flex box
+....................................................................................
+
+CSS supports multiple layout methodology.
+
+1.fixedwith layout.
+   =>float,position properties are used to position elements on the screen.
+
+2.Responsive web layouts
+   =>the layout is adjusted based on the screen resolution and size using percentage      pattern
+
+3.Grids layout
+  =>The  layout is highly responsive but 
+  =>CSS Grid Layout is a two-dimensional layout system for the web.
+  =>It lets you lay content out in rows and columns. 
+
+4.Flexbox layout
+  Flexbox is a one-dimensional layout method for arranging items in rows or columns
+  Items flex (expand) to fill additional space or shrink to fit into smaller spaces. 
+..................................................................................
+				Flex box layout
+...................................................................................
+React Native supports flex box layout.
+
+Core Concepts of FlexBox:
+........................
+Axis:
+  Flex box organizies the content either in main axis(x axis) or cross axis(y axis).
+
+Main Axis:
+.........
+The main axis is the axis running in the direction the flex items are laid out in (for example, as a row across the page, or a column down the page.)
+The start and end of this axis are called the main start and main end.
+
+Cross axis:
+...........
+The cross axis is the axis running perpendicular to the direction the flex items are laid out in.
+The start and end of this axis are called the cross start and cross end
+
+Flex ITem:
+.........
+=>The items laid out as flexible boxes inside the flex container are called flex items
+
+Flex Container:
+...............
+=>in order to start flex box layout we must have flex container.
+
+Space Allocation:
+.................
+  Flex will define how your flex items are going to "fill" over the availble space along your main axis. 
+
+How to activate the flex layout?
+  Flex layout is activated inside every react element by default
+
+flex:1 for Container:
+....................
+ Generally flex container will have value always 1. meaning that it calculates the screen width and height automatically.
+  flex :1 in container means the whole width and height of the screen, let says my screen width is 120px and height is 150px then these values are automatically.
+
+<View style={{flex:1}}>
+  <View
+
+</View>
+
+Flex values and Flex Items:
+.........
+<View style={{ flex: 1 }}>
+        {/* Flex items:children */}
+        <View style={{flex:1,backgroundColor:'red'}} />
+        <View style={{flex:2,backgroundColor:'yellow'}}/>
+        <View style={{flex:3,backgroundColor:'blue'}} />
+</View>
+
+The total flex container space is "divided among child(flex items)"
+
+Calculation
+
+flex 1 + flex 2 + flex 3 =Total flex space 
+1+2+3=6
+
+box1 which takes 1/6
+box2 which takes 2/6
+box3 which takes 3/6
+
+import { View } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={{ flex: 1 }}>
+        {/* Flex items:children */}
+        <View style={{flex:1,backgroundColor:'red'}} />
+        <View style={{flex:2,backgroundColor:'yellow'}}/>
+        <View style={{flex:3,backgroundColor:'blue'}} />
+        </View>
+}
+
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+...................................................................................
+				Nested Containers
+...................................................................................
+import { View } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={{ flex: 1 }}>
+        {/* Flex items:children */}
+        <View style={{ flex: 1, backgroundColor: 'red' }} />
+        <View style={{ flex: 2, backgroundColor: 'yellow' }} />
+        <View style={{ flex: 3, backgroundColor: 'blue' }} />
+        <View style={{ flex: 4, backgroundColor: 'green' }}>
+            <View style={{ flex: 1, backgroundColor: 'white' }} />
+            <View style={{ flex: 2, backgroundColor: 'yellow' }} />
+        </View>
+    </View>
+}
+
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+..................................................................................
+				Flex Direction
+...................................................................................
+flexDirection property controls the direction in which the children(flex items) are laid out within child element.
+
+flex direction has values:
+
+1.column:
+     Align childrens top to bottom which is default.
+
+2.row:
+    Align childrens left to right
+
+3.column-reverse:
+    Align childrens from the bottom to top.
+
+4.row-reverse:
+   Align childrens right to left.
+
+
+Column:
+import { StyleSheet, View,Text } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={styles.container}>
+        <Text style={styles.headerStyle}>Flex Direction:Column</Text>
+        <View style={styles.elementsContainer}>
+            <View style={{width:50,height:50,backgroundColor:'red'}}/>
+            <View style={{width:50,height:50,backgroundColor:'yellow'}}/>
+            <View style={{width:50,height:50,backgroundColor:'green'}}/>
+        </ View>
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    headerStyle: {
+        fontSize: 29,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 24,
+        color:'blue'
+    },
+    elementsContainer: {
+        flex:1,
+        backgroundColor:'black',
+        marginLeft: 24,
+        marginRight:24,
+        flexDirection:'column',
+        marginBottom:24
+    }
+
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+
+...
+
+Row:
+import { StyleSheet, View,Text } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={styles.container}>
+        <Text style={styles.headerStyle}>Flex Direction:Row</Text>
+        <View style={styles.elementsContainer}>
+            <View style={{width:50,height:50,backgroundColor:'red'}}/>
+            <View style={{width:50,height:50,backgroundColor:'yellow'}}/>
+            <View style={{width:50,height:50,backgroundColor:'green'}}/>
+        </ View>
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    headerStyle: {
+        fontSize: 29,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 24,
+        color:'blue'
+    },
+    elementsContainer: {
+        flex:1,
+        backgroundColor:'black',
+        marginLeft: 24,
+        marginRight:24,
+        flexDirection:'row',
+        marginBottom:24
+    }
+
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+....................................................................................
+
+Column Reverse:
+
+import { StyleSheet, View,Text } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={styles.container}>
+        <Text style={styles.headerStyle}>Flex Direction:Column-Reverse</Text>
+        <View style={styles.elementsContainer}>
+            <View style={{width:50,height:50,backgroundColor:'red'}}/>
+            <View style={{width:50,height:50,backgroundColor:'yellow'}}/>
+            <View style={{width:50,height:50,backgroundColor:'green'}}/>
+        </ View>
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    headerStyle: {
+        fontSize: 29,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 24,
+        color:'blue'
+    },
+    elementsContainer: {
+        flex:1,
+        backgroundColor:'black',
+        marginLeft: 24,
+        marginRight:24,
+        flexDirection:'column-reverse',
+        marginBottom:24
+    }
+
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+...................................................................................
+Row Reverse:
+...........
+import { StyleSheet, View,Text } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={styles.container}>
+        <Text style={styles.headerStyle}>Flex Direction:RowReverse</Text>
+        <View style={styles.elementsContainer}>
+            <View style={{width:50,height:50,backgroundColor:'red'}}/>
+            <View style={{width:50,height:50,backgroundColor:'yellow'}}/>
+            <View style={{width:50,height:50,backgroundColor:'green'}}/>
+        </ View>
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    headerStyle: {
+        fontSize: 29,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 24,
+        color:'blue'
+    },
+    elementsContainer: {
+        flex:1,
+        backgroundColor:'black',
+        marginLeft: 24,
+        marginRight:24,
+        flexDirection:'row-reverse',
+        marginBottom:24
+    }
+
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+....................................................................................
+			Aligning Child elements(Flex Items)
+....................................................................................
+
+In order to align flex items within container we have properties
+
+1.Justify content
+2.Align items
+3.Align self
+4.Align Content
+5.Flex wrap
+
+Justify content:
+ Align flex items within the main axis(x axis) of their container.
+
+Flex Direction says that how to organize either row or column
+
+
+justifyContent: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly'
+
+flex-start; + flex direction: column
+
+  The default value, align childern of a container to the start of the container's main axis.
+import { StyleSheet, View,Text } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={styles.container}>
+        <Text style={styles.headerStyle}>justifyContent: :Column : flex-start</Text>
+        <View style={styles.elementsContainer}>
+            <View style={{width:50,height:50,backgroundColor:'red'}}/>
+            <View style={{width:50,height:50,backgroundColor:'yellow'}}/>
+            <View style={{width:50,height:50,backgroundColor:'green'}}/>
+        </ View>
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    headerStyle: {
+        fontSize: 29,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 24,
+        color:'blue'
+    },
+    elementsContainer: {
+        flex:1,
+        backgroundColor:'black',
+        marginLeft: 24,
+        marginRight:24,
+        flexDirection:'column',
+        justifyContent: 'flex-start',
+        marginBottom:24
+    }
+
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+................................................................................
+justifyContent: 'flex-start', + flexDirection:'row':
+.......................................................
+
+import { StyleSheet, View,Text } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={styles.container}>
+        <Text style={styles.headerStyle}>justifyContent: :Column : flex-start</Text>
+        <View style={styles.elementsContainer}>
+            <View style={{width:50,height:50,backgroundColor:'red'}}/>
+            <View style={{width:50,height:50,backgroundColor:'yellow'}}/>
+            <View style={{width:50,height:50,backgroundColor:'green'}}/>
+        </ View>
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    headerStyle: {
+        fontSize: 29,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 24,
+        color:'blue'
+    },
+    elementsContainer: {
+        flex:1,
+        backgroundColor:'black',
+        marginLeft: 24,
+        marginRight:24,
+        flexDirection:'row',
+        justifyContent: 'flex-start',
+        marginBottom:24
+    }
+
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+...................................................................................
+
+
+flex-end:
+   Align childern of a container to the end of the container's main axis
+ 
+flexDirection:'column'+ justifyContent: 'flex-end',
+  
+import { StyleSheet, View,Text } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={styles.container}>
+        <Text style={styles.headerStyle}>justifyContent: :Column : flex-start</Text>
+        <View style={styles.elementsContainer}>
+            <View style={{width:50,height:50,backgroundColor:'red'}}/>
+            <View style={{width:50,height:50,backgroundColor:'yellow'}}/>
+            <View style={{width:50,height:50,backgroundColor:'green'}}/>
+        </ View>
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    headerStyle: {
+        fontSize: 29,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 24,
+        color:'blue'
+    },
+    elementsContainer: {
+        flex:1,
+        backgroundColor:'black',
+        marginLeft: 24,
+        marginRight:24,
+        flexDirection:'column',
+        justifyContent: 'flex-end',
+        marginBottom:24
+    }
+
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+
+
+flexDirection:'row'+ justifyContent: 'flex-end',
+
+import { StyleSheet, View,Text } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={styles.container}>
+        <Text style={styles.headerStyle}>justifyContent: :Column : flex-start</Text>
+        <View style={styles.elementsContainer}>
+            <View style={{width:50,height:50,backgroundColor:'red'}}/>
+            <View style={{width:50,height:50,backgroundColor:'yellow'}}/>
+            <View style={{width:50,height:50,backgroundColor:'green'}}/>
+        </ View>
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    headerStyle: {
+        fontSize: 29,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 24,
+        color:'blue'
+    },
+    elementsContainer: {
+        flex:1,
+        backgroundColor:'black',
+        marginLeft: 24,
+        marginRight:24,
+        // flexDirection:'column',
+        flexDirection:'row',
+        justifyContent: 'flex-end',
+        marginBottom:24
+    }
+
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+.....................................................................................
+
+center:
+......
+   Align childern of a container in the center of the container's main axis.
+
+flexDirection:'column',+  justifyContent: 'center',
+
+import { StyleSheet, View,Text } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={styles.container}>
+        <Text style={styles.headerStyle}>justifyContent: :Column : flex-start</Text>
+        <View style={styles.elementsContainer}>
+            <View style={{width:50,height:50,backgroundColor:'red'}}/>
+            <View style={{width:50,height:50,backgroundColor:'yellow'}}/>
+            <View style={{width:50,height:50,backgroundColor:'green'}}/>
+        </ View>
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    headerStyle: {
+        fontSize: 29,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 24,
+        color:'blue'
+    },
+    elementsContainer: {
+        flex:1,
+        backgroundColor:'black',
+        marginLeft: 24,
+        marginRight:24,
+        flexDirection:'column',
+        // flexDirection:'row',
+        justifyContent: 'center',
+        marginBottom:24
+    }
+
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+.............
+
+Justify-Content: space between
+.............................
+Allocate space between items based on containers x'axis
+
+
+
+import { StyleSheet, View,Text } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={styles.container}>
+        <Text style={styles.headerStyle}>justifyContent: :Space-between</Text>
+        <View style={styles.elementsContainer}>
+            <View style={{width:50,height:50,backgroundColor:'red'}}/>
+            <View style={{width:50,height:50,backgroundColor:'yellow'}}/>
+            <View style={{width:50,height:50,backgroundColor:'green'}}/>
+        </ View>
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    headerStyle: {
+        fontSize: 29,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 24,
+        color:'blue'
+    },
+    elementsContainer: {
+        flex:1,
+        backgroundColor:'black',
+        marginLeft: 24,
+        marginRight:24,
+        flexDirection:'row',
+        justifyContent: 'space-between',
+        marginBottom:24
+    }
+
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+...................................
+justify content: space-around:
+.............................
+
+Allocate space around the items based on x axis
+//justifyContent: space-between
+
+import { StyleSheet, View, Text } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={styles.container}>
+        <Text style={styles.headerStyle}>justifyContent: :Space-between</Text>
+        <View style={styles.elementsContainer}>
+            <View style={{ width: 50, height: 50, backgroundColor: 'red' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'yellow' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'green' }} />
+        </ View>
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    headerStyle: {
+        fontSize: 29,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 24,
+        color: 'blue'
+    },
+    elementsContainer: {
+        flex: 1,
+        backgroundColor: 'black',
+        marginLeft: 24,
+        marginRight: 24,
+        flexDirection: 'column',
+        //  justifyContent: 'space-between',
+        justifyContent: 'space-around',
+        marginBottom: 24
+    }
+
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+.....................
+
+space-evenly:
+............
+Evenly distribute space for children the alignment container along the main axis.
+
+space-evenly= space-between + space-around
+..
+
+//justifyContent: space-between
+
+import { StyleSheet, View, Text } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={styles.container}>
+        <Text style={styles.headerStyle}>justifyContent: :Space-between</Text>
+        <View style={styles.elementsContainer}>
+            <View style={{ width: 50, height: 50, backgroundColor: 'red' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'yellow' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'green' }} />
+        </ View>
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    headerStyle: {
+        fontSize: 29,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 24,
+        color: 'blue'
+    },
+    elementsContainer: {
+        flex: 1,
+        backgroundColor: 'black',
+        marginLeft: 24,
+        marginRight: 24,
+        flexDirection: 'column',
+        //  justifyContent: 'space-between',
+        //justifyContent: 'space-around',
+        justifyContent:'space-evenly',
+        marginBottom: 24
+    }
+
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+.....................................................................................
+				Align items
+....................................................................................
+
+Align items going to allocate space based "Y/Cross " axis.
+
+Justify Content always X axis where AlignItems y axis.
+
+
+AlignItems: 'stretch' | 'flex-start',|'flex-end' | 'center'| 'baseline'
+
+eg:
+
+Flex-start:
+
+import { View, StyleSheet } from 'react-native'
+
+const MyComponent = props => {
+    return <View style={styles.container}>
+        {/* i want to use existing style + extra style */}
+        <View style={[styles.box, { backgroundColor: 'blue' }]} />
+        <View style={[styles.box, { backgroundColor: 'skyblue' }]} />
+        <View style={[styles.box, { backgroundColor: 'steelblue', width: 'auto', minWidth: 50 }]} />
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        marginTop: 1,
+        backgroundColor: 'aliceblue',
+        minHeight: 200,
+        flexDirection:'column',
+        alignItems:'flex-start',
+
+    },
+    box: {
+        height: 50,
+        width: 50
+    }
+})
+
+const App = () => {
+    return <MyComponent />
+}
+export default App;
+.............
+
+Flex-end:
+import { View, StyleSheet } from 'react-native'
+
+const MyComponent = props => {
+    return <View style={styles.container}>
+        {/* i want to use existing style + extra style */}
+        <View style={[styles.box, { backgroundColor: 'blue' }]} />
+        <View style={[styles.box, { backgroundColor: 'skyblue' }]} />
+        <View style={[styles.box, { backgroundColor: 'steelblue', width: 'auto', minWidth: 50 }]} />
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        marginTop: 1,
+        backgroundColor: 'aliceblue',
+        minHeight: 200,
+        flexDirection:'column',
+        alignItems:'flex-end',
+
+    },
+    box: {
+        height: 50,
+        width: 50
+    }
+})
+
+const App = () => {
+    return <MyComponent />
+}
+export default App;
+
+...
+center
+.....
+alignItems:'center',
+import { View, StyleSheet } from 'react-native'
+
+const MyComponent = props => {
+    return <View style={styles.container}>
+        {/* i want to use existing style + extra style */}
+        <View style={[styles.box, { backgroundColor: 'blue' }]} />
+        <View style={[styles.box, { backgroundColor: 'skyblue' }]} />
+        <View style={[styles.box, { backgroundColor: 'steelblue', width: 'auto', minWidth: 50 }]} />
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        marginTop: 1,
+        backgroundColor: 'aliceblue',
+        minHeight: 200,
+        flexDirection:'column',
+        //alignItems:'flex-end',
+        alignItems:'center',
+
+    },
+    box: {
+        height: 50,
+        width: 50
+    }
+})
+
+const App = () => {
+    return <MyComponent />
+}
+export default App;
+.....
+base line:
+import { View, StyleSheet } from 'react-native'
+
+const MyComponent = props => {
+    return <View style={styles.container}>
+        {/* i want to use existing style + extra style */}
+        <View style={[styles.box, { backgroundColor: 'blue' }]} />
+        <View style={[styles.box, { backgroundColor: 'skyblue' }]} />
+        <View style={[styles.box, { backgroundColor: 'steelblue', width: 'auto', minWidth: 50 }]} />
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        marginTop: 1,
+        backgroundColor: 'aliceblue',
+        minHeight: 200,
+        flexDirection:'column',
+        //alignItems:'flex-end',
+        alignItems:'baseline',
+
+    },
+    box: {
+        height: 50,
+        width: 50
+    }
+})
+
+const App = () => {
+    return <MyComponent />
+}
+export default App;
+......................................................................................
+stretch:
+  To stretch children of a container to match "height" of the container's cross axis.
+ 
+import { View, StyleSheet } from 'react-native'
+
+const MyComponent = props => {
+    return <View style={styles.container}>
+        {/* i want to use existing style + extra style */}
+        <View style={[styles.box, { backgroundColor: 'blue' }]} />
+        <View style={[styles.box, { backgroundColor: 'skyblue' }]} />
+        <View style={[styles.box, { backgroundColor: 'steelblue', width: 'auto', minWidth: 50 }]} />
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        marginTop: 1,
+        backgroundColor: 'aliceblue',
+        minHeight: 200,
+        flexDirection:'column',
+        //alignItems:'flex-end',
+        alignItems:'stretch',
+
+    },
+    box: {
+        height: 50,
+        width: 50
+    }
+})
+
+const App = () => {
+    return <MyComponent />
+}
+export default App;
+.....................................................................................
+				Align self - child element 
+....................................................................................
+Align self is similar to Align items and justify content but align self is going to have power child elements can controler their alignments.
+
+Elements can align itself.
+
+alignSelf: 'stretch' | 'flex-start',|'flex-end' | 'center'| 'baseline'
+
+import { StyleSheet, View, Text } from 'react-native'
+
+const MyComponent = props => {
+    return <View style={styles.container}>
+        <View
+            style={[
+                styles.box,
+                {
+                    alignSelf:'stretch',
+                    width: 'auto',
+                    minWidth: 50,
+                    backgroundColor: 'red',
+                },
+            ]}
+        />
+        <View style={[styles.box, { backgroundColor: 'skyblue',alignSelf:'center' }]} />
+        <View style={[styles.box, { backgroundColor: 'steelblue',alignSelf:'flex-end' }]} />
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor:'yellow',
+        height:50,
+    },
+    box: {
+        width: 50,
+        height: 50,
+    }
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+...................................................................................
+				Flex wrap
+...................................................................................
+
+
+....................................................................................
+			Flex wrap
+....................................................................................
+if more childrens beyond container size, it starts overflow, in order avoid overflow
+meaning that you want to lay elements within container... we can use flex wrap.
+import { StyleSheet, View, Text } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={styles.container}>
+        <Text style={styles.headerStyle}>Flex wrap</Text>
+        <View style={styles.elementsContainer}>
+            <View style={{ width: 50, height: 50, backgroundColor: 'red' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'yellow' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'green' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'yellow' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'green' }} />
+            
+            <View style={{ width: 50, height: 50, backgroundColor: 'yellow' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'green' }} />
+            
+            <View style={{ width: 50, height: 50, backgroundColor: 'yellow' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'green' }} />
+            
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+          
+        
+        </ View>
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    headerStyle: {
+        fontSize: 29,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 24,
+        color: 'blue'
+    },
+    elementsContainer: {
+        flex: 1,
+        backgroundColor: 'black',
+        flexWrap:'wrap',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        marginBottom: 24
+    }
+
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+....................................................................................
+				Gap
+....................................................................................
+
+How to allocate space among elements?
+
+ Flex gap
+ =>Column gap
+ =>Row gap				
+
+import { StyleSheet, View, Text } from 'react-native'
+
+const MyComponent = props => {
+    // Flex container
+    return <View style={styles.container}>
+        <Text style={styles.headerStyle}>Flex wrap</Text>
+        <View style={styles.elementsContainer}>
+            <View style={{ width: 50, height: 50, backgroundColor: 'red' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'yellow' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'green' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'yellow' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'green' }} />
+            
+            <View style={{ width: 50, height: 50, backgroundColor: 'yellow' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'green' }} />
+            
+            <View style={{ width: 50, height: 50, backgroundColor: 'yellow' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'green' }} />
+            
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'white' }} />
+            <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+          
+        
+        </ View>
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor:'pink'
+    },
+    headerStyle: {
+        fontSize: 29,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginBottom: 24,
+        color: 'blue'
+    },
+    elementsContainer: {
+        flex: 1,
+        backgroundColor: 'steelblue',
+        flexWrap:'wrap',
+        flexDirection: 'column',
+        alignContent: 'flex-start',
+        marginBottom: 24,
+        rowGap:10,
+        columnGap:10
+    }
+
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+....................................................................................
+				Types of layout
+
+1.Absolute 
+2.Relative
+ 
+The layout property called "position"
+
+position: 'top' | 'right' | 'bottom' | left
+
+position property controls the element position. generally elements are positioned according natural positioning order like row wise or column
+
+Relative:
+ =>This is default layout.
+ =>Elements are positioned relatively to the container.
+
+Absolute:
+  =>The elements are place not based on the normal layout work flow.
+  =>we have to override postion property.
+
+
+import { StyleSheet, View, Text } from 'react-native'
+
+const MyComponent = () => {
+    // Flex container
+    return <View style={styles.container}>
+
+        {/* <View style={[styles.box, { backgroundColor: 'powderblue', top: 25, left: 25, position: 'relative' }]} />
+        <View style={[styles.box, { backgroundColor: 'skyblue', top: 50, left: 50, position: 'relative' }]} />
+        <View />
+        <View style={[styles.box, { backgroundColor: 'red', top: 75, left: 75, position: 'relative' }]} /> */}
+        <View style={[styles.box, { backgroundColor: 'powderblue', top: 25, left: 25, position: 'absolute' }]} />
+        <View style={[styles.box, { backgroundColor: 'skyblue', top: 50, left: 50, position: 'absolute' }]} />
+        <View />
+        <View style={[styles.box, { backgroundColor: 'red', top: 75, left: 75, position: 'absolute' }]} />
+        <View />
+    </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: 'pink',
+        minWidth: 200,
+        marginTop: 10,
+        flexDirection: 'row',
+        flexWrap: 'wrap'
+
+    },
+    box: {
+        height: 50,
+        width: 50
+    }
+
+})
+
+const App = () => {
+    return <MyComponent />
+}
+
+export default App;
+..................................................................................
+				Mixing layout properties
+....................................................................................
+
+Flex direction : row
+Justify content: flex-start
+AlignItems:flex-start
+
+https://yogalayout.com/docs
+....................................................................................
+				 Margins and Padding
+....................................................................................
+Margins will add space outside element in all directions : top,right,bottom,left
+Padding will add space within element in all directions: top,right,bottom,left
+
+marginTop:10
+paddingTop:10
+
+Assignment : Design calculator
+.....................................................................................
+			   Colors 
+.....................................................................................
+
+How to use colors?
+
+ -color names; red blue; which is not mostly recommended.
+ -color values ; #
+
+Api:
+PlatformColor
+  It is used to apply platform default colors
+
+Since our application is build platform independent, how to apply plaftform specific colors.
+for eg: i want to apply android color schemes when i run app in android device, if the same app is executed on IOS , i need to apply ios spcific colors.
+
+How to detect platform?
+ React native offers an api called "Platform"
+
+Platform api properties and methods:
+
+constants
+isPad | isTv | isTesting
+os
+version
+
+methods:
+ select
+
+select method how works?
+ select internally applies if logic to select os
+
+Platform.OS === 'platform' or a Platform.select()
+
+
+Eg: Platform Interformation:
+//Platform information
+
+import { View, Text, StyleSheet, Platform } from 'react-native'
+
+const App = () => {
+
+     return <View style={styles.container}>
+         <Text>Platform Information</Text>
+         <Text>OS : {Platform.OS}</Text>
+         <Text>OS version: {Platform.Version}</Text>
+         <Text>Device Type {Platform.isTV ? "TV" : "Mobile"}</Text>
+         <Text>Platform Constants</Text>
+         <Text>{JSON.stringify(Platform.constants)}</Text>
+     </View>
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor:'pink',
+        fontSize:50,
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+})
+
+
+export default App;
+....................................................................................
+			How to apply colors based on Platform
+....................................................................................
+How to use colors?
+
+ -color names; red blue; which is not mostly recommended.
+ -color values ; #
+
+Color apis:
+
+PlatformColor
+
+PlatformColor(color1, [color2, ...colorN]);
+
+ You can use the PlatformColor function to access native colors on the target platform by supplying the native color’s corresponding string value
+
+If you pass more than one string value to the PlatformColor function, it will treat the first value as the default and the rest as fallback.
+
+PlatformColor('bogusName', 'linkColor');
+
+Supported colors
+:
+For a full list of the types of system colors supported.
+
+Android:
+R.attr - ?attr prefix
+R.color - @android:color prefix
+
+
+iOS (Objective-C and Swift notations):
+
+UIColor Standard Colors
+UIColor UI Element Colors
+
+select method how works?
+ select internally applies if logic to select os
+
+Platform.OS === 'platform' or a Platform.select()
+
+
+
+import React from 'react';
+import {
+    Platform,
+    PlatformColor,
+    StyleSheet,
+    Text,
+    View
+} from 'react-native';
+
+const App = () => (
+    <View style={styles.container}>
+        <Text style={styles.label}>
+            I am a special label color!
+    </Text>
+    </View>
+);
+
+const styles = StyleSheet.create({
+    label: {
+        padding: 16,
+        ...Platform.select({
+            ios: {
+                color: PlatformColor('label'),
+                backgroundColor:
+                    PlatformColor('systemTealColor'),
+            },
+            android: {
+                color: PlatformColor('?android:attr/textColor'),
+                backgroundColor:
+                    PlatformColor('@android:color/holo_blue_bright'),
+            },
+            default: { color: 'black' }
+        })
+    },
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        ...Platform.select({
+            ios: {
+                color: PlatformColor('label'),
+                backgroundColor:
+                    PlatformColor('systemTealColor'),
+            },
+            android: {
+                color: PlatformColor('?android:attr/textColor'),
+                backgroundColor:
+                    PlatformColor('@android:color/holo_orange_dark'),
+            },
+            default: { color: 'black' }
+        })
+    }
+});
+
+export default App;
+....................................................................................
+				Style Sheet Composition
+...................................................................................
+
+coimbines two styles into one style
+
+StyleeSheet.compose(style1,style2,style3,styleN)
+
+style1 can be overriden by styles2
+import { StyleSheet, Text, View } from 'react-native'
+
+
+
+const App = props => {
+    return <View style={[container,{}]}>
+        <Text style={text}>Hello</Text>
+    </View>
+}
+//page style :Common style 
+const page = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: 24,
+        backgroundColor: "pink"
+    },
+    text: {
+        fontSize: 30,
+        color: '#000'
+    }
+})
+//list styles 
+
+
+const lists = StyleSheet.create({
+    listContainer: {
+        flex: 1,
+        backgroundColor: '#61dafb'
+    },
+    listItem: {
+        fontStyle: 'italic',
+        fontWeight: 'bold'
+    }
+})
+
+//merge twos 
+const container = StyleSheet.compose(page.container, lists.container)
+const text = StyleSheet.compose(page.text, lists.listItem)
+
+
+export default App; 
+................................**********..........................................
+				Dynamic ui
+...................................................................................
+
+State
+.....
+
+=>How to interact with Ui
+=>How to introduce events and listerners
+=>hooks
+=>class vs functional compoents.
+
+
+How to mutate state:
+import { StyleSheet, Text, View, Button, Alert } from 'react-native'
+import React from 'react';
+
+class App extends React.Component {
+    state = {
+        like: 0
+    }
+    //listener 
+    onLike = () => {
+        //Alert.alert('Like')
+        // this.setState((prvState) => {
+        //     //return new state : Immutable 
+        //     return { ...prvState, like: prvState.like + 1 }
+        // })
+        this.setState({
+            like: this.state.like + 1
+        });
+    }
+    render() {
+        return <View style={page.container}>
+            <Text style={page.text}>State</Text>
+            <Text style={page.text}>{this.state.like}</Text>
+            <Button title="Like" onPress={this.onLike} />
+        </View>
+    }
+}
+
+//page style :Common style 
+const page = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: 24,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: "pink"
+    },
+    text: {
+        fontSize: 30,
+        color: '#000'
+    }
+})
+
+export default App; 
+....................................................................................
+			How to remove class components?
+
+class components almost gone from the react echo system. rather we use functional components.
+
+Functional components has been refactored with feature called "hooks"
+
+class Components drawbacks:
+..........................
+
+=>Code Reuse
+   if i have written some logic inside class component the same logic i want to resue in another components then we cant reuse.
+
+functional components and Code Reuse:
+......................................
+  via hooks
+
+What is hook?
+ =>hook is just function which carries reusable code, which can be used across application.
+=>hooks eleminate lot of boiler plate code.
+
+React provides lot of built in hooks in order to write complex code.
+
+Hooks features:
+=>hooks are just js functions, which takes args and parameters, returns values too.
+=>hooks starts with "use+FunctionName" which common convention.
+
+import { StyleSheet, Text, View, Button, Alert } from 'react-native'
+import { useState } from 'react';
+
+const Like = props => {
+    const [like, setLike] = useState(0)
+    //Listener
+    const onLike = () => {
+        setLike(like => {
+            return like + 1
+        })
+    }
+
+    return <View style={page.container}>
+        <Text>Hooks</Text>
+        <Text>{like}</Text>
+        <Button title="Like" onPress={onLike} />
+    </View>
+}
+
+const App = () => {
+    return <Like />
+}
+
+//page style :Common style 
+const page = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: 24,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: "pink"
+    }
+})
+
+export default App; 
+....................................................................................
+
+Assignment:
+
+1.Build list of content
+ when i click a list item i have to show in alert box that item in json format.
+
+2.Write complete calculator logic
+
+Using hooks..
+....................................................................................
+			 WebService/Server  Integration
+...................................................................................
+
+How to rest apis?
+ js provides api called "XHR"
+
+XHR is very low level api used for api communications.
+Now a days we have frameworks/libs for xhr 
+
+Popular libs
+1.fetch -from google
+2.axios - community
+etc..
+
+when to make api call calls in UI Apps?
+
+1.during inital render.
+   when you lanuch app you need to load data, that time we need to talk to api.
+2.after user interaction
+   when you submit a form, you press any time, when you press menu...
+
+during inital render:
+
+Every component has life cycle.
+We have three life cycle phases
+1.mount- inital render
+2.update- when you user interacts
+3.unmount-when you leave the current screen / component or component is destroyed.
+
+1.mount- inital render - methods
+
+in case of class components
+ -componentDidMount
+ -render
+in case of functional component
+  -useEffect - hook
+
+inside componentDidMount/useEffect is used to initalize
+ =>Ajax calls
+ =>web sockets
+ =>Timers
+ =>Rxjs subscriptions
+
+useEffect(()=>{},[])
+
+When you make api call you have to think three things
+
+1.How to handle data
+2.How to handle error
+3.How to handle slow calls
+
+import { StyleSheet, Text, View, Button, Alert, StatusBar, ActivityIndicator, FlatList } from 'react-native'
+import { useEffect, useState } from 'react';
+
+const Todos = props => {
+    //declare state to hold items
+    const [todos, setTodos] = useState({
+        error: null,
+        isLoaded: false,  //spinners or progress bar 
+        items: [] //todo data 
+    })
+    //componentDidMount life cycle method 
+    useEffect(() => {
+        const url = `https://jsonplaceholder.typicode.com/todos`;
+        fetch(url)
+            .then(res => res.json())
+            .then(todos => {
+                console.log(todos)
+                setTodos({
+                    items: todos,
+                    isLoaded: true
+                })
+            })
+            .catch(err => {
+                setTodos({
+                    isLoaded: true,
+                    error: err
+                })
+            })
+    }, [])
+
+    const { error, isLoaded, items } = todos;
+    // conditional rendering:
+    if (error) {
+        return <View>
+            <Text>Error: {error.message}</Text>
+        </View>
+    } else if (!isLoaded) {
+        //show spinner
+        return <View style={{
+            alignItems: 'center', justifyContent: 'center'
+        }}>
+            <ActivityIndicator size="large" color="#000ff" />
+        </View >
+    } else {
+        //show data
+        return <FlatList
+            keyExtractor={(todo) => {
+                return todo.id
+            }}
+            data={items}
+            renderItem={({ item }) => {
+                const { title } = item
+                return <View style={styles.item} >
+                    <Text style={styles.text}>{title}</Text>
+                </View>
+            }
+
+            }
+        />
+    }
+}
+
+const App = () => {
+    return <View style={styles.container}>
+        <Text style={{ alignItems: 'center', justifyContent: 'center',fontWeight:'bold' ,color:'red' ,textAlign:'center'}} >Todo App</Text>
+        <Todos />
+
+    </View>
+}
+
+//page style :Common style 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor:'white',
+        marginTop: StatusBar.currentHeight || 0
+    },
+    item: {
+        backgroundColor: '#f9c2ff',
+        padding: 20,
+        marginVertical: 8,
+        marginHorizontal: 8
+    },
+    title: {
+        fontSize: 32
+    }
+})
+
+
+
+export default App; 
+....................................................................................
+			Handling Touch Features in React Native
+....................................................................................
+
+Handling touch features:
+ User interactions mainly with mobile apps through touch.
+ They can use a combination of gestures,such as tapping on a button,scrolling list, zooming on a map.
+
+
+Touchable components:
+
+1.Touchable Highlight
+
+import { StyleSheet, Text, View, Button, Alert, StatusBar, ActivityIndicator, FlatList, TouchableHighlight } from 'react-native'
+import { useEffect, useState } from 'react';
+
+const Todos = props => {
+    //declare state to hold items
+    const [todos, setTodos] = useState({
+        error: null,
+        isLoaded: false,  //spinners or progress bar 
+        items: [] //todo data 
+    })
+    //componentDidMount life cycle method 
+    useEffect(() => {
+        const url = `https://jsonplaceholder.typicode.com/todos`;
+        fetch(url)
+            .then(res => res.json())
+            .then(todos => {
+                console.log(todos)
+                setTodos({
+                    items: todos,
+                    isLoaded: true
+                })
+            })
+            .catch(err => {
+                setTodos({
+                    isLoaded: true,
+                    error: err
+                })
+            })
+    }, [])
+
+    const { error, isLoaded, items } = todos;
+    // conditional rendering:
+    if (error) {
+        return <View>
+            <Text>Error: {error.message}</Text>
+        </View>
+    } else if (!isLoaded) {
+        //show spinner
+        return <View style={{
+            alignItems: 'center', justifyContent: 'center'
+        }}>
+            <ActivityIndicator size="large" color="#000ff" />
+        </View >
+    } else {
+        //show data
+        return <FlatList
+            keyExtractor={(todo) => {
+                return todo.id
+            }}
+            data={items}
+            renderItem={({ item }) => {
+                const { title } = item
+                return <TouchableHighlight onPress={() => {
+                        //select item
+                }} activeOpacity={0.6} underlayColor="#DDDDD">
+                    <View style={styles.item} >
+
+                        <Text style={styles.text}>{title}</Text>
+                    </View>
+                </TouchableHighlight>
+
+            }
+
+            }
+        />
+    }
+}
+
+const App = () => {
+    return <View style={styles.container}>
+        <Text style={{ alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', color: 'red', textAlign: 'center' }} >Todo App</Text>
+        <Todos />
+
+    </View>
+}
+
+//page style :Common style 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: 'white',
+        marginTop: StatusBar.currentHeight || 0
+    },
+    item: {
+        backgroundColor: '#f9c2ff',
+        padding: 20,
+        marginVertical: 8,
+        marginHorizontal: 8
+    },
+    title: {
+        fontSize: 32
+    }
+})
+
+export default App; 
+...................................................................................
+			  Status Bar and SafeAreaView
+...................................................................................
+
+<StatusBar animated, backgroundColor, barStyle.../>
+
+SafeAreaView
+The purpose of SafeAreaView is to render content within the safe area boundaries of a device. It is currently only applicable to iOS devices with iOS version 11 or later.
+Note: if you target both devices, better we can wrap other views within safe area view.
+incase of android this view will be ignored automatically.
+
+import React, {useState} from 'react';
+import {
+  Button,
+  Platform,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+
+const STYLES = ['default', 'dark-content', 'light-content'];
+const TRANSITIONS = ['fade', 'slide', 'none'];
+
+const App = () => {
+  const [hidden, setHidden] = useState(false);
+  const [statusBarStyle, setStatusBarStyle] = useState(STYLES[0]);
+  const [statusBarTransition, setStatusBarTransition] = useState(
+    TRANSITIONS[0],
+  );
+
+  const changeStatusBarVisibility = () => setHidden(!hidden);
+
+  const changeStatusBarStyle = () => {
+    const styleId = STYLES.indexOf(statusBarStyle) + 1;
+    if (styleId === STYLES.length) {
+      setStatusBarStyle(STYLES[0]);
+    } else {
+      setStatusBarStyle(STYLES[styleId]);
+    }
+  };
+
+  const changeStatusBarTransition = () => {
+    const transition = TRANSITIONS.indexOf(statusBarTransition) + 1;
+    if (transition === TRANSITIONS.length) {
+      setStatusBarTransition(TRANSITIONS[0]);
+    } else {
+      setStatusBarTransition(TRANSITIONS[transition]);
+    }
+  };
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <StatusBar
+        animated={true}
+        backgroundColor="#61dafb"
+        barStyle={statusBarStyle}
+        showHideTransition={statusBarTransition}
+        hidden={hidden}
+      />
+      <Text style={styles.textStyle}>
+        StatusBar Visibility:{'\n'}
+        {hidden ? 'Hidden' : 'Visible'}
+      </Text>
+      <Text style={styles.textStyle}>
+        StatusBar Style:{'\n'}
+        {statusBarStyle}
+      </Text>
+      {Platform.OS === 'ios' ? (
+        <Text style={styles.textStyle}>
+          StatusBar Transition:{'\n'}
+          {statusBarTransition}
+        </Text>
+      ) : null}
+      <View style={styles.buttonsContainer}>
+        <Button title="Toggle StatusBar" onPress={changeStatusBarVisibility} />
+        <Button title="Change StatusBar Style" onPress={changeStatusBarStyle} />
+        {Platform.OS === 'ios' ? (
+          <Button
+            title="Change StatusBar Transition"
+            onPress={changeStatusBarTransition}
+          />
+        ) : null}
+      </View>
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#ECF0F1',
+  },
+  buttonsContainer: {
+    padding: 10,
+  },
+  textStyle: {
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+});
+
+export default App;
+....................................................................................
+			 Switch Component
+....................................................................................
+in order to toggle, enable and disable features
+
+import React from 'react';
+import { View, Button, Text, ScrollView, StyleSheet, StatusBar, Switch, SafeAreaView } from 'react-native'
+
+let id = 0
+
+const styles = StyleSheet.create({
+    todoContainer: {
+        marginTop: 50,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    appContainer: {
+        paddingTop: 10,
+        marginTop: 20,
+
+    },
+    // Let container (ScrollView (todo container) & View (app container)) fills up all possible space
+    fill: {
+        flex: 1,
+    }
+})
+
+export const Todo = props => (
+    <View style={styles.todoContainer}>
+        <Switch value={props.todo.checked} onValueChange={props.onToggle} />
+        <Button onPress={props.onDelete} title="delete" />
+        <Text>{props.todo.text}</Text>
+    </View>
+)
+class App extends React.Component {
+    state = {
+        todos: [],
+    }
+    addTodo() {
+        id++
+        const text = `TODO number ${id}`
+        this.setState({
+            todos: [
+                ...this.state.todos,
+                { id: id, text: text, checked: false },
+            ],
+        })
+    }
+
+    removeTodo(id) {
+        this.setState({
+            todos: this.state.todos.filter(todo => todo.id !== id)
+        })
+    }
+
+    toggleTodo(id) {
+        this.setState({
+            todos: this.state.todos.map(todo => {
+                if (todo.id !== id) return todo
+                return {
+                    id: todo.id,
+                    text: todo.text,
+                    checked: !todo.checked,
+                }
+            })
+        })
+    }
+
+    render() {
+        return (
+            <SafeAreaView style={[styles.appContainer, styles.fill]}>
+                <StatusBar
+                    animated={true}
+                    backgroundColor="#61dafb"
+                    barStyle={"default"}
+                    showHideTransition={"fade"}
+                    hidden={false} />
+                <Text>Todo count: {this.state.todos.length}</Text>
+                <Text>Unchecked todo count: {this.state.todos.filter(todo => !todo.checked).length}</Text>
+                <Button onPress={() => this.addTodo()} title="Add TODO" />
+                <ScrollView style={styles.fill}>
+                    {this.state.todos.map(todo => (
+                        <Todo
+                            onToggle={() => this.toggleTodo(todo.id)}
+                            onDelete={() => this.removeTodo(todo.id)}
+                            todo={todo}
+                        />
+                    ))}
+                </ScrollView>
+            </SafeAreaView>
+        )
+    }
+}
+export default App;
+.....................................................................................	
+			Image,ImageBackground
+.....................................................................................
+
+In web we have img tage and also background-image
+
+
+Image
+A React component for displaying different types of images, including network images, static resources, temporary local images, and images from local disk, such as the camera roll.
+
+Loding images from the local(within phone)
+..........................................
+import React from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import icon from './assets/icon.png'
+
+
+const App = () => {
+    return <View style={styles.container}>
+        <Image source={icon} style={styles.image}></Image>
+        <Text style={{ color: '#888', fontSize: 18 }}>To share a photo from Your Phone Just Press Button below!</Text>
+    </View>
+}
+export default App;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    image: {
+        width: 305,
+        height: 159
+    }
+})
+
+Loading image from the network:
+...............................
+import React from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
+
+const App = () => {
+    const imageUri = "https://i.imgur.com/TkIrScD.png";
+    return <View style={styles.container}>
+        <Image source={{ uri: imageUri }} style={styles.image}></Image>
+
+        <Text style={{ color: '#888', fontSize: 18 }}>To share a photo from Your Phone Just Press Button below!</Text>
+    </View>
+}
+export default App;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    image: {
+        width: 305,
+        height: 159
+    }
+})
+...
+Image Background:
+................
+import React from "react";
+import { ImageBackground, StyleSheet, Text, View } from "react-native";
+
+const image = { uri: "https://reactjs.org/logo-og.png" };
+
+const App = () => (
+  <View style={styles.container}>
+    <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+      <Text style={styles.text}>Inside</Text>
+      <Text style={styles.text}>Inside</Text>
+      <Text style={styles.text}>Inside</Text>
+      <Text style={styles.text}>Inside</Text>
+      <Text style={styles.text}>Inside</Text>
+      <Text style={styles.text}>Inside</Text>
+      <Text style={styles.text}>Inside</Text>
+    </ImageBackground>
+  </View>
+);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  image: {
+    flex: 1,
+    justifyContent: "center"
+  },
+  text: {
+    color: "white",
+    fontSize: 42,
+    lineHeight: 84,
+    fontWeight: "bold",
+    textAlign: "center",
+    backgroundColor: "#000000c0"
+  }
+});
+
+export default App;
+
+Assignment : Build image Gallery: get images from the url.
+end point:https://jsonplaceholder.typicode.com/photos
+.....................................................................................
+				React Native Navigation
+.....................................................................................				
+How navigation works?
+
+In a web browser, you can link to different pages using an anchor (<a>) tag. When the user clicks on a link, the URL is pushed to the browser history stack.
+
+ When the user presses the back button, the browser pops the item from the top of the history stack, so the active page is now the previously visited page.
+
+React Native doesn't have a built-in idea of a global history stack like a web browser does -- this is where React Navigation enters the story.
+
+React Navigation's stack navigator provides a way for your app to transition between screens and manage navigation history.
+
+If your app uses only one stack navigator then it is conceptually similar to how a web browser handles navigation state - your app pushes and pops items from the navigation stack as users interact with it, and this results in the user seeing different screens. 
+
+A key difference between how this works in a web browser and in React Navigation is that React Navigation's stack navigator provides the gestures and animations that you would expect on Android and iOS when navigating between routes in the stack.
+
+Core concepts in React Native Navigation:
+.........................................
+
+1.Screen
+   =>It is a special component,which only display Userinterface, not having any logic      It acts container.
+2.Component
+   => It is component having biz logic and ui logic...
+
+Setup React Navigation:
+
+in case your project is in "React Native cli"
+in case your project is in "Expo work flow"
+
+Common for both projects:
+
+npm install @react-navigation/native @react-navigation/native-stack
+
+For Bare React Native project:
+
+npm install react-native-screens react-native-safe-area-context
+
+
+React Native  offers lot built in components
+
+1.NavigationContainer
+
+import { NavigationContainer } from '@react-navigation/native'
+import { StyleSheet, View, Text } from 'react-native'
+
+const Home = () => <Text>Home</Text>
+
+const App = () => {
+    return <View style={styles.container}>
+        <NavigationContainer>
+            {/* Rest of your app code */}
+        </NavigationContainer>
+    </View>
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
+})
+export default App;
+
+...................................................................................
+				Multi screen-Page
+.................................................................................
+
+Types of navigation:
+1.screen to screen - stack navigation -  @react-navigation/stack
+2.Tab - tab based navivation.  @react-navigation/bottom-tabs
+3.Drawer -Drawer navigation.   @react-navigation/drawer
+
+Stack Navigation:
+
+Moving among screens: How to move from one screen to another screen?
+
+StackNavigator : 
+ Object used to navigate between screen.
+ Stack Object used to  represent stack navigator.
+
+import { createStackNavigator } from '@react-navigation/stack'
+
+//create Stack Object
+const Stack  = createStackNavigator();
+console.log(Stack)
+
+Object {
+  "Navigator": [Function StackNavigator],
+  "Screen": [Function Screen],
+}
+
+
+1.createStackNavigator is a function that returns an object containing 2 properties: Screen and Navigator.
+2.Both of them are React components used for configuring the navigator.
+The Navigator should contain Screen elements as its children to define the configuration for routes.
+
+3.NavigationContainer is a component which manages our navigation tree and contains the navigation state. This component must wrap all navigators structure. Usually, we'd render this component at the root of our app, which is usually the component exported from App.js.
+
+import * as React from 'react';
+import { Text, View, StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+//stack navigator
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+//create Stack Object
+const Stack = createNativeStackNavigator();
+
+const Home = () => {
+    return <View style={styles.container}>
+        <Text>Home Screen</Text>
+    </View>
+}
+const Profile = () => {
+    return <View style={styles.container}>
+        <Text>Profile Screen</Text>
+    </View>
+}
+
+
+export default function App() {
+    return <NavigationContainer>
+        <Stack.Navigator>
+              <Stack.Screen name="Home" component={Home}/>
+              <Stack.Screen name="Profile" component={Profile}/>
+        </Stack.Navigator>
+    </NavigationContainer>
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+....................................................................................
+			....................................................................................
+			   How to move between screens
+..................................................................................
+
+Navigating to a new screen​
+
+Every Component receives information from the parent component as a prop.
+When component is rendered via route,React Navigator injects an object called "Navigation" Object as prop to every Component
+
+
+Props;
+Object {
+  "navigation": Object {
+    "addListener": [Function addListener],
+    "canGoBack": [Function canGoBack],
+    "dispatch": [Function dispatch],
+    "getId": [Function getId],
+    "getParent": [Function getParent],
+    "getState": [Function anonymous],
+    "goBack": [Function anonymous],
+    "isFocused": [Function isFocused],
+    "navigate": [Function anonymous],
+    "pop": [Function anonymous],
+    "popToTop": [Function anonymous],
+    "push": [Function anonymous],
+    "removeListener": [Function removeListener],
+    "replace": [Function anonymous],
+    "reset": [Function anonymous],
+    "setOptions": [Function setOptions],
+    "setParams": [Function anonymous],
+  },
+  "route": Object {
+    "key": "Home-V-z_dGCJfqcHgNXxzxRGK",
+    "name": "Home",
+    "params": undefined,
+  },
+
+Eg:
+import * as React from 'react';
+import { Text, View, StyleSheet, Button, Alert } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+//stack navigator
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+//create Stack Object
+const Stack = createNativeStackNavigator();
+
+const Home = (props) => {
+    console.log(props)
+    const { navigation: { navigate } } = props
+    const moveToProfile = evt => {
+        Alert.alert('moving screen')
+        //logic to move from this screen to next screen.
+        // props.navigation.navigate('Profile')
+        //  navigation.navigate('Profile')
+        navigate('Profile')
+    }
+
+    return <View style={styles.container}>
+        <Text>Home Screen</Text>
+        {/* <Button title="Profile" onPress={moveToProfile} /> */}
+        <Button title="Profile" onPress={() => navigate('Profile')} />
+    </View>
+}
+const Profile = () => {
+    return <View style={styles.container}>
+        <Text>Profile Screen</Text>
+    </View>
+}
+
+
+export default function App() {
+    return <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Profile" component={Profile} />
+        </Stack.Navigator>
+    </NavigationContainer>
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+....................................................................................	
+
+.....................................................................................
+Assignment:
+
+Personal Diary App
+->Show Home Screen
+  --->TodosScreen - AJAX To fetch data from the end point/You can mock data
+        -DetailsTodScreen--> Just display label
+ ---->Diet Screen
+        -DetailsDietScreen
+...................................................................................
+			  Moving from current Screen to Back Screen
+...................................................................................
+
+Ways to move from current screen to back screen:
+................................................
+
+1.via Current back button
+2.via Program
+   navigation.goBack()
+
+import * as React from 'react';
+import { Text, View, StyleSheet, Button, Alert } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+//stack navigator
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+//create Stack Object
+const Stack = createNativeStackNavigator();
+
+const Home = (props) => {
+    console.log(props)
+    const { navigation: { navigate } } = props
+    const moveToProfile = evt => {
+        Alert.alert('moving screen')
+        //logic to move from this screen to next screen.
+        // props.navigation.navigate('Profile')
+        //  navigation.navigate('Profile')
+        navigate('Profile')
+    }
+
+    return <View style={styles.container}>
+        <Text>Home Screen</Text>
+        {/* <Button title="Profile" onPress={moveToProfile} /> */}
+        <Button title="Profile" onPress={() => navigate('Profile')} />
+    </View>
+}
+const Profile = props => {
+    const { navigation: { goBack } } = props
+    return <View style={styles.container}>
+        <Text>Profile Screen</Text>
+        <Button title="Back" onPress={() => goBack()} />
+
+    </View>
+}
+
+
+export default function App() {
+    return <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Profile" component={Profile} />
+        </Stack.Navigator>
+    </NavigationContainer>
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+....................................................................................
+		Passing params from one screen to another Screen
+....................................................................................
+Pass params to a route by putting them in an object as a second parameter to the navigation.navigate function:
+ navigation.navigate('RouteName', { /* params go here */ })
+
+import * as React from 'react';
+import { Text, View, StyleSheet, Button, Alert } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+//stack navigator
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+//create Stack Object
+const Stack = createNativeStackNavigator();
+
+const Home = (props) => {
+    console.log(props)
+    const { navigation: { navigate } } = props
+    const moveToProfile = evt => {
+        Alert.alert('moving screen')
+        //logic to move from this screen to next screen.
+        // props.navigation.navigate('Profile')
+        //  navigation.navigate('Profile')
+        navigate('Profile')
+    }
+
+    const profile = {
+        id:1,
+        name:'Subramanian Murugan'
+    }
+
+    return <View style={styles.container}>
+        <Text>Home Screen</Text>
+        {/* <Button title="Profile" onPress={moveToProfile} /> */}
+        {/* <Button title="Profile" onPress={() => navigate('Profile', { id: 1, name: 'Subramanian' })} /> */}
+        <Button title="Profile" onPress={() => navigate('Profile', { profile })} />
+    </View>
+}
+const Profile = props => {
+    const { navigation: { goBack }, route: { params } } = props
+    return <View style={styles.container}>
+        <Text>Profile Screen</Text>
+        <Text>{params.profile.id} {params.profile.name}</Text>
+        <Button title="Back" onPress={() => goBack()} />
+
+    </View>
+}
+
+
+export default function App() {
+    return <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Profile" component={Profile} />
+        </Stack.Navigator>
+    </NavigationContainer>
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+.....................................................................................
+				inital params
+
+you can some inital params to a screen, if you didnot specify any params when navigating to this screen.
+
+<Stack.screen name="Profile" component={Profile} initalParams={{id:0,name:'name'}}/>
+
+eg:
+import * as React from 'react';
+import { Text, View, StyleSheet, Button, Alert } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+//stack navigator
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+//create Stack Object
+const Stack = createNativeStackNavigator();
+
+const Home = (props) => {
+    console.log(props)
+    const { navigation: { navigate } } = props
+    const moveToProfile = evt => {
+        Alert.alert('moving screen')
+        //logic to move from this screen to next screen.
+        // props.navigation.navigate('Profile')
+        //  navigation.navigate('Profile')
+        navigate('Profile')
+    }
+
+    const profile = {
+        id: 1,
+        name: 'Subramanian Murugan'
+    }
+
+    return <View style={styles.container}>
+        <Text>Home Screen</Text>
+        {/* <Button title="Profile" onPress={moveToProfile} /> */}
+        {/* <Button title="Profile" onPress={() => navigate('Profile', { id: 1, name: 'Subramanian' })} /> */}
+        {/* <Button title="Profile" onPress={() => navigate('Profile', { profile })} /> */}
+        <Button title="Profile" onPress={() => navigate('Profile')} />
+        <Button title="Profile" onPress={() => navigate('Profile', { profile })} />
+    </View>
+}
+const Profile = props => {
+    const { navigation: { goBack }, route: { params } } = props
+    return <View style={styles.container}>
+        <Text>Profile Screen</Text>
+        <Text>{params.profile.id} {params.profile.name}</Text>
+        <Button title="Back" onPress={() => goBack()} />
+
+    </View>
+}
+
+
+export default function App() {
+    return <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Profile" component={Profile} initialParams={{ profile: { id: 0, name: 'name' } }} />
+        </Stack.Navigator>
+    </NavigationContainer>
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+....................................................................................				   setParams
+
+Updating params#
+
+Screens can also update their params, like they can update their state. The navigation.setParams method lets you update the params of a screen.
+Basic usage:
+
+navigation.setParams({
+  query: 'someText',
+})
+import * as React from 'react';
+import { Text, View, StyleSheet, Button, Alert } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+//stack navigator
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+//create Stack Object
+const Stack = createNativeStackNavigator();
+
+const Home = (props) => {
+    console.log(props)
+    const { navigation: { navigate } } = props
+    const moveToProfile = evt => {
+        Alert.alert('moving screen')
+        //logic to move from this screen to next screen.
+        // props.navigation.navigate('Profile')
+        //  navigation.navigate('Profile')
+        navigate('Profile')
+    }
+
+    const profile = {
+        id: 1,
+        name: 'Subramanian Murugan'
+    }
+
+    return <View style={styles.container}>
+        <Text>Home Screen</Text>
+        {/* <Button title="Profile" onPress={moveToProfile} /> */}
+        {/* <Button title="Profile" onPress={() => navigate('Profile', { id: 1, name: 'Subramanian' })} /> */}
+        {/* <Button title="Profile" onPress={() => navigate('Profile', { profile })} /> */}
+        <Button style={{ marginTop: 10 }} title="Profile" onPress={() => navigate('Profile')} />
+
+        <Button style={{ marginTop: 10 }} title="Profile" onPress={() => navigate('Profile', { profile })} />
+    </View>
+}
+const Profile = props => {
+    const { navigation: { goBack }, route: { params } } = props
+    return <View style={styles.container}>
+        <Text>Profile Screen</Text>
+        <Text>{params.profile.id} {params.profile.name}</Text>
+        <Button title="Back" onPress={() => goBack()} />
+
+        <Button title="Update Params" onPress={() => {
+            props.navigation.setParams({ profile: { id: 900, name: 'foo' } })
+        }} />
+
+    </View>
+}
+
+
+export default function App() {
+    return <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Profile" component={Profile} initialParams={{ profile: { id: 0, name: 'name' } }} />
+        </Stack.Navigator>
+    </NavigationContainer>
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+.....................................................................................					Configuring the Header Bar
+....................................................................................
+
+Header Title:
+ By default header title is name of the Route
+
+
+ <Stack.Screen name="Home" component={Home} />
+
+How to override the default Header title?
+
+   <Stack.Screen options={{title:'My Personal Diary'}} name="Home" component={Home} />
+
+How to update header dynamically based on some props?
+
+<Stack.Screen name="Profile" options={(navigation)=>{
+   return {
+	title:navigation.route.params.name || ''
+   }
+}} component={Profile} />
+..
+import * as React from 'react';
+import { Text, View, StyleSheet, Button, Alert } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+//stack navigator
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+//create Stack Object
+const Stack = createNativeStackNavigator();
+
+const Home = (props) => {
+    const { navigation: { navigate } } = props
+    const moveToProfile = evt => {
+        Alert.alert('moving screen')
+        //logic to move from this screen to next screen.
+        // props.navigation.navigate('Profile')
+        //  navigation.navigate('Profile')
+        navigate('Profile')
+    }
+
+    const profile = {
+        id: 1,
+        name: 'Subramanian Murugan'
+    }
+
+    return <View style={styles.container}>
+        <Text>Home Screen</Text>
+        {/* <Button title="Profile" onPress={moveToProfile} /> */}
+        {/* <Button title="Profile" onPress={() => navigate('Profile', { id: 1, name: 'Subramanian' })} /> */}
+        {/* <Button title="Profile" onPress={() => navigate('Profile', { profile })} /> */}
+        <Button style={{ marginTop: 10 }} title="Profile" onPress={() => navigate('Profile')} />
+
+        <Button style={{ marginTop: 10 }} title="Profile" onPress={() => navigate('Profile', { profile })} />
+    </View>
+}
+const Profile = props => {
+    const { navigation: { goBack }, route: { params } } = props
+    return <View style={styles.container}>
+        <Text>Profile Screen</Text>
+        <Text>{params.profile.id} {params.profile.name}</Text>
+        <Button title="Back" onPress={() => goBack()} />
+
+        <Button title="Update Params" onPress={() => {
+            props.navigation.setParams({ profile: { id: 900, name: 'foo' } })
+        }} />
+
+    </View>
+}
+
+
+export default function App() {
+    return <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen options={{ title: 'My Personal Diary' }} name="Home" component={Home} />
+            <Stack.Screen name="Profile" options={({route}) => {
+                console.log(route)
+                return {
+                    title: `Profile - ${route.params.profile.name}` || ''
+                }
+            }} component={Profile} initialParams={{ profile: { id: 0, name: 'name' } }} />
+        </Stack.Navigator>
+    </NavigationContainer>
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+....................................................................................
+				Header styles
+....................................................................................
+
+
+There are three key properties to use when customizing the style of your header: headerStyle, headerTintColor, and headerTitleStyle.
+
+headerStyle: a style object that will be applied to the View that wraps the header. If you set backgroundColor on it, that will be the color of your header.
+
+headerTintColor: the back button and title both use this property as their color.
+
+headerTitleStyle: if we want to customize the fontFamily, fontWeight and other Text style properties for the title, we can use this to do it.
+import * as React from 'react';
+import { Text, View, StyleSheet, Button, Alert } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+//stack navigator
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+//create Stack Object
+const Stack = createNativeStackNavigator();
+
+const Home = (props) => {
+    const { navigation: { navigate } } = props
+    const moveToProfile = evt => {
+        Alert.alert('moving screen')
+        //logic to move from this screen to next screen.
+        // props.navigation.navigate('Profile')
+        //  navigation.navigate('Profile')
+        navigate('Profile')
+    }
+
+    const profile = {
+        id: 1,
+        name: 'Subramanian Murugan'
+    }
+
+    return <View style={styles.container}>
+        <Text>Home Screen</Text>
+        {/* <Button title="Profile" onPress={moveToProfile} /> */}
+        {/* <Button title="Profile" onPress={() => navigate('Profile', { id: 1, name: 'Subramanian' })} /> */}
+        {/* <Button title="Profile" onPress={() => navigate('Profile', { profile })} /> */}
+        <Button style={{ marginTop: 10 }} title="Profile" onPress={() => navigate('Profile')} />
+
+        <Button style={{ marginTop: 10 }} title="Profile" onPress={() => navigate('Profile', { profile })} />
+    </View>
+}
+const Profile = props => {
+    const { navigation: { goBack }, route: { params } } = props
+    return <View style={styles.container}>
+        <Text>Profile Screen</Text>
+        <Text>{params.profile.id} {params.profile.name}</Text>
+        <Button title="Back" onPress={() => goBack()} />
+
+        <Button title="Update Params" onPress={() => {
+            props.navigation.setParams({ profile: { id: 900, name: 'foo' } })
+        }} />
+
+    </View>
+}
+
+
+export default function App() {
+    return <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen options={{ title: 'My Personal Diary' }} name="Home" component={Home} />
+            <Stack.Screen name="Profile" options={({ route }) => {
+                return {
+                    title: `Profile - ${route.params.profile.name}` || '',
+                    headerStyle: {
+                        backgroundColor: 'yellow'
+                    },
+                    headerTintColor: 'blue',
+                    headerTitleStyle: {
+                        fontWeight: 'bold'
+                    }
+                }
+            }
+            } component={Profile} initialParams={{ profile: { id: 0, name: 'name' } }} />
+        </Stack.Navigator>
+    </NavigationContainer>
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+....................................................................................
+			Sharing common options(styles) across screens
+....................................................................................
+
+Sharing common options across screens#
+
+It is common to want to configure the header in a similar way across many screens. For example, your company brand color might be red and so you want the header background color to be red and tint color to be white. Conveniently, these are the colors we're using in our running example, and you'll notice that when you navigate to the DetailsScreen the colors go back to the defaults. Wouldn't it be awful if we had to copy the options header style properties from HomeScreen to DetailsScreen, and for every single screen component we use in our app? Thankfully, we do not. We can instead move the configuration up to the stack navigator under the prop screenOptions
+
+  <Stack.Navigator screenOptions={
+            {
+                headerStyle: {
+                    backgroundColor: 'yellow'
+                },
+                headerTintColor: 'blue',
+                headerTitleStyle: {
+                    fontWeight: 'bold'
+                }
+            }
+        }>
+
+import * as React from 'react';
+import { Text, View, StyleSheet, Button, Alert } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+//stack navigator
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+//create Stack Object
+const Stack = createNativeStackNavigator();
+
+const Home = (props) => {
+    const { navigation: { navigate } } = props
+    const moveToProfile = evt => {
+        Alert.alert('moving screen')
+        //logic to move from this screen to next screen.
+        // props.navigation.navigate('Profile')
+        //  navigation.navigate('Profile')
+        navigate('Profile')
+    }
+
+    const profile = {
+        id: 1,
+        name: 'Subramanian Murugan',
+    }
+
+    return <View style={styles.container}>
+        <Text>Home Screen</Text>
+        {/* <Button title="Profile" onPress={moveToProfile} /> */}
+        {/* <Button title="Profile" onPress={() => navigate('Profile', { id: 1, name: 'Subramanian' })} /> */}
+        {/* <Button title="Profile" onPress={() => navigate('Profile', { profile })} /> */}
+        <Button style={{ marginTop: 10 }} title="Profile" onPress={() => navigate('Profile')} />
+
+        <Button style={{ marginTop: 10 }} title="Profile" onPress={() => navigate('Profile', { profile })} />
+    </View>
+}
+const Profile = props => {
+    const { navigation: { goBack }, route: { params } } = props
+    return <View style={styles.container}>
+        <Text>Profile Screen</Text>
+        <Text>{params.profile.id} {params.profile.name}</Text>
+        <Button title="Back" onPress={() => goBack()} />
+
+        <Button title="Update Params" onPress={() => {
+            props.navigation.setParams({ profile: { id: 900, name: 'foo' } })
+        }} />
+
+    </View>
+}
+
+
+export default function App() {
+    return <NavigationContainer>
+        <Stack.Navigator screenOptions={
+            {
+                headerStyle: {
+                    backgroundColor: 'yellow',
+                },
+                headerTintColor: 'blue',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                }
+            }
+        }>
+            <Stack.Screen options={{ title: 'My Personal Diary' }} name="Home" component={Home} />
+            <Stack.Screen name="Profile" options={({ route }) => {
+                return {
+                    title: `Profile - ${route.params.profile.name}` || '',
+                }
+            }
+            } component={Profile} initialParams={{ profile: { id: 0, name: 'name' } }} />
+        </Stack.Navigator>
+    </NavigationContainer>
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+...................................................................................
+			 Header Buttons
+
+How to add a button to header?
+
+          <Stack.Screen name="Profile" options={({ route }) => {
+                return {
+                    title: `Profile - ${route.params.profile.name}` || '',
+                    headerRight: () => {
+                        return <Button onPress={()=>{
+                            alert('Info')
+                        }} title="Info" color="red" />
+                    }
+                }
+            }
+            } component={Profile} initialParams={{ profile: { id: 0, name: 'name' } }} />
+
+import * as React from 'react';
+import { Text, View, StyleSheet, Button, Alert } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+//stack navigator
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+//create Stack Object
+const Stack = createNativeStackNavigator();
+
+const Home = (props) => {
+    const { navigation: { navigate } } = props
+    const moveToProfile = evt => {
+        Alert.alert('moving screen')
+        //logic to move from this screen to next screen.
+        // props.navigation.navigate('Profile')
+        //  navigation.navigate('Profile')
+        navigate('Profile')
+    }
+
+    const profile = {
+        id: 1,
+        name: 'Subramanian Murugan',
+    }
+
+    return <View style={styles.container}>
+        <Text>Home Screen</Text>
+        {/* <Button title="Profile" onPress={moveToProfile} /> */}
+        {/* <Button title="Profile" onPress={() => navigate('Profile', { id: 1, name: 'Subramanian' })} /> */}
+        {/* <Button title="Profile" onPress={() => navigate('Profile', { profile })} /> */}
+        <Button style={{ marginTop: 10 }} title="Profile" onPress={() => navigate('Profile')} />
+
+        <Button style={{ marginTop: 10 }} title="Profile" onPress={() => navigate('Profile', { profile })} />
+    </View>
+}
+const Profile = props => {
+    const { navigation: { goBack }, route: { params } } = props
+    return <View style={styles.container}>
+        <Text>Profile Screen</Text>
+        <Text>{params.profile.id} {params.profile.name}</Text>
+        <Button title="Back" onPress={() => goBack()} />
+
+        <Button title="Update Params" onPress={() => {
+            props.navigation.setParams({ profile: { id: 900, name: 'foo' } })
+        }} />
+
+    </View>
+}
+
+
+export default function App() {
+    return <NavigationContainer>
+        <Stack.Navigator screenOptions={
+            {
+                headerStyle: {
+                    backgroundColor: 'yellow',
+                },
+                headerTintColor: 'blue',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                }
+            }
+        }>
+            <Stack.Screen options={{ title: 'My Personal Diary' }} name="Home" component={Home} />
+            <Stack.Screen name="Profile" options={({ route }) => {
+                return {
+                    title: `Profile - ${route.params.profile.name}` || '',
+                    headerRight: () => {
+                        return <Button onPress={()=>{
+                            alert('Info')
+                        }} title="Info" color="red" />
+                    }
+                }
+            }
+            } component={Profile} initialParams={{ profile: { id: 0, name: 'name' } }} />
+        </Stack.Navigator>
+    </NavigationContainer>
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+.........................
+Navigating to Different screens through Header Buttons
+
+<Stack.Screen name="Profile" options={({ route, navigation }) => {
+                return {
+                    title: `Profile - ${route.params.profile.name}` || '',
+                    headerRight: () => {
+                        return <Button onPress={() => {
+                            alert('Info')
+                            navigation.navigate('Info')
+                        }} title="Info" color="red" />
+                    }
+                }
+            }
+            } component={Profile} initialParams={{ profile: { id: 0, name: 'name' } }} />
+
+import * as React from 'react';
+import { Text, View, StyleSheet, Button, Alert } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+//stack navigator
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Screen } from 'react-native-screens';
+
+//create Stack Object
+const Stack = createNativeStackNavigator();
+
+
+const Info = prop => {
+    return <View style={styles.container}>
+        <Text>Info Screen</Text>
+    </View>
+}
+
+const Home = (props) => {
+    const { navigation: { navigate } } = props
+    const moveToProfile = evt => {
+        Alert.alert('moving screen')
+        //logic to move from this screen to next screen.
+        // props.navigation.navigate('Profile')
+        //  navigation.navigate('Profile')
+        navigate('Profile')
+    }
+
+    const profile = {
+        id: 1,
+        name: 'Subramanian Murugan',
+    }
+
+    return <View style={styles.container}>
+        <Text>Home Screen</Text>
+        {/* <Button title="Profile" onPress={moveToProfile} /> */}
+        {/* <Button title="Profile" onPress={() => navigate('Profile', { id: 1, name: 'Subramanian' })} /> */}
+        {/* <Button title="Profile" onPress={() => navigate('Profile', { profile })} /> */}
+        <Button style={{ marginTop: 10 }} title="Profile" onPress={() => navigate('Profile')} />
+
+        <Button style={{ marginTop: 10 }} title="Profile" onPress={() => navigate('Profile', { profile })} />
+    </View>
+}
+const Profile = props => {
+    const { navigation: { goBack }, route: { params } } = props
+    return <View style={styles.container}>
+        <Text>Profile Screen</Text>
+        <Text>{params.profile.id} {params.profile.name}</Text>
+        <Button title="Back" onPress={() => goBack()} />
+
+        <Button title="Update Params" onPress={() => {
+            props.navigation.setParams({ profile: { id: 900, name: 'foo' } })
+        }} />
+
+    </View>
+}
+
+
+export default function App() {
+    return <NavigationContainer>
+        <Stack.Navigator screenOptions={
+            {
+                headerStyle: {
+                    backgroundColor: 'yellow',
+                },
+                headerTintColor: 'blue',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                }
+            }
+        }>
+            <Stack.Screen options={{ title: 'My Personal Diary' }} name="Home" component={Home} />
+            <Stack.Screen name="Profile" options={({ route, navigation }) => {
+                return {
+                    title: `Profile - ${route.params.profile.name}` || '',
+                    headerRight: () => {
+                        return <Button onPress={() => {
+                            alert('Info')
+                            navigation.navigate('Info')
+                        }} title="Info" color="red" />
+                    }
+                }
+            }
+            } component={Profile} initialParams={{ profile: { id: 0, name: 'name' } }} />
+            <Stack.Screen name="Info" component={Info} />
+
+        </Stack.Navigator>
+    </NavigationContainer>
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+.....................................................................................
+				Tabs,Drawer
+....................................................................................
+Tab:
+
+Steps:
+> npm install @react-navigation/bottom-tabs
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { View, Text, StyleSheet } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+
+const Home = props => {
+
+    return <View style={styles.container}>
+        <Text>Home</Text>
+    </View>
+}
+const Settings = props => {
+    return <View style={styles.container}>
+        <Text>Profile Settings</Text>
+    </View>
+}
+
+//Create Tab 
+const Tab = createBottomTabNavigator();
+
+
+const App = () => {
+    return <NavigationContainer>
+        <Tab.Navigator>
+            <Tab.Screen name="Home" component={Home} />
+            <Tab.Screen name="Settings" component={Settings} options={{ title: 'Profile-Settings' }} />
+        </Tab.Navigator>
+    </NavigationContainer>
+}
+
+export default App;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+
+...................................................................................
+			Navigating from tab to screen
+			  Tab + Stack
+...................................................................................
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { View, Text, StyleSheet, Button } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+
+//create Stack Object
+const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
+const Home = props => {
+    return <Tab.Navigator>
+        <Tab.Screen name="Messages" component={Messages} />
+        <Tab.Screen name="Feed" component={Feed} />
+    </Tab.Navigator>
+}
+
+const Feed = props => {
+    return <View style={styles.container}>
+        <Text>Feed Screen</Text>
+    </View>
+}
+
+const Messages = props => {
+    const { navigation } = props;
+    return <View style={styles.container}>
+        <Text>Messages Screen</Text>
+        <Button title="go to Settions" onPress={() => {
+            navigation.navigate('Settings')
+        }} />
+    </View>
+}
+const Settings = props => {
+    return <View style={styles.container}>
+        <Text>Settings Screen</Text>
+    </View>
+}
+function App() {
+    return <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen
+                name="Home"
+                component={Home}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="Settings" component={Settings} />
+        </Stack.Navigator>
+    </NavigationContainer>
+
+}
+
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+
+export default App
+..............................................................................
+			Tab
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { View, Text, StyleSheet, Button } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+
+//create Stack Object
+const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
+const Home = props => {
+    return <Tab.Navigator>
+        <Tab.Screen name="Messages" component={Messages} />
+        <Tab.Screen name="Feed" component={Feed} />
+    </Tab.Navigator>
+}
+
+const Feed = props => {
+    return <View style={styles.container}>
+        <Text>Feed Screen</Text>
+    </View>
+}
+
+const Messages = props => {
+    const { navigation } = props;
+    return <View style={styles.container}>
+        <Text>Messages Screen</Text>
+        <Button title="go to Settions" onPress={() => {
+            navigation.navigate('Settings')
+        }} />
+    </View>
+}
+const Settings = props => {
+    return <View style={styles.container}>
+        <Text>Settings Screen</Text>
+    </View>
+}
+function App() {
+    return <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen
+                name="Home"
+                component={Home}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen name="Settings" component={Settings} />
+        </Stack.Navigator>
+    </NavigationContainer>
+
+}
+
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+
+export default App
+....................................................................................
+				Drawer
+.....................................................................................
+
+Steps to install drawer dependency:
+....................................
+
+1.install dependency:
+
+npm install @react-navigation/drawer
+npm install react-native-gesture-handler react-native-reanimated
+
+2.plugin configuration in babel.config.js
+
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: ['react-native-reanimated/plugin'],
+};
+
+3.reAnimation configuration 
+Follow this url
+https://docs.swmansion.com/react-native-reanimated
+
+After adding the react-native-reanimated/plugin to your project you may encounter a false-positive "Reanimated 2 failed to create a worklet" error. In most cases, this can be fixed by cleaning the application's cache. Depending on your workflow or favorite package manager that could be done by:
+
+yarn start --reset-cache
+npm start -- --reset-cache
+expo start -c
+or other.
+
+This step has to be down after writing code.
+
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { View, Text, StyleSheet, Button } from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+
+//Create Drawer
+const Drawer = createDrawerNavigator();
+
+//screens
+
+const Feed = () => <Text>Feed</Text>
+const Article = () => <Text>Article</Text>
+
+function App() {
+    return <NavigationContainer>
+        <Drawer.Navigator>
+            <Drawer.Screen name="Feed" component={Feed} />
+            <Drawer.Screen name="Article" component={Article} />
+        </Drawer.Navigator>
+    </NavigationContainer>
+
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+
+export default App
+
+Note:
+import 'react-native-gesture-handler';
+  It must be top of the code always.
+....................................................................................
+				Expo framework
+...................................................................................
+In order to work with Device features:
+
+When you are creating an app that requires access to potentially senstive information on user's device, such as their location, contacts,camera ...you need to ask for the user's permission first.
+
+
+How to get permission from the device?
+
+expo provides an module to work with permissions on both platforms.
+
+$ expo install expo-permissions
+
+Note : if you are working with particular device feature, device specific permission
+package must also be installed
+
+
+Permission type	Packages
+
+NOTIFICATIONS	expo-notifications
+
+USER_FACING_NOTIFICATIONS	expo-notifications
+
+LOCATION	expo-location
+
+CAMERA	expo-barcode-scanner expo-camera 
+        expo-face-detector expo-image-picker expo-media-library
+
+AUDIO_RECORDING	expo-av
+
+CONTACTS	expo-contacts
+
+MEDIA_LIBRARY MEDIA_LIBRARY_WRITE_ONLY	expo-image-picker
+                                        expo-media-library
+CALENDAR	expo-calendar
+
+REMINDERS	expo-calendar
+
+SYSTEM_BRIGHTNESS expo-brightness
+
+MOTION   expo-sensors	
+
+
+import * as Permission from 'expo-permission'
+
+Objects
+
+1.PermissionResponse
+
+ status: 'granted'|'denied'|'undermined'
+ granted: boolean
+ expires: 'never' | number
+
+Expo project setup:
+...................
+Expo Work flow:
+...............
+What is expo?
+
+ Expo is a framework and a platform for universal React applications. It is a set of tools and services built around React Native and native platforms that help you develop, build, deploy, and quickly iterate on iOS, Android, and web apps from the same JavaScript/TypeScript codebase.
+
+Expo apps can be created in two ways
+
+
+Managed Work flow:
+
+  With the managed workflow you only write JavaScript / TypeScript and Expo tools and services take care of everything else for you.
+
+  The managed workflow is kind of like Rails and Create React App, but for React Native.
+
+Apps are built with the managed workflow using the expo-cli, the Expo Go app on your mobile device, and our various services: push notifications, the build service, and over-the-air (OTA) updates. 
+
+Expo tries to manage as much of the complexity of building apps for you as we can, which is why we call it the managed workflow.
+
+ A developer using the managed workflow doesn't use Xcode or Android Studio, they just write JavaScript code and manage configuration for things like the app icon and splash screen through app.json.
+
+ The Expo SDK exposes an increasingly comprehensive set of APIs that give you the power to access device capabilities like the camera, biometric authentication, file system, haptics, and so on.
+
+Bare Work flow:
+
+  In the bare workflow you have full control over every aspect of the native project, and Expo tools and services are a little more limited.
+
+In the bare workflow the developer has complete control, along with the complexity that comes with that. You can use most APIs in the Expo SDK, but the build service and easy Configuration with app.json / app.config.js are not yet supported.
+
+Running your React Native application in case of expo work flow:
+.................................................................
+
+1.You can run and test app inside browser itself- this is not recommended for complex apps.
+
+2.You can run inside your device directly.
+  Expo offers called expo client.
+3.You can use emulators -Andorid virtual devices or emulators.
+
+Metro Bundler:
+-Online compiler, compiles code into react native 
+////////////////////////////////////////////////////////////////////////////////////////////
+
+Tools:
+1.expo cli - to create manage react native projects
+2.expo go - which is an app used to run expo react native project.
+
+>npx create-expo-app my-expo-app
+√ Downloaded and extracted project files.
+√ Installed JavaScript dependencies.
+
+✅ Your project is ready!
+
+To run your project, navigate to the directory and run one of the following npm commands.
+
+- cd my-expo-app
+- npm run android
+- npm run ios # you need to use macOS to build the iOS project - use the Expo app if you need to do iOS development without a Mac
+- npm run web
+
+.....................................................................................
+			Device specific components 
+....................................................................................
+
+1.Location 
+
+How to use Location Component?
+
+=>Inside expo project.
+=>Can i use Expo Components - Location inside ReactNative Projects
+  Yes, but you have to do some configuration to in order to work properly
+
+The difference between expo projects and react native projects are most of the configuration expo takes automatically like meta files creating and updating
+ "AndroidManifest.xml"
+
+Steps:
+1.Ensure Platform Compatibility.
+2.npx expo install expo-location
+3.App configuration - app.json or app.config.js
+You can configure expo-location using its built-in config plugin if you use config plugins in your project (EAS Build or npx expo run:[android|ios]).
+
+
+app.json
+{
+  "expo": {
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
+        }
+      ]
+    ]
+  }
+}
+eg:
+ "expo": {
+      "plugins": [
+        "expo-location"
+      ]
+    }
+
+Are you using this lib(expo-location) in bare react native project?
+Learn how to configure the native projects in the installation instructions in the expo-location repository.
+
+4.If you're using the iOS or Android Emulators, ensure that Location is enabled.
+https://docs.expo.dev/versions/latest/sdk/location/#enabling-emulator-location
+...
+
+Eg:
+import * as Location from 'expo-location';
+import { StyleSheet, Text, View } from 'react-native';
+import { useState, useEffect } from 'react'
+
+export default function App() {
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
+  }, []);
+
+  let text = 'Waiting..';
+  if (errorMsg) {
+    text = errorMsg;
+  } else if (location) {
+    text = JSON.stringify(location);
+  }
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.paragraph}>{text}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+....................................................................................
+				Expo-Network
+...................................................................................
+expo-network provides useful information about the device's network such as its IP address, MAC address, and airplane mode status.
+
+
+
+npx expo install expo-network
+
+app.json
+  "expo": {
+      "plugins": [
+        "expo-location",
+        "expo-network"
+      ]
+    },
+
+Configuration
+On Android, this module requires permissions to access the network and Wi-Fi state. The permissions ACCESS_NETWORK_STATE and ACCESS_WIFI_STATE are added automatically.
+
+import * as Network from 'expo-network';
+
+Network.getNetworkStateAsync()
+Network.getIpAddressAsync()
+Network.getMacAddressAsync(interfaceName?)
+Network.isAirplaneModeEnabledAsync() (Android only)
+
+eg:
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View, Text } from 'react-native';
+import * as Network from 'expo-network';
+
+export default function App() {
+    const [network, setNetwork] = useState(null)
+    useEffect(() => {
+        (async () => {
+            const ip = await Network.getIpAddressAsync();
+            console.log(ip)
+            setNetwork(ip)
+        })();
+    }, []);
+
+    return (
+        <View style={styles.container}>
+            <Text>Network Module</Text>
+            <Text>Ip Address{network}</Text>
+        </View>
+    );
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+...................................................................................
+			Expo-Camera
+...................................................................................
+expo-camera provides a React component that renders a preview of the device's front or back camera. The camera's parameters like zoom, auto focus, white balance and flash mode are adjustable
+
+Steps:
+npx expo install expo-camera
+
+app.json
+  "expo": {
+      "plugins": [
+        "expo-location",
+        "expo-network",
+        "expo-camera"
+      ]
+ },
+
+eg:
+import { Camera, CameraType } from 'expo-camera';
+import { useState } from 'react';
+import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
+export default function App() {
+  const [type, setType] = useState(CameraType.back);
+  const [permission, requestPermission] = Camera.useCameraPermissions();
+
+  if (!permission) ... 
+
+  if (!permission.granted) ... 
+
+  function toggleCameraType() {
+    setType(current => (current === CameraType.back ? CameraType.front : CameraType.back));
+  }
+
+  return (
+    <View style={styles.container}>
+      <Camera style={styles.camera} type={type}>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button} onPress={toggleCameraType}>
+            <Text style={styles.text}>Flip Camera</Text>
+          </TouchableOpacity>
+        </View>
+      </Camera>
+    </View>
+  );
+}
+..................................................................................
+			Expo-Audio,Expo-font,Expo-assets
+..................................................................................
+To access audio  of the device.
+
+npx expo install expo-av
+
+app.json
+  "expo": {
+      "plugins": [
+        "expo-location",
+        "expo-network",
+        "expo-camera",
+        "expo-av"
+      ]
+    },
+
+
+
+/**
+ * @flow
+ */
+
+import React from "react";
+import {
+    Dimensions,
+    Image,
+    StyleSheet,
+    Text,
+    TouchableHighlight,
+    View
+} from "react-native";
+import { Asset } from "expo-asset";
+import {
+    Audio,
+    InterruptionModeAndroid,
+    InterruptionModeIOS,
+    ResizeMode,
+    Video
+} from "expo-av";
+import * as Font from "expo-font";
+import Slider from "@react-native-community/slider";
+
+import { MaterialIcons } from "@expo/vector-icons";
+
+class Icon {
+    constructor(module, width, height) {
+        this.module = module;
+        this.width = width;
+        this.height = height;
+        Asset.fromModule(this.module).downloadAsync();
+    }
+}
+
+class PlaylistItem {
+    constructor(name, uri, isVideo) {
+        this.name = name;
+        this.uri = uri;
+        this.isVideo = isVideo;
+    }
+}
+
+const PLAYLIST = [
+    new PlaylistItem(
+        "Comfort Fit - “Sorry”",
+        "https://s3.amazonaws.com/exp-us-standard/audio/playlist-example/Comfort_Fit_-_03_-_Sorry.mp3",
+        false
+    ),
+    new PlaylistItem(
+        "Big Buck Bunny",
+        "http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+        true
+    ),
+    new PlaylistItem(
+        "Mildred Bailey – “All Of Me”",
+        "https://ia800304.us.archive.org/34/items/PaulWhitemanwithMildredBailey/PaulWhitemanwithMildredBailey-AllofMe.mp3",
+        false
+    ),
+    new PlaylistItem(
+        "Popeye - I don't scare",
+        "https://ia800501.us.archive.org/11/items/popeye_i_dont_scare/popeye_i_dont_scare_512kb.mp4",
+        true
+    ),
+    new PlaylistItem(
+        "Podington Bear - “Rubber Robot”",
+        "https://s3.amazonaws.com/exp-us-standard/audio/playlist-example/Podington_Bear_-_Rubber_Robot.mp3",
+        false
+    )
+];
+
+const ICON_THROUGH_EARPIECE = "speaker-phone";
+const ICON_THROUGH_SPEAKER = "speaker";
+
+const ICON_PLAY_BUTTON = new Icon(
+    require("./assets/images/play_button.png"),
+    34,
+    51
+);
+const ICON_PAUSE_BUTTON = new Icon(
+    require("./assets/images/pause_button.png"),
+    34,
+    51
+);
+const ICON_STOP_BUTTON = new Icon(
+    require("./assets/images/stop_button.png"),
+    22,
+    22
+);
+const ICON_FORWARD_BUTTON = new Icon(
+    require("./assets/images/forward_button.png"),
+    33,
+    25
+);
+const ICON_BACK_BUTTON = new Icon(
+    require("./assets/images/back_button.png"),
+    33,
+    25
+);
+
+const ICON_LOOP_ALL_BUTTON = new Icon(
+    require("./assets/images/loop_all_button.png"),
+    77,
+    35
+);
+const ICON_LOOP_ONE_BUTTON = new Icon(
+    require("./assets/images/loop_one_button.png"),
+    77,
+    35
+);
+
+const ICON_MUTED_BUTTON = new Icon(
+    require("./assets/images/muted_button.png"),
+    67,
+    58
+);
+const ICON_UNMUTED_BUTTON = new Icon(
+    require("./assets/images/unmuted_button.png"),
+    67,
+    58
+);
+
+const ICON_TRACK_1 = new Icon(require("./assets/images/track_1.png"), 166, 5);
+const ICON_THUMB_1 = new Icon(require("./assets/images/thumb_1.png"), 18, 19);
+const ICON_THUMB_2 = new Icon(require("./assets/images/thumb_2.png"), 15, 19);
+
+const LOOPING_TYPE_ALL = 0;
+const LOOPING_TYPE_ONE = 1;
+const LOOPING_TYPE_ICONS = { 0: ICON_LOOP_ALL_BUTTON, 1: ICON_LOOP_ONE_BUTTON };
+
+const { width: DEVICE_WIDTH, height: DEVICE_HEIGHT } = Dimensions.get("window");
+const BACKGROUND_COLOR = "#FFF8ED";
+const DISABLED_OPACITY = 0.5;
+const FONT_SIZE = 14;
+const LOADING_STRING = "... loading ...";
+const BUFFERING_STRING = "...buffering...";
+const RATE_SCALE = 3.0;
+const VIDEO_CONTAINER_HEIGHT = (DEVICE_HEIGHT * 2.0) / 5.0 - FONT_SIZE * 2;
+
+export default class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.index = 0;
+        this.isSeeking = false;
+        this.shouldPlayAtEndOfSeek = false;
+        this.playbackInstance = null;
+        this.state = {
+            showVideo: false,
+            playbackInstanceName: LOADING_STRING,
+            loopingType: LOOPING_TYPE_ALL,
+            muted: false,
+            playbackInstancePosition: null,
+            playbackInstanceDuration: null,
+            shouldPlay: false,
+            isPlaying: false,
+            isBuffering: false,
+            isLoading: true,
+            fontLoaded: false,
+            shouldCorrectPitch: true,
+            volume: 1.0,
+            rate: 1.0,
+            videoWidth: DEVICE_WIDTH,
+            videoHeight: VIDEO_CONTAINER_HEIGHT,
+            poster: false,
+            useNativeControls: false,
+            fullscreen: false,
+            throughEarpiece: false
+        };
+    }
+
+    componentDidMount() {
+        Audio.setAudioModeAsync({
+            allowsRecordingIOS: false,
+            staysActiveInBackground: false,
+            interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+            playsInSilentModeIOS: true,
+            shouldDuckAndroid: true,
+            interruptionModeAndroid: InterruptionModeAndroid.DoNotMix,
+            playThroughEarpieceAndroid: false
+        });
+        (async () => {
+            await Font.loadAsync({
+                ...MaterialIcons.font,
+                "cutive-mono-regular": require("./assets/fonts/CutiveMono-Regular.ttf")
+            });
+            this.setState({ fontLoaded: true });
+        })();
+    }
+
+    async _loadNewPlaybackInstance(playing) {
+        if (this.playbackInstance != null) {
+            await this.playbackInstance.unloadAsync();
+            // this.playbackInstance.setOnPlaybackStatusUpdate(null);
+            this.playbackInstance = null;
+        }
+
+        const source = { uri: PLAYLIST[this.index].uri };
+        const initialStatus = {
+            shouldPlay: playing,
+            rate: this.state.rate,
+            shouldCorrectPitch: this.state.shouldCorrectPitch,
+            volume: this.state.volume,
+            isMuted: this.state.muted,
+            isLooping: this.state.loopingType === LOOPING_TYPE_ONE
+            // // UNCOMMENT THIS TO TEST THE OLD androidImplementation:
+            // androidImplementation: 'MediaPlayer',
+        };
+
+        if (PLAYLIST[this.index].isVideo) {
+            await this._video.loadAsync(source, initialStatus);
+            // this._video.onPlaybackStatusUpdate(this._onPlaybackStatusUpdate);
+            this.playbackInstance = this._video;
+            const status = await this._video.getStatusAsync();
+        } else {
+            const { sound, status } = await Audio.Sound.createAsync(
+                source,
+                initialStatus,
+                this._onPlaybackStatusUpdate
+            );
+            this.playbackInstance = sound;
+        }
+
+        this._updateScreenForLoading(false);
+    }
+
+    _mountVideo = component => {
+        this._video = component;
+        this._loadNewPlaybackInstance(false);
+    };
+
+    _updateScreenForLoading(isLoading) {
+        if (isLoading) {
+            this.setState({
+                showVideo: false,
+                isPlaying: false,
+                playbackInstanceName: LOADING_STRING,
+                playbackInstanceDuration: null,
+                playbackInstancePosition: null,
+                isLoading: true
+            });
+        } else {
+            this.setState({
+                playbackInstanceName: PLAYLIST[this.index].name,
+                showVideo: PLAYLIST[this.index].isVideo,
+                isLoading: false
+            });
+        }
+    }
+
+    _onPlaybackStatusUpdate = status => {
+        if (status.isLoaded) {
+            this.setState({
+                playbackInstancePosition: status.positionMillis,
+                playbackInstanceDuration: status.durationMillis,
+                shouldPlay: status.shouldPlay,
+                isPlaying: status.isPlaying,
+                isBuffering: status.isBuffering,
+                rate: status.rate,
+                muted: status.isMuted,
+                volume: status.volume,
+                loopingType: status.isLooping ? LOOPING_TYPE_ONE : LOOPING_TYPE_ALL,
+                shouldCorrectPitch: status.shouldCorrectPitch
+            });
+            if (status.didJustFinish && !status.isLooping) {
+                this._advanceIndex(true);
+                this._updatePlaybackInstanceForIndex(true);
+            }
+        } else {
+            if (status.error) {
+                console.log(`FATAL PLAYER ERROR: ${status.error}`);
+            }
+        }
+    };
+
+    _onLoadStart = () => {
+        console.log(`ON LOAD START`);
+    };
+
+    _onLoad = status => {
+        console.log(`ON LOAD : ${JSON.stringify(status)}`);
+    };
+
+    _onError = error => {
+        console.log(`ON ERROR : ${error}`);
+    };
+
+    _onReadyForDisplay = event => {
+        const widestHeight =
+            (DEVICE_WIDTH * event.naturalSize.height) / event.naturalSize.width;
+        if (widestHeight > VIDEO_CONTAINER_HEIGHT) {
+            this.setState({
+                videoWidth:
+                    (VIDEO_CONTAINER_HEIGHT * event.naturalSize.width) /
+                    event.naturalSize.height,
+                videoHeight: VIDEO_CONTAINER_HEIGHT
+            });
+        } else {
+            this.setState({
+                videoWidth: DEVICE_WIDTH,
+                videoHeight:
+                    (DEVICE_WIDTH * event.naturalSize.height) / event.naturalSize.width
+            });
+        }
+    };
+
+    _onFullscreenUpdate = event => {
+        console.log(
+            `FULLSCREEN UPDATE : ${JSON.stringify(event.fullscreenUpdate)}`
+        );
+    };
+
+    _advanceIndex(forward) {
+        this.index =
+            (this.index + (forward ? 1 : PLAYLIST.length - 1)) % PLAYLIST.length;
+    }
+
+    async _updatePlaybackInstanceForIndex(playing) {
+        this._updateScreenForLoading(true);
+
+        this.setState({
+            videoWidth: DEVICE_WIDTH,
+            videoHeight: VIDEO_CONTAINER_HEIGHT
+        });
+
+        this._loadNewPlaybackInstance(playing);
+    }
+
+    _onPlayPausePressed = () => {
+        if (this.playbackInstance != null) {
+            if (this.state.isPlaying) {
+                this.playbackInstance.pauseAsync();
+            } else {
+                this.playbackInstance.playAsync();
+            }
+        }
+    };
+
+    _onStopPressed = () => {
+        if (this.playbackInstance != null) {
+            this.playbackInstance.stopAsync();
+        }
+    };
+
+    _onForwardPressed = () => {
+        if (this.playbackInstance != null) {
+            this._advanceIndex(true);
+            this._updatePlaybackInstanceForIndex(this.state.shouldPlay);
+        }
+    };
+
+    _onBackPressed = () => {
+        if (this.playbackInstance != null) {
+            this._advanceIndex(false);
+            this._updatePlaybackInstanceForIndex(this.state.shouldPlay);
+        }
+    };
+
+    _onMutePressed = () => {
+        if (this.playbackInstance != null) {
+            this.playbackInstance.setIsMutedAsync(!this.state.muted);
+        }
+    };
+
+    _onLoopPressed = () => {
+        if (this.playbackInstance != null) {
+            this.playbackInstance.setIsLoopingAsync(
+                this.state.loopingType !== LOOPING_TYPE_ONE
+            );
+        }
+    };
+
+    _onVolumeSliderValueChange = value => {
+        if (this.playbackInstance != null) {
+            this.playbackInstance.setVolumeAsync(value);
+        }
+    };
+
+    _trySetRate = async (rate, shouldCorrectPitch) => {
+        if (this.playbackInstance != null) {
+            try {
+                await this.playbackInstance.setRateAsync(rate, shouldCorrectPitch);
+            } catch (error) {
+                // Rate changing could not be performed, possibly because the client's Android API is too old.
+            }
+        }
+    };
+
+    _onRateSliderSlidingComplete = async value => {
+        this._trySetRate(value * RATE_SCALE, this.state.shouldCorrectPitch);
+    };
+
+    _onPitchCorrectionPressed = async value => {
+        this._trySetRate(this.state.rate, !this.state.shouldCorrectPitch);
+    };
+
+    _onSeekSliderValueChange = value => {
+        if (this.playbackInstance != null && !this.isSeeking) {
+            this.isSeeking = true;
+            this.shouldPlayAtEndOfSeek = this.state.shouldPlay;
+            this.playbackInstance.pauseAsync();
+        }
+    };
+
+    _onSeekSliderSlidingComplete = async value => {
+        if (this.playbackInstance != null) {
+            this.isSeeking = false;
+            const seekPosition = value * this.state.playbackInstanceDuration;
+            if (this.shouldPlayAtEndOfSeek) {
+                this.playbackInstance.playFromPositionAsync(seekPosition);
+            } else {
+                this.playbackInstance.setPositionAsync(seekPosition);
+            }
+        }
+    };
+
+    _getSeekSliderPosition() {
+        if (
+            this.playbackInstance != null &&
+            this.state.playbackInstancePosition != null &&
+            this.state.playbackInstanceDuration != null
+        ) {
+            return (
+                this.state.playbackInstancePosition /
+                this.state.playbackInstanceDuration
+            );
+        }
+        return 0;
+    }
+
+    _getMMSSFromMillis(millis) {
+        const totalSeconds = millis / 1000;
+        const seconds = Math.floor(totalSeconds % 60);
+        const minutes = Math.floor(totalSeconds / 60);
+
+        const padWithZero = number => {
+            const string = number.toString();
+            if (number < 10) {
+                return "0" + string;
+            }
+            return string;
+        };
+        return padWithZero(minutes) + ":" + padWithZero(seconds);
+    }
+
+    _getTimestamp() {
+        if (
+            this.playbackInstance != null &&
+            this.state.playbackInstancePosition != null &&
+            this.state.playbackInstanceDuration != null
+        ) {
+            return `${this._getMMSSFromMillis(
+                this.state.playbackInstancePosition
+            )} / ${this._getMMSSFromMillis(this.state.playbackInstanceDuration)}`;
+        }
+        return "";
+    }
+
+    _onPosterPressed = () => {
+        this.setState({ poster: !this.state.poster });
+    };
+
+    _onUseNativeControlsPressed = () => {
+        this.setState({ useNativeControls: !this.state.useNativeControls });
+    };
+
+    _onFullscreenPressed = () => {
+        try {
+            this._video.presentFullscreenPlayer();
+        } catch (error) {
+            console.log(error.toString());
+        }
+    };
+
+    _onSpeakerPressed = () => {
+        this.setState(
+            state => {
+                return { throughEarpiece: !state.throughEarpiece };
+            },
+            () =>
+                Audio.setAudioModeAsync({
+                    allowsRecordingIOS: false,
+                    interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+                    playsInSilentModeIOS: true,
+                    shouldDuckAndroid: true,
+                    interruptionModeAndroid: InterruptionModeAndroid.DoNotMix,
+                    playThroughEarpieceAndroid: this.state.throughEarpiece
+                })
+        );
+    };
+
+    render() {
+        return !this.state.fontLoaded ? (
+            <View style={styles.emptyContainer} />
+        ) : (
+            <View style={styles.container}>
+                <View />
+                <View style={styles.nameContainer}>
+                    <Text style={[styles.text, { fontFamily: "cutive-mono-regular" }]}>
+                        {this.state.playbackInstanceName}
+                    </Text>
+                </View>
+                <View style={styles.space} />
+                <View style={styles.videoContainer}>
+                    <Video
+                        ref={this._mountVideo}
+                        style={[
+                            styles.video,
+                            {
+                                opacity: this.state.showVideo ? 1.0 : 0.0,
+                                width: this.state.videoWidth,
+                                height: this.state.videoHeight
+                            }
+                        ]}
+                        resizeMode={ResizeMode.CONTAIN}
+                        onPlaybackStatusUpdate={this._onPlaybackStatusUpdate}
+                        onLoadStart={this._onLoadStart}
+                        onLoad={this._onLoad}
+                        onError={this._onError}
+                        onFullscreenUpdate={this._onFullscreenUpdate}
+                        onReadyForDisplay={this._onReadyForDisplay}
+                        useNativeControls={this.state.useNativeControls}
+                    />
+                </View>
+                <View
+                    style={[
+                        styles.playbackContainer,
+                        {
+                            opacity: this.state.isLoading ? DISABLED_OPACITY : 1.0
+                        }
+                    ]}
+                >
+                    <Slider
+                        style={styles.playbackSlider}
+                        trackImage={ICON_TRACK_1.module}
+                        thumbImage={ICON_THUMB_1.module}
+                        value={this._getSeekSliderPosition()}
+                        onValueChange={this._onSeekSliderValueChange}
+                        onSlidingComplete={this._onSeekSliderSlidingComplete}
+                        disabled={this.state.isLoading}
+                    />
+                    <View style={styles.timestampRow}>
+                        <Text
+                            style={[
+                                styles.text,
+                                styles.buffering,
+                                { fontFamily: "cutive-mono-regular" }
+                            ]}
+                        >
+                            {this.state.isBuffering ? BUFFERING_STRING : ""}
+                        </Text>
+                        <Text
+                            style={[
+                                styles.text,
+                                styles.timestamp,
+                                { fontFamily: "cutive-mono-regular" }
+                            ]}
+                        >
+                            {this._getTimestamp()}
+                        </Text>
+                    </View>
+                </View>
+                <View
+                    style={[
+                        styles.buttonsContainerBase,
+                        styles.buttonsContainerTopRow,
+                        {
+                            opacity: this.state.isLoading ? DISABLED_OPACITY : 1.0
+                        }
+                    ]}
+                >
+                    <TouchableHighlight
+                        underlayColor={BACKGROUND_COLOR}
+                        style={styles.wrapper}
+                        onPress={this._onBackPressed}
+                        disabled={this.state.isLoading}
+                    >
+                        <Image style={styles.button} source={ICON_BACK_BUTTON.module} />
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        underlayColor={BACKGROUND_COLOR}
+                        style={styles.wrapper}
+                        onPress={this._onPlayPausePressed}
+                        disabled={this.state.isLoading}
+                    >
+                        <Image
+                            style={styles.button}
+                            source={
+                                this.state.isPlaying
+                                    ? ICON_PAUSE_BUTTON.module
+                                    : ICON_PLAY_BUTTON.module
+                            }
+                        />
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        underlayColor={BACKGROUND_COLOR}
+                        style={styles.wrapper}
+                        onPress={this._onStopPressed}
+                        disabled={this.state.isLoading}
+                    >
+                        <Image style={styles.button} source={ICON_STOP_BUTTON.module} />
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        underlayColor={BACKGROUND_COLOR}
+                        style={styles.wrapper}
+                        onPress={this._onForwardPressed}
+                        disabled={this.state.isLoading}
+                    >
+                        <Image style={styles.button} source={ICON_FORWARD_BUTTON.module} />
+                    </TouchableHighlight>
+                </View>
+                <View
+                    style={[
+                        styles.buttonsContainerBase,
+                        styles.buttonsContainerMiddleRow
+                    ]}
+                >
+                    <View style={styles.volumeContainer}>
+                        <TouchableHighlight
+                            underlayColor={BACKGROUND_COLOR}
+                            style={styles.wrapper}
+                            onPress={this._onMutePressed}
+                        >
+                            <Image
+                                style={styles.button}
+                                source={
+                                    this.state.muted
+                                        ? ICON_MUTED_BUTTON.module
+                                        : ICON_UNMUTED_BUTTON.module
+                                }
+                            />
+                        </TouchableHighlight>
+                        <Slider
+                            style={styles.volumeSlider}
+                            trackImage={ICON_TRACK_1.module}
+                            thumbImage={ICON_THUMB_2.module}
+                            value={1}
+                            onValueChange={this._onVolumeSliderValueChange}
+                        />
+                    </View>
+                    <TouchableHighlight
+                        underlayColor={BACKGROUND_COLOR}
+                        style={styles.wrapper}
+                        onPress={this._onLoopPressed}
+                    >
+                        <Image
+                            style={styles.button}
+                            source={LOOPING_TYPE_ICONS[this.state.loopingType].module}
+                        />
+                    </TouchableHighlight>
+                </View>
+                <View
+                    style={[
+                        styles.buttonsContainerBase,
+                        styles.buttonsContainerBottomRow
+                    ]}
+                >
+                    <TouchableHighlight
+                        underlayColor={BACKGROUND_COLOR}
+                        style={styles.wrapper}
+                        onPress={() => this._trySetRate(1.0, this.state.shouldCorrectPitch)}
+                    >
+                        <View style={styles.button}>
+                            <Text
+                                style={[styles.text, { fontFamily: "cutive-mono-regular" }]}
+                            >
+                                Rate:
+                            </Text>
+                        </View>
+                    </TouchableHighlight>
+                    <Slider
+                        style={styles.rateSlider}
+                        trackImage={ICON_TRACK_1.module}
+                        thumbImage={ICON_THUMB_1.module}
+                        value={this.state.rate / RATE_SCALE}
+                        onSlidingComplete={this._onRateSliderSlidingComplete}
+                    />
+                    <TouchableHighlight
+                        underlayColor={BACKGROUND_COLOR}
+                        style={styles.wrapper}
+                        onPress={this._onPitchCorrectionPressed}
+                    >
+                        <View style={styles.button}>
+                            <Text
+                                style={[styles.text, { fontFamily: "cutive-mono-regular" }]}
+                            >
+                                PC: {this.state.shouldCorrectPitch ? "yes" : "no"}
+                            </Text>
+                        </View>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        onPress={this._onSpeakerPressed}
+                        underlayColor={BACKGROUND_COLOR}
+                    >
+                        <MaterialIcons
+                            name={
+                                this.state.throughEarpiece
+                                    ? ICON_THROUGH_EARPIECE
+                                    : ICON_THROUGH_SPEAKER
+                            }
+                            size={32}
+                            color="black"
+                        />
+                    </TouchableHighlight>
+                </View>
+                <View />
+                {this.state.showVideo ? (
+                    <View>
+                        <View
+                            style={[
+                                styles.buttonsContainerBase,
+                                styles.buttonsContainerTextRow
+                            ]}
+                        >
+                            <View />
+                            <TouchableHighlight
+                                underlayColor={BACKGROUND_COLOR}
+                                style={styles.wrapper}
+                                onPress={this._onPosterPressed}
+                            >
+                                <View style={styles.button}>
+                                    <Text
+                                        style={[styles.text, { fontFamily: "cutive-mono-regular" }]}
+                                    >
+                                        Poster: {this.state.poster ? "yes" : "no"}
+                                    </Text>
+                                </View>
+                            </TouchableHighlight>
+                            <View />
+                            <TouchableHighlight
+                                underlayColor={BACKGROUND_COLOR}
+                                style={styles.wrapper}
+                                onPress={this._onFullscreenPressed}
+                            >
+                                <View style={styles.button}>
+                                    <Text
+                                        style={[styles.text, { fontFamily: "cutive-mono-regular" }]}
+                                    >
+                                        Fullscreen
+                                    </Text>
+                                </View>
+                            </TouchableHighlight>
+                            <View />
+                        </View>
+                        <View style={styles.space} />
+                        <View
+                            style={[
+                                styles.buttonsContainerBase,
+                                styles.buttonsContainerTextRow
+                            ]}
+                        >
+                            <View />
+                            <TouchableHighlight
+                                underlayColor={BACKGROUND_COLOR}
+                                style={styles.wrapper}
+                                onPress={this._onUseNativeControlsPressed}
+                            >
+                                <View style={styles.button}>
+                                    <Text
+                                        style={[styles.text, { fontFamily: "cutive-mono-regular" }]}
+                                    >
+                                        Native Controls:{" "}
+                                        {this.state.useNativeControls ? "yes" : "no"}
+                                    </Text>
+                                </View>
+                            </TouchableHighlight>
+                            <View />
+                        </View>
+                    </View>
+                ) : null}
+            </View>
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    emptyContainer: {
+        alignSelf: "stretch",
+        backgroundColor: BACKGROUND_COLOR
+    },
+    container: {
+        flex: 1,
+        flexDirection: "column",
+        justifyContent: "space-between",
+        alignItems: "center",
+        alignSelf: "stretch",
+        backgroundColor: BACKGROUND_COLOR
+    },
+    wrapper: {},
+    nameContainer: {
+        height: FONT_SIZE
+    },
+    space: {
+        height: FONT_SIZE
+    },
+    videoContainer: {
+        height: VIDEO_CONTAINER_HEIGHT
+    },
+    video: {
+        maxWidth: DEVICE_WIDTH
+    },
+    playbackContainer: {
+        flex: 1,
+        flexDirection: "column",
+        justifyContent: "space-between",
+        alignItems: "center",
+        alignSelf: "stretch",
+        minHeight: ICON_THUMB_1.height * 2.0,
+        maxHeight: ICON_THUMB_1.height * 2.0
+    },
+    playbackSlider: {
+        alignSelf: "stretch"
+    },
+    timestampRow: {
+        flex: 1,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        alignSelf: "stretch",
+        minHeight: FONT_SIZE
+    },
+    text: {
+        fontSize: FONT_SIZE,
+        minHeight: FONT_SIZE
+    },
+    buffering: {
+        textAlign: "left",
+        paddingLeft: 20
+    },
+    timestamp: {
+        textAlign: "right",
+        paddingRight: 20
+    },
+    button: {
+        backgroundColor: BACKGROUND_COLOR
+    },
+    buttonsContainerBase: {
+        flex: 1,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between"
+    },
+    buttonsContainerTopRow: {
+        maxHeight: ICON_PLAY_BUTTON.height,
+        minWidth: DEVICE_WIDTH / 2.0,
+        maxWidth: DEVICE_WIDTH / 2.0
+    },
+    buttonsContainerMiddleRow: {
+        maxHeight: ICON_MUTED_BUTTON.height,
+        alignSelf: "stretch",
+        paddingRight: 20
+    },
+    volumeContainer: {
+        flex: 1,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        minWidth: DEVICE_WIDTH / 2.0,
+        maxWidth: DEVICE_WIDTH / 2.0
+    },
+    volumeSlider: {
+        width: DEVICE_WIDTH / 2.0 - ICON_MUTED_BUTTON.width
+    },
+    buttonsContainerBottomRow: {
+        maxHeight: ICON_THUMB_1.height,
+        alignSelf: "stretch",
+        paddingRight: 20,
+        paddingLeft: 20
+    },
+    rateSlider: {
+        width: DEVICE_WIDTH / 2.0
+    },
+    buttonsContainerTextRow: {
+        maxHeight: FONT_SIZE,
+        alignItems: "center",
+        paddingRight: 20,
+        paddingLeft: 20,
+        minWidth: DEVICE_WIDTH,
+        maxWidth: DEVICE_WIDTH
+    }
+});
+.....................................................................................
+			Expo-Av : vidio + audio
+.....................................................................................
+
+steps:
+
+npx expo install expo-av
+
+app.json
+"expo": {
+      "plugins": [
+        "expo-location",
+        "expo-network",
+        "expo-camera",
+        "expo-av"
+      ]
+    },
+
+import React, { useState, useRef } from 'react';
+import { View, StyleSheet, Button } from 'react-native';
+import { Video } from 'expo-av';
+
+export default function App() {
+  const video = useRef(null);
+  const [status, setStatus] = useState({});
+  return (
+    <View style={styles.container}>
+      <Video
+        ref={video}
+        style={styles.video}
+        source={{
+          uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
+        }}
+        useNativeControls
+        resizeMode="contain"
+        isLooping
+        onPlaybackStatusUpdate={status => setStatus(() => status)}
+      />
+      <View style={styles.buttons}>
+        <Button
+          title={status.isPlaying ? 'Pause' : 'Play'}
+          onPress={() =>
+            status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
+          }
+        />
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#ecf0f1',
+  },
+  video: {
+    alignSelf: 'center',
+    width: 320,
+    height: 200,
+  },
+  buttons: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+.....................................................................................
+				Redux
+.....................................................................................
+..................................................................................
+				Redux
+...................................................................................
+
+What is Redux?
+   Redux is a lib,State management lib.
+
+As of now, we have kept state inside react component- View.
+To separate State from the view layer(react)
+
+We need to isloate state from the react and keep the state inside  lib called "Redux
+
+Redux is not only lib but also pattern for managining and updating application state, using event driven programming model called "actions"
+
+As of how state is encapulated inside component.
+
+How to declare state inside component?
+
+component-1
+
+ let state = {
+    counter:0
+ }
+ how to mutate -biz logic
+ setState(state=>{
+    return {...state,counter:state.counter+1}
+ })
+
+
+component-2
+ let state = {
+    counter:0
+ }
+ how to mutate -biz logic
+ setState(state=>{
+    return {...state,counter:state.counter+1}
+ })
+
+                        Redux and State  Management
+
+
+Redux is going to store all component state into one single object -Application State
+
+const appState = {
+  ....   
+}
+
+Core Concepts or Principles:
+............................
+
+1.State:
+   Redux maintains or stores the data in single object called as application state.
+2.Store
+   Store is object where Redux application state lives.
+   Store offers api to communicate from react and redux to react
+   Store is entry and exit point of react and redux
+3.reducer
+    You know very well how to mutate and where mutate state in react
+     ->Inside setState pure function.
+    Reducer is pure function which returns immutable object.
+
+4.actions
+    An action is like request in webserver, redux actions are plain javascript object
+ eg:
+  let counterAction = {
+	type:'counter/increment'
+  }
+ action may take input also called payload
+  let counterByAmount = {
+   type:'counter/increment',
+   payload:12
+ }
+
+5.Dispatcher 
+  It is transporter which transport action object from react to redux
+  Dispatcher is represented by a method called "dispatch"
+  dispatch is part of "Store object"
+  store.dispatch(action)
+..................................................................................					Building Redux
+...................................................................................
+
+in order to start redux we have two patterns
+
+1.old redux
+2.new redux called "Redux toolkit"
+
+We are going to use "Redux toolkit"
+
+
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//biz logic : reducer
+const counterReducer = (state = { counter: 10 }, action) => {
+  //switch case
+  switch (action.type) {
+    case 'counter/increment':
+      return { ...state, counter: state.counter + 1 }
+    default:
+      return state;
+  }
+}
+
+//create store object
+const store = configureStore({
+  reducer: {
+    //counterReducer: counterReducer
+    counterReducer
+  }
+})
+
+const Counter = props => {
+  // const [counter, setCounter] = useState(0)
+
+  const counter = useSelector(state => {
+    //state.reducerName.state
+    return state.counterReducer.counter
+  })
+  const dispatch = useDispatch();
+  const onIncrement = evt => {
+    //send request 
+    dispatch({ type: 'counter/increment' })
+  }
+  // const onIncrement = evt => {
+  //   setCounter(counter + 1)
+  // }
+  return <View>
+    <Text>Counter {counter}</Text>
+    <Button title="Increment" onPress={onIncrement} />
+  </View>
+}
+
+
+export default function App() {
+  return (
+    <Provider store={store}>
+      <View style={styles.container}>
+        <Counter />
+        <StatusBar style="auto" />
+      </View>
+    </Provider>
+
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+.....................................................................................
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//biz logic : reducer
+const counterReducer = (state = { counter: 10 }, action) => {
+    //switch case
+    switch (action.type) {
+        case 'counter/increment':
+            return { ...state, counter: state.counter + 1 }
+        default:
+            return state;
+    }
+}
+
+//Like Feature : 
+const LikeReducer = (state = { like: 10 }, action) => {
+    //switch case
+    switch (action.type) {
+        case 'like/increment':
+            return { ...state, like: state.like + 1 }
+        default:
+            return state;
+    }
+}
+//Dislike Reducer
+const DislikeReducer = (state = { dislike: 10 }, action) => {
+    //switch case
+    switch (action.type) {
+        case 'like/decrement':
+            return { ...state, like: state.dislike + 1 }
+        default:
+            return state;
+    }
+}
+
+//create store object
+const store = configureStore({
+    reducer: {
+        //counterReducer: counterReducer
+        counterReducer,
+        LikeReducer,
+        DislikeReducer
+    }
+})
+
+const Counter = props => {
+    const counter = useSelector(state => {
+        return state.counterReducer.counter
+    })
+    const dispatch = useDispatch();
+    const onIncrement = evt => {
+        //send request 
+        dispatch({ type: 'counter/increment' })
+    }
+
+    return <View>
+        <Text>Counter {counter}</Text>
+        <Button title="Increment" onPress={onIncrement} />
+    </View>
+}
+const Like = props => {
+    const myLike = useSelector(state => {
+        return state.LikeReducer.like
+    })
+    const dispatch = useDispatch();
+    const onIncrement = evt => {
+        //send request 
+        dispatch({ type: 'like/increment' })
+    }
+
+    return <View>
+        <Text>Like {myLike}</Text>
+        <Button title="Increment" onPress={onIncrement} />
+    </View>
+}
+const DisLike = props => {
+    const myDislike = useSelector(state => {
+        return state.DislikeReducer.dislike
+    })
+    const dispatch = useDispatch();
+    const onIncrement = evt => {
+        //send request 
+        dispatch({ type: 'like/dislike' })
+    }
+
+    return <View>
+        <Text>Dislike {myDislike}</Text>
+        <Button title="Increment" onPress={onIncrement} />
+    </View>
+}
+
+
+export default function App() {
+    return (
+        <Provider store={store}>
+            <View style={styles.container}>
+                <Counter />
+                <Like />
+                <DisLike/>
+                <StatusBar style="auto" />
+            </View>
+        </Provider>
+
+    );
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+....................................................................................
+			import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//biz logic : reducer
+const counterReducer = (state = { counter: 10 }, action) => {
+    //switch case
+    switch (action.type) {
+        case 'counter/increment':
+            return { ...state, counter: state.counter + 1 }
+        default:
+            return state;
+    }
+}
+
+//Like Feature : 
+const LikeReducer = (state = { like: 10 }, action) => {
+    //switch case
+    switch (action.type) {
+        case 'like/increment':
+            return { ...state, like: state.like + 1 }
+        default:
+            return state;
+    }
+}
+//Dislike Reducer
+const DislikeReducer = (state = { dislike: 10 }, action) => {
+    //switch case
+    switch (action.type) {
+        case 'like/decrement':
+            return { ...state, like: state.dislike + 1 }
+        default:
+            return state;
+    }
+}
+
+//create store object
+const store = configureStore({
+    reducer: {
+        //counterReducer: counterReducer
+        counterReducer,
+        LikeReducer,
+        DislikeReducer
+    }
+})
+
+const Counter = props => {
+    const counter = useSelector(state => {
+        return state.counterReducer.counter
+    })
+    const dispatch = useDispatch();
+    const onIncrement = evt => {
+        //send request 
+        dispatch({ type: 'counter/increment' })
+    }
+
+    return <View>
+        <Text>Counter {counter}</Text>
+        <Button title="Increment" onPress={onIncrement} />
+    </View>
+}
+const Like = props => {
+    const myLike = useSelector(state => {
+        return state.LikeReducer.like
+    })
+    const dispatch = useDispatch();
+    const onIncrement = evt => {
+        //send request 
+        dispatch({ type: 'like/increment' })
+    }
+
+    return <View>
+        <Text>Like {myLike}</Text>
+        <Button title="Like" onPress={onIncrement} />
+    </View>
+}
+const DisLike = props => {
+    const myDislike = useSelector(state => {
+        return state.DislikeReducer.dislike
+    })
+    const dispatch = useDispatch();
+    const onIncrement = evt => {
+        //send request 
+        dispatch({ type: 'like/dislike' })
+    }
+
+    return <View>
+        <Text>Dislike {myDislike}</Text>
+        <Button title="Dislike" onPress={onIncrement} />
+    </View>
+}
+
+
+export default function App() {
+    return (
+        <Provider store={store}>
+            <View style={styles.container}>
+                <Counter />
+                <Like />
+                <DisLike/>
+                <StatusBar style="auto" />
+            </View>
+        </Provider>
+
+    );
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+....................................................................................
+			 Redux-React Native Router
+....................................................................................
+
+npm install @react-navigation/native @react-navigation/native-stack
+npx expo install react-native-screens react-native-safe-area-context
+
+
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+//biz logic : reducer
+const counterReducer = (state = { counter: 10 }, action) => {
+    //switch case
+    switch (action.type) {
+        case 'counter/increment':
+            return { ...state, counter: state.counter + 1 }
+        default:
+            return state;
+    }
+}
+
+//Like Feature : 
+const LikeReducer = (state = { like: 10 }, action) => {
+    //switch case
+    switch (action.type) {
+        case 'like/increment':
+            return { ...state, like: state.like + 1 }
+        default:
+            return state;
+    }
+}
+//Dislike Reducer
+const DislikeReducer = (state = { dislike: 10 }, action) => {
+    //switch case
+    switch (action.type) {
+        case 'like/decrement':
+            return { ...state, like: state.dislike + 1 }
+        default:
+            return state;
+    }
+}
+
+//create store object
+const store = configureStore({
+    reducer: {
+        //counterReducer: counterReducer
+        counterReducer,
+        LikeReducer,
+        DislikeReducer
+    }
+})
+
+const Counter = props => {
+    const counter = useSelector(state => {
+        return state.counterReducer.counter
+    })
+    const dispatch = useDispatch();
+    const onIncrement = evt => {
+        //send request 
+        dispatch({ type: 'counter/increment' })
+    }
+
+    return <View>
+        <Text>Counter {counter}</Text>
+        <Button title="Increment" onPress={onIncrement} />
+    </View>
+}
+const Like = props => {
+    const myLike = useSelector(state => {
+        return state.LikeReducer.like
+    })
+    const dispatch = useDispatch();
+    const onIncrement = evt => {
+        //send request 
+        dispatch({ type: 'like/increment' })
+    }
+
+    return <View>
+        <Text>Like {myLike}</Text>
+        <Button title="Like" onPress={onIncrement} />
+    </View>
+}
+const DisLike = props => {
+    const myDislike = useSelector(state => {
+        return state.DislikeReducer.dislike
+    })
+    const dispatch = useDispatch();
+    const onIncrement = evt => {
+        //send request 
+        dispatch({ type: 'like/dislike' })
+    }
+
+    return <View>
+        <Text>Dislike {myDislike}</Text>
+        <Button title="Dislike" onPress={onIncrement} />
+    </View>
+}
+
+const HomeScreen = props => {
+    return <View style={styles.container}>
+        <Button title="Counter" onPress={() => {
+            props.navigation.navigate('Counter')
+
+        }} />
+        <Button title="Like" onPress={() => {
+            props.navigation.navigate('Like')
+
+        }} /> 
+        <Button title="Dislike" onPress={() => {
+            props.navigation.navigate('Dislike')
+
+        }} />
+    </View>
+}
+const CounterScreen = props => {
+    return <View style={styles.container}>
+        <Counter />
+    </View>
+}
+const LikeScreen = props => {
+    return <View style={styles.container}>
+        <Like />
+    </View>
+}
+const DisLikeScreen = props => {
+    return <View style={styles.container}>
+        <DisLike />
+    </View>
+}
+
+
+export default function App() {
+    return (
+        <Provider store={store}>
+            <NavigationContainer>
+                <Stack.Navigator>
+                    <Stack.Screen
+                        name="Home"
+                        component={HomeScreen}
+                        options={{ title: 'Redux App' }}
+                    />
+                    <Stack.Screen
+                        name="Counter"
+                        component={CounterScreen}
+                        options={{ title: 'Counter' }}
+                    />
+                    <Stack.Screen
+                        name="Like"
+                        component={LikeScreen}
+                        options={{ title: 'Like' }}
+                    />
+                    <Stack.Screen
+                        name="Dislike"
+                        component={DisLikeScreen}
+                        options={{ title: 'Dislike' }}
+                    />
+                </Stack.Navigator>
+            </NavigationContainer>
+            {/* <StatusBar style="auto" /> */}
+        </Provider>
+
+
+    );
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+....................................................................................
+			 Folder Structure and React native projects
+
+
+components
+screens-navigation
+redux
+
+App
+ |
+ components
+   |
+   counter.jsx
+   like.jsx
+   dislike.jsx
+
+ screens
+  |
+  HomeScreen.jsx
+  LikeScreen.jsx
+
+ store
+   ->store.js
+ reducers
+   ->counter.reducer.js
+   ->like.reducer.js
+ assets
+   ---images
+ apis
+  -customer.api
+.....................................................................................
+   
+
+
+
+
+
+
+
