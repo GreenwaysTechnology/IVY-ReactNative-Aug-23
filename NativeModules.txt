@@ -1,0 +1,241 @@
+			Native Modules
+....................................................................................
+Sometimes a React Native app needs to access a native platform API that is not available by default in JavaScript, for example the native APIs to access Apple or Google Pay.
+
+ Maybe you want to reuse some existing Objective-C, Swift, Java or C++ libraries without having to reimplement it in JavaScript, or write some high performance, multi-threaded code for things like image processing.
+
+The NativeModule system exposes instances of Java/Objective-C/C++ (native) classes to JavaScript (JS) as JS objects, thereby allowing you to execute arbitrary native code from within JS.
+
+While we don't expect this feature to be part of the usual development process, it is essential that it exists. If React Native doesn't export a native API that your JS app needs you should be able to export it yourself!.
+
+
+Native Module Setup:
+
+There are two ways to write a native module for your React Native application:
+
+1.Directly within your React Native application’s iOS/Android projects.
+
+2.As a NPM package that can be installed as a dependency by your/other React Native applications
+
+Steps:
+In the following sections we will walk you through guides on how to build a native module directly within a React Native application.
+	As a prerequisite, you will need a React Native application to work within
+
+npx react-native@latest init 	MyApp
+
+Use Case:
+	Imagine that you want to access the iOS/Android native calendar APIs from JavaScript within a React Native application in order to create calendar events.
+
+By default React Native does not expose a JavaScript API to communicate with the native calendar libraries. 
+
+However, through native modules, you can write native code that communicates with native calendar APIs.
+
+Then you can invoke that native code through JavaScript in your React Native application.
+
+
+Android Native Modules
+
+Steps:
+
+1.Create a Calendar Native Module
+In the following guide you will create a native module, CalendarModule, that will allow you to access Android’s calendar APIs from JavaScript. 
+
+By the end, you will be able to call CalendarModule.createCalendarEvent('Dinner Party', 'My House'); from JavaScript, invoking a Java/Kotlin method that creates a calendar event.
+
+To get started, open up the Android project within your React Native application in Android Studio. You can find your Android project here within a React Native app:
+
+
+1.Create A Custom Native Module File
+
+package com.nativemoduleapp;
+
+import androidx.annotation.NonNull;
+
+import com.facebook.react.bridge.NativeModule;
+import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReactContext;
+import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.facebook.react.bridge.ReactMethod;
+import java.util.Map;
+import java.util.HashMap;
+
+public class CalendarModule extends ReactContextBaseJavaModule {
+    CalendarModule(ReactApplicationContext context) {
+        super(context);
+    }
+
+    @NonNull
+    @Override
+    public String getName() {
+        return null;
+    }
+}
+
+As you can see, your CalendarModule class extends the ReactContextBaseJavaModule class. For Android, Java/Kotlin native modules are written as classes that extend ReactContextBaseJavaModule and implement the functionality required by JavaScript.
+
+"
+It is worth noting that technically Java/Kotlin classes only need to extend the BaseJavaModule class or implement the NativeModule interface to be considered a Native Module by React Native.
+"
+
+"
+However we recommend that you use ReactContextBaseJavaModule, as shown above. ReactContextBaseJavaModule gives access to the ReactApplicationContext (RAC), which is useful for Native Modules that need to hook into activity lifecycle methods. Using ReactContextBaseJavaModule will also make it easier to make your native module type-safe in the future. 
+
+For native module type-safety, which is coming in future releases, React Native looks at each native module's JavaScript spec and generates an abstract base class that extends ReactContextBaseJavaModule.
+"
+
+Module Name:
+
+All Java/Kotlin native modules in Android need to implement the getName() method
+This method returns a string, which represents the name of the native module
+The native module can then be accessed in JavaScript using its name. For example, in the below code snippet, getName() returns "CalendarModule".
+
+
+// add to CalendarModule.java
+@Override
+public String getName() {
+   return "CalendarModule";
+}
+
+The native module can then be accessed in JS like this:
+
+const {CalendarModule} = ReactNative.NativeModules;
+
+Export a Native Method to JavaScript:
+.....................................
+Next you will need to add a method to your native module that will create calendar events and can be invoked in JavaScript.
+
+All native module methods meant to be invoked from JavaScript must be annotated with @ReactMethod.
+
+package com.nativemoduleapp;
+
+import androidx.annotation.NonNull;
+
+import com.facebook.react.bridge.NativeModule;
+import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReactContext;
+import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.facebook.react.bridge.ReactMethod;
+import java.util.Map;
+import java.util.HashMap;
+
+public class CalendarModule extends ReactContextBaseJavaModule {
+    CalendarModule(ReactApplicationContext context) {
+        super(context);
+    }
+
+    @NonNull
+    @Override
+    public String getName() {
+        //this will be used in javascript
+        return "CalendarModule";
+    }
+    //Native methods
+    @ReactMethod
+    public void createCalendarEvent(String name, String location,Promise p) {
+       if(newor) promise.resolve(info) 
+    }
+}
+
+Set up a method createCalendarEvent() for CalendarModule that can be invoked in JS through CalendarModule.createCalendarEvent(). For now, the method will take in a name and location as strings. Argument type options will be covered shortly.
+
+
+Add a debug log in the method to confirm it has been invoked when you call it from your application. Below is an example of how you can import and use the Log class from the Android util package:
+
+    @ReactMethod
+    public void createCalendarEvent(String name, String location) {
+        Log.d("CalendarModule", "Create event called with name: " + name
+                + " and location: " + location);
+    }
+
+
+Register the Module (Android Specific):
+.......................................
+Once a native module is written, it needs to be registered with React Native
+
+In order to do so, you need to add your native module to a ReactPackage and register the ReactPackage with React Native.
+
+During initialization, React Native will loop over all packages, and for each ReactPackage, register each native module within.
+
+
+"
+React Native invokes the method createNativeModules() on a ReactPackage in order to get the list of native modules to register. For Android, if a module is not instantiated and returned in createNativeModules it will not be available from JavaScript.
+"
+
+To add your Native Module to ReactPackage, first create a new Java/Kotlin Class named (MyAppPackage.java or MyAppPackage.kt) that implements ReactPackage inside the android/app/src/main/java/com/your-app-name/ folder:
+
+Then add the following content:
+
+
+package com.nativemoduleapp;
+
+import com.facebook.react.ReactPackage;
+import com.facebook.react.bridge.NativeModule;
+import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.uimanager.ViewManager;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class MyAppPackage implements ReactPackage {
+
+    @Override
+    public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
+        return Collections.emptyList();
+    }
+
+    @Override
+    public List<NativeModule> createNativeModules(
+            ReactApplicationContext reactContext) {
+        List<NativeModule> modules = new ArrayList<>();
+
+        //register caldener module
+        modules.add(new CalendarModule(reactContext));
+
+        return modules;
+    }
+}
+
+This file imports the native module you created, CalendarModule. It then instantiates CalendarModule within the createNativeModules() function and returns it as a list of NativeModules to register. If you add more native modules down the line, you can also instantiate them and add them to the list returned here.
+
+Next step: 
+
+To register the CalendarModule package, you must add MyAppPackage to the list of packages returned in ReactNativeHost's getPackages() method. Open up your MainApplication.java or MainApplication.kt file, which can be found in the following path:
+
+  protected List<ReactPackage> getPackages() {
+          @SuppressWarnings("UnnecessaryLocalVariable")
+          List<ReactPackage> packages = new PackageList(this).getPackages();
+          // Packages that cannot be autolinked yet can be added manually here, for example:
+           packages.add(new MyAppPackage());
+          return packages;
+        }
+
+Test What You Have Built:
+import { NativeModules, Button, View } from 'react-native'
+
+const { CalendarModule } = NativeModules;
+
+const NewModuleButton = () => {
+    const onPress = () => {
+        console.log('We will invoke the native module here!');
+        CalendarModule.createCalendarEvent('testName', 'testLocation');
+    };
+
+    return (
+        <Button
+            title="Click to invoke your native module!"
+            color="#841584"
+            onPress={onPress}
+        />
+    );
+};
+export default function App() {
+    return <View style={{ flex: 1, justifyContent: 'center', alignContent: 'center' }}>
+        <NewModuleButton />
+    </View>
+}
+
+npm run android
+
+
+

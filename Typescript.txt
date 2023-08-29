@@ -1,25 +1,4 @@
-				User interface Development
-				     Using Angular
-.....................................................................................
-
-Angular is just javascript framework to build user interface.
-
-Pre Knowledge
-1.Javascript - basics of js
-2.CSS 3
-3.HTML 5.
-
-Are we going to build angular apps using plain javascript?
-   No!
-
-We are going to use the language called "typescript"
-
-Angular is built on the top of various technologies
-1.Typescript
-2.Reactive Programming using RXJS
-4.Build tools like webpack
-....................................................................................
-		                     TypeScript 
+				                  TypeScript 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 What is typescript?
@@ -222,7 +201,7 @@ Typescript is strongly typed, object oriented  javascript.
 Now you can use type script to build better object oriented systems using javascript.
 
 TS is not compititor or replacer for javascript but it complements js.
-Type scrit is a typed superset of javascript that compiles to plain javascript
+Type script is a typed superset of javascript that compiles to plain javascript
 
                   any browser,any host, any os, any device
 
